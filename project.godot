@@ -11,5 +11,13 @@ config_version=5
 [application]
 
 config/name="Tobujam"
+run/main_scene="res://Scenes/Title.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=200
+window/size/mode=2
+window/stretch/mode="canvas_items"
