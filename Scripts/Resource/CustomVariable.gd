@@ -1,5 +1,9 @@
 extends Resource
 class_name CustomVariable
 
-@export var Name = "default"
+var Name = ""
+
+func GetName():
+	var name = resource_path.get_file().trim_suffix(".tres")
+	return name
 

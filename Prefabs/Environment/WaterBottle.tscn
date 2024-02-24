@@ -13,7 +13,6 @@ size = Vector2(4, 4)
 position = Vector2(0, 151)
 collision_mask = 4
 script = ExtResource("1_onied")
-SetVariable = "bHasWater"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("4_u3b6c")

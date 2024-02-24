@@ -5,5 +5,5 @@ class_name ValueSet
 @export var Value = true
 
 func SetValue():
-	if VariableName.Name != "default":
-		Game.SetData(VariableName.Name, Value)
+	if VariableName.GetName() != "default":
+		Game.SetData(VariableName.GetName(), Value)

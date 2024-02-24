@@ -6,6 +6,6 @@ class_name DialogueListener
 @export var DialogueToPointTo : DialogueItem
 
 func ShouldSwitch():
-	if VariableName.Name != "default":
-		return Game.GetProperty(VariableName.Name) == str(Value)
+	if VariableName.GetName() != "default":
+		return Game.GetProperty(VariableName.GetName()) == str(Value)
 	return false

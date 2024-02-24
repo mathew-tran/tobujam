@@ -16,7 +16,7 @@ func IsOptionValid():
 	if is_instance_valid(OptionUnlockCode) == false:
 		return true
 
-	if OptionUnlockCode.Name == "default":
+	if OptionUnlockCode.GetName() == "default":
 		return true
 	else:
-		return Game.GetData()[OptionUnlockCode.Name]
+		return Game.GetData()[OptionUnlockCode.GetName()]
