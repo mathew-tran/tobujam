@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 40
+var speed = 80
 
 var bCanMove = true
 
@@ -23,4 +23,6 @@ func _physics_process(delta):
 	if bCanMove == false:
 		return
 	get_input()
-	var collision = move_and_collide(velocity * delta)
+	#var collision = move_and_collide(velocity * delta)
+	move_and_slide()
+
