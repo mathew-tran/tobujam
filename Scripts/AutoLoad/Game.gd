@@ -4,9 +4,12 @@ signal EnterDialogue
 signal ExitDialogue
 signal SendDialogue(data)
 
+var GridSize = Vector2(10, 10)
+
 signal DataUpdate
+
+
 var Data = {
-	"bHasWater" : false
 }
 
 func GetData():

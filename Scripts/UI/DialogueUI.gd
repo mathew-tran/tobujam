@@ -28,6 +28,11 @@ func _ready():
 func SplitString(s: String, length: int):
 	var result = []
 	var start = 0
+	var splitString = s.split("\n")
+	for split in splitString:
+		result.append(split)
+	return result
+
 	while start < s.length():
 		result.append(s.substr(start, length))
 		start += length
