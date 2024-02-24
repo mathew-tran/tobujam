@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 run/max_fps=8
 config/icon="res://icon.svg"
 
+[autoload]
+
+Game="*res://Scripts/AutoLoad/Game.gd"
+
 [display]
 
 window/size/viewport_width=320

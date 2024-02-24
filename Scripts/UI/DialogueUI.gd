@@ -8,8 +8,6 @@ var DialogueData = {}
 var DialogueToSay = []
 var DefaultCharacterDelay = .1
 
-signal StartDialogue
-signal EndDialogue
 
 func _enter_tree():
 	visible = false
@@ -20,7 +18,7 @@ func _ready():
 	SetDialogue({
 		"Speaker" : "Janitor",
 		"Description" : "Testing dialogue.... this is a long sentence with no point to it oh Testin testing testin",
-		"Cadence" : .15
+		"Cadence" : .05
 	})
 
 func SplitString(s: String, length: int):
@@ -32,7 +30,7 @@ func SplitString(s: String, length: int):
 	return result
 
 func SetDialogue(data):
-	emit_signal("StartDialogue")
+	Game.BroadcastEnterDialogue()
 	DialogueData = data
 
 	$TextureRect.visible = false
@@ -70,13 +68,13 @@ func _input(event):
 			else:
 				CloseDialogue()
 		else:
-			if $Timer.wait_time != .005:
-				$Timer.wait_time = .005
+			if $Timer.wait_time != .00005:
+				$Timer.wait_time = .00005
 				$Timer.start()
 
 func CloseDialogue():
 	visible = false
-	emit_signal("EndDialogue")
+	Game.BroadcastExitDialogue()
 
 func _on_timer_timeout():
 	DescriptionText.visible_characters += 1
