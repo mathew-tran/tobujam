@@ -19,4 +19,4 @@ func IsOptionValid():
 	if OptionUnlockCode.GetName() == "default":
 		return true
 	else:
-		return Game.GetData()[OptionUnlockCode.GetName()]
+		return Game.GetProperty(OptionUnlockCode.GetName()) == "true"

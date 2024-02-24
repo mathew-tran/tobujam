@@ -1,7 +1,7 @@
 extends Resource
 class_name DialogueItem
 
-@export var Dialogue = "test"
+@export_multiline  var Dialogue = "test"
 @export var Options : Array[DialogueOption]
 @export var UpdateVariables : Array[ValueSet]
 
