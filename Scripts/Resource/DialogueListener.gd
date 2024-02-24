@@ -1,11 +1,11 @@
 extends Resource
 class_name DialogueListener
 
-@export var Name = "default"
+@export var VariableName : CustomVariable
 @export var Value = true
 @export var DialogueToPointTo : DialogueItem
 
 func ShouldSwitch():
-	if Name != "default":
-		return Game.GetProperty(Name) == str(Value)
+	if VariableName.Name != "default":
+		return Game.GetProperty(VariableName.Name) == str(Value)
 	return false

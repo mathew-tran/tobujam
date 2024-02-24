@@ -1,9 +1,9 @@
 extends Resource
 class_name ValueSet
 
-@export var Name = "default"
+@export var VariableName : CustomVariable
 @export var Value = true
 
 func SetValue():
-	if Name != "default":
-		Game.SetData(Name, Value)
+	if VariableName.Name != "default":
+		Game.SetData(VariableName.Name, Value)

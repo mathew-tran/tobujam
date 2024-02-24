@@ -2,8 +2,9 @@ extends Resource
 class_name DialogueOption
 
 @export var OptionName = "test"
+@export var OptionUnlockCode : CustomVariable
 @export var DialogueToPointTo : DialogueItem
-@export var OptionUnlockCode = "default"
+
 
 func GetOptionName():
 	return OptionName
@@ -12,7 +13,10 @@ func GetDialogueItem():
 	return DialogueToPointTo
 
 func IsOptionValid():
-	if OptionUnlockCode == "default":
+	if is_instance_valid(OptionUnlockCode) == false:
+		return true
+
+	if OptionUnlockCode.Name == "default":
 		return true
 	else:
-		return Game.GetData()[OptionUnlockCode]
+		return Game.GetData()[OptionUnlockCode.Name]
