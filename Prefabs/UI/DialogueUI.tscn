@@ -1,0 +1,114 @@
+[gd_scene load_steps=8 format=3 uid="uid://bayiq4i52kqk7"]
+
+[ext_resource type="Script" path="res://Scripts/UI/DialogueUI.gd" id="1_mmxwe"]
+[ext_resource type="Texture2D" uid="uid://bkcnnb7nd2fr3" path="res://Art/Dialogue/ContinueArrow.png" id="2_g12th"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igkn2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfsk8"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_jo7gg"]
+resource_name = "animateArrow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(306, 35), Vector2(306, 32), Vector2(306, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_nkasd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(306, 35)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2twd"]
+_data = {
+"RESET": SubResource("Animation_nkasd"),
+"animateArrow": SubResource("Animation_jo7gg")
+}
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mmxwe")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_igkn2")
+
+[node name="Description" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 311.0
+offset_bottom = 38.0
+text = "test"
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -17.0
+offset_right = 82.0
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xfsk8")
+metadata/_edit_group_ = true
+
+[node name="Speaker" type="Label" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -12.0
+offset_right = 85.0
+offset_bottom = 11.0
+grow_vertical = 2
+text = "test"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 35.0
+offset_right = 314.0
+offset_bottom = 43.0
+texture = ExtResource("2_g12th")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w2twd")
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
