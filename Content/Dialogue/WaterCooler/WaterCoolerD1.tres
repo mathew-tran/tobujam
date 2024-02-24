@@ -1,10 +1,48 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=4 format=3 uid="uid://bpqswyd8c0dc1"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=10 format=3 uid="uid://bncins8cvi4hq"]
 
-[ext_resource type="Resource" uid="uid://ck8hjspriwycp" path="res://Content/Dialogue/WaterCooler/WaterCoolerD1OptionLeave.tres" id="1_t4nnx"]
+[ext_resource type="Script" path="res://Scripts/Resource/ValueSet.gd" id="1_bmieo"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_vof28"]
-[ext_resource type="Resource" uid="uid://ciw8dmvx0qrqr" path="res://Content/Dialogue/WaterCooler/WaterCoolerD1OptionLook.tres" id="2_dc6yn"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_xh8lg"]
+
+[sub_resource type="Resource" id="Resource_3b8c2"]
+script = ExtResource("1_bmieo")
+Name = "bAddedWater"
+Value = true
+
+[sub_resource type="Resource" id="Resource_kat4a"]
+script = ExtResource("1_bmieo")
+Name = "bHasWater"
+Value = false
+
+[sub_resource type="Resource" id="Resource_q4to6"]
+script = ExtResource("1_vof28")
+Dialogue = "You add the water. People should be able to drink it now!"
+Options = Array[ExtResource("2_xh8lg")]([])
+UpdateVariables = Array[ExtResource("1_bmieo")]([SubResource("Resource_3b8c2"), SubResource("Resource_kat4a")])
+VariableName = "bHasWater"
+
+[sub_resource type="Resource" id="Resource_bbpaw"]
+script = ExtResource("2_xh8lg")
+OptionName = "Add Water"
+DialogueToPointTo = SubResource("Resource_q4to6")
+OptionUnlockCode = "bHasWater"
+
+[sub_resource type="Resource" id="Resource_h7sc2"]
+script = ExtResource("1_vof28")
+Dialogue = "You leave the Water Cooler for now."
+Options = Array[ExtResource("2_xh8lg")]([])
+UpdateVariables = Array[ExtResource("1_bmieo")]([])
+VariableName = "default"
+
+[sub_resource type="Resource" id="Resource_jy3co"]
+script = ExtResource("2_xh8lg")
+OptionName = "Leave"
+DialogueToPointTo = SubResource("Resource_h7sc2")
+OptionUnlockCode = "default"
 
 [resource]
 script = ExtResource("1_vof28")
-Dialogue = "It ran out of water."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([ExtResource("2_dc6yn"), ExtResource("1_t4nnx")])
+Dialogue = "Water Cooler lacks water."
+Options = Array[ExtResource("2_xh8lg")]([SubResource("Resource_bbpaw"), SubResource("Resource_jy3co")])
+UpdateVariables = Array[ExtResource("1_bmieo")]([])
+VariableName = "default"

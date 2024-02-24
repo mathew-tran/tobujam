@@ -4,9 +4,24 @@ signal EnterDialogue
 signal ExitDialogue
 signal SendDialogue(data)
 
+signal DataUpdate
 var Data = {
 	"bHasWater" : false
 }
+
+func GetData():
+	return Data
+
+func SetData(property, value):
+	Data[property] = value
+	emit_signal("DataUpdate")
+
+func GetProperty(property):
+	if Data.has(property):
+		return str(Data[property])
+	else:
+		return "null"
+
 func BroadcastSendDialogue(data):
 	emit_signal("SendDialogue", data)
 

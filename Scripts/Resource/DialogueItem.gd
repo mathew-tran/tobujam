@@ -3,6 +3,8 @@ class_name DialogueItem
 
 @export var Dialogue = "test"
 @export var Options : Array[DialogueOption]
+@export var UpdateVariables : Array[ValueSet]
+@export var VariableName = "default"
 func Get():
 	return Dialogue
 
@@ -11,3 +13,7 @@ func HasOptions():
 
 func GetOptions():
 	return Options
+
+func SetValue():
+	for setValue in UpdateVariables:
+		setValue.SetValue()

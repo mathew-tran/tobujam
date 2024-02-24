@@ -3,7 +3,7 @@ extends Interactable
 @export var SetVariable = ""
 
 func OnUsed():
-	Game.Data[SetVariable] = true
+	Game.SetData(SetVariable, true)
 	queue_free()
 
 func _input(event):
