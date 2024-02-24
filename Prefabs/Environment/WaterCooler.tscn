@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cji0ukyoc8h76"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/Interactable.gd" id="1_pup8k"]
+[ext_resource type="Texture2D" uid="uid://kkyr4ms7a3ip" path="res://Art/WaterCooler.png" id="1_sqnye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxmhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt4ut"]
+size = Vector2(20, 18)
+
+[node name="WaterCooler" type="Area2D"]
+position = Vector2(0, 151)
+collision_mask = 4
+script = ExtResource("1_pup8k")
+InteractableName = "Water Cooler"
+InteractableContent = "The water cooler is not working...."
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sqnye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pxmhn")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tt4ut")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -11,15 +11,19 @@ var DefaultCharacterDelay = .1
 
 func _enter_tree():
 	visible = false
+	Game.connect("SendDialogue", Callable(self, "OnSendDialogue"))
+
+func OnSendDialogue(data):
+	SetDialogue(data)
 
 func _ready():
 	DescriptionText.visible_characters = 0
 	DescriptionText.text = ""
-	SetDialogue({
-		"Speaker" : "Janitor",
-		"Description" : "Testing dialogue.... this is a long sentence with no point to it oh Testin testing testin",
-		"Cadence" : .05
-	})
+	#SetDialogue({
+		#"Speaker" : "Janitor",
+		#"Description" : "Testing dialogue.... this is a long sentence with no point to it oh Testin testing testin",
+		#"Cadence" : .05
+	#})
 
 func SplitString(s: String, length: int):
 	var result = []
@@ -74,6 +78,9 @@ func _input(event):
 
 func CloseDialogue():
 	visible = false
+	if DialogueData:
+		if DialogueData.has("Owner"):
+			DialogueData["Owner"].bCanInteract = true
 	Game.BroadcastExitDialogue()
 
 func _on_timer_timeout():
