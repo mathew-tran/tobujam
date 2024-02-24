@@ -1,9 +1,9 @@
 extends Interactable
 
-@export var SetVariable = ""
+@export var SetVariable : CustomVariable
 
 func OnUsed():
-	Game.Data[SetVariable] = true
+	Game.SetData(SetVariable.GetName(), true)
 	queue_free()
 
 func _input(event):

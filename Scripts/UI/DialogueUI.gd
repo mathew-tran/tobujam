@@ -47,6 +47,7 @@ func SetDialogue(data):
 	visible = true
 
 	DialogueToSay = SplitString(data["Description"].Get(), 80)
+	data["Description"].SetValue()
 
 	if data.has("Cadence"):
 		$Timer.wait_time = data["Cadence"]
@@ -101,10 +102,12 @@ func PopulateOptions():
 	$TextureRect.visible = false
 	$VBoxContainer.get_child(0).grab_focus()
 func CloseDialogue():
+
 	visible = false
 	if DialogueData:
-		if is_instance_valid(DialogueData.has("Owner")):
-			DialogueData["Owner"].bCanInteract = true
+		if DialogueData.has("Owner"):
+			if is_instance_valid(DialogueData["Owner"]):
+				DialogueData["Owner"].bCanInteract = true
 	Game.BroadcastExitDialogue()
 
 func _on_timer_timeout():

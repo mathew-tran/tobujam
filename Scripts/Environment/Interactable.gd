@@ -3,8 +3,23 @@ class_name Interactable
 
 @export var InteractableName : DialogueOwner
 @export var InteractableContent : DialogueItem
+@export var GameSetUpdate : Array[DialogueListener]
 
 var bCanInteract = false
+
+func _ready():
+	Game.connect("DataUpdate", Callable(self, "OnGameDataUpdate"))
+
+func OnGameDataUpdate():
+	for update in GameSetUpdate:
+		if update.ShouldSwitch():
+			InteractableContent = update.DialogueToPointTo
+			GameSetUpdate = []
+			break
+	pass
+
+func DisconnectUpdateCheck():
+	Game.disconnect("DataUpdate", Callable(self, "OnGameDataUpdate"))
 
 func _input(event):
 	if bCanInteract:
