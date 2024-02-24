@@ -1,7 +1,8 @@
 extends Area2D
+class_name Interactable
 
-@export var InteractableName = "name"
-@export var InteractableContent = "..."
+@export var InteractableName : DialogueOwner
+@export var InteractableContent : DialogueItem
 
 var bCanInteract = false
 
@@ -14,6 +15,10 @@ func _input(event):
 				"Owner" : self
 			})
 			bCanInteract = false
+			OnUsed()
+
+func OnUsed():
+	pass
 
 func _on_body_entered(body):
 	bCanInteract = true

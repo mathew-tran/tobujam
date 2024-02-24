@@ -4,6 +4,9 @@ signal EnterDialogue
 signal ExitDialogue
 signal SendDialogue(data)
 
+var Data = {
+	"bHasWater" : false
+}
 func BroadcastSendDialogue(data):
 	emit_signal("SendDialogue", data)
 
@@ -12,3 +15,4 @@ func BroadcastEnterDialogue():
 
 func BroadcastExitDialogue():
 	emit_signal("ExitDialogue")
+

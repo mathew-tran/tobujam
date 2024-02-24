@@ -1,24 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://cji0ukyoc8h76"]
+[gd_scene load_steps=5 format=3 uid="uid://dwxxq00jhpong"]
 
-[ext_resource type="Script" path="res://Scripts/Environment/Interactable.gd" id="1_pup8k"]
-[ext_resource type="Texture2D" uid="uid://kkyr4ms7a3ip" path="res://Art/WaterCooler.png" id="1_sqnye"]
-[ext_resource type="Resource" uid="uid://7eahbwfor2tf" path="res://Content/Dialogue/WaterCooler/WaterCooler.tres" id="2_64f1t"]
-[ext_resource type="Resource" uid="uid://bpqswyd8c0dc1" path="res://Content/Dialogue/WaterCooler/WaterCoolerD1.tres" id="3_atiqc"]
+[ext_resource type="Script" path="res://Scripts/Environment/InteractablePickup.gd" id="1_onied"]
+[ext_resource type="Texture2D" uid="uid://cgscplnecb5wf" path="res://Art/Environment/WaterBottle.png" id="4_u3b6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxmhn"]
+size = Vector2(12, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt4ut"]
-size = Vector2(20, 18)
+size = Vector2(4, 4)
 
-[node name="WaterCooler" type="Area2D"]
+[node name="WaterBottle" type="Area2D"]
 position = Vector2(0, 151)
 collision_mask = 4
-script = ExtResource("1_pup8k")
-InteractableName = ExtResource("2_64f1t")
-InteractableContent = ExtResource("3_atiqc")
+script = ExtResource("1_onied")
+SetVariable = "bHasWater"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_sqnye")
+texture = ExtResource("4_u3b6c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pxmhn")

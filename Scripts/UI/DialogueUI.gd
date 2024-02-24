@@ -33,7 +33,12 @@ func SplitString(s: String, length: int):
 		start += length
 	return result
 
+func DeleteOptions():
+	for child in $VBoxContainer.get_children():
+		child.queue_free()
+
 func SetDialogue(data):
+	DeleteOptions()
 	Game.BroadcastEnterDialogue()
 	DialogueData = data
 
@@ -41,7 +46,7 @@ func SetDialogue(data):
 	$AnimationPlayer.stop()
 	visible = true
 
-	DialogueToSay = SplitString(data["Description"], 80)
+	DialogueToSay = SplitString(data["Description"].Get(), 80)
 
 	if data.has("Cadence"):
 		$Timer.wait_time = data["Cadence"]
@@ -51,7 +56,11 @@ func SetDialogue(data):
 
 func StartText():
 	DescriptionText.visible_characters = 0
-	TitleText.text = DialogueData["Speaker"]
+	if DialogueData["Speaker"]:
+		TitleText.text = DialogueData["Speaker"].Get()
+		$Panel/Panel.visible = true
+	else:
+		$Panel/Panel.visible = false
 	DescriptionText.text = DialogueToSay[0]
 
 	$Timer.start()
@@ -70,16 +79,31 @@ func _input(event):
 			if CanGetNextLine():
 				StartText()
 			else:
-				CloseDialogue()
+				if HasOptions():
+					PopulateOptions()
+				else:
+					CloseDialogue()
 		else:
 			if $Timer.wait_time != .00005:
 				$Timer.wait_time = .00005
 				$Timer.start()
 
+func HasOptions():
+	return DialogueData["Description"].HasOptions()
+
+func PopulateOptions():
+	for option in DialogueData["Description"].GetOptions():
+		if option.IsOptionValid():
+			var instance = load("res://Prefabs/UI/OptionButton.tscn").instantiate()
+			instance.SetDialogue(option.GetOptionName(), option.GetDialogueItem(), DialogueData["Speaker"], DialogueData["Owner"])
+			$VBoxContainer.add_child(instance)
+
+	$TextureRect.visible = false
+	$VBoxContainer.get_child(0).grab_focus()
 func CloseDialogue():
 	visible = false
 	if DialogueData:
-		if DialogueData.has("Owner"):
+		if is_instance_valid(DialogueData.has("Owner")):
 			DialogueData["Owner"].bCanInteract = true
 	Game.BroadcastExitDialogue()
 

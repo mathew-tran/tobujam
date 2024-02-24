@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueOwner" load_steps=2 format=3 uid="uid://7eahbwfor2tf"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOwner.gd" id="1_t45bf"]
+
+[resource]
+script = ExtResource("1_t45bf")
+Name = "Water Cooler"

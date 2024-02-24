@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cc0eqh2e32k7c"]
+[gd_scene load_steps=11 format=3 uid="uid://cc0eqh2e32k7c"]
 
 [ext_resource type="PackedScene" uid="uid://bl2xtfoma3ah8" path="res://Prefabs/Player.tscn" id="1_3m6dp"]
 [ext_resource type="Texture2D" uid="uid://dvt4wl7mhi4e5" path="res://Art/Wall.png" id="2_8e1hj"]
 [ext_resource type="Texture2D" uid="uid://i3xx0ihbq4vd" path="res://Art/GroundTile.png" id="2_yq3r5"]
 [ext_resource type="PackedScene" uid="uid://bayiq4i52kqk7" path="res://Prefabs/UI/DialogueUI.tscn" id="4_8b7hm"]
 [ext_resource type="PackedScene" uid="uid://cji0ukyoc8h76" path="res://Prefabs/Environment/WaterCooler.tscn" id="5_ghh5g"]
+[ext_resource type="PackedScene" uid="uid://dwxxq00jhpong" path="res://Prefabs/Environment/WaterBottle.tscn" id="6_tm6be"]
+[ext_resource type="Resource" uid="uid://b2j8g8jde6or2" path="res://Content/Dialogue/WaterBottle/WaterBottlePickup.tres" id="7_0o4kv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ys164"]
 texture = ExtResource("2_yq3r5")
@@ -43,9 +45,14 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608,
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Dialogue" parent="CanvasLayer" instance=ExtResource("4_8b7hm")]
+visible = false
 
 [node name="WaterCooler" parent="." instance=ExtResource("5_ghh5g")]
 position = Vector2(110, 29)
 
 [node name="Player" parent="." instance=ExtResource("1_3m6dp")]
 position = Vector2(40, 40)
+
+[node name="WaterBottle" parent="." instance=ExtResource("6_tm6be")]
+position = Vector2(43, 17)
+InteractableContent = ExtResource("7_0o4kv")
