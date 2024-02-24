@@ -3,7 +3,6 @@ class_name DialogueItem
 
 @export var Dialogue = "test"
 @export var Options : Array[DialogueOption]
-
 func Get():
 	return Dialogue
 

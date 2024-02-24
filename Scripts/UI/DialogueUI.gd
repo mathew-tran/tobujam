@@ -56,7 +56,11 @@ func SetDialogue(data):
 
 func StartText():
 	DescriptionText.visible_characters = 0
-	TitleText.text = DialogueData["Speaker"].Get()
+	if DialogueData["Speaker"]:
+		TitleText.text = DialogueData["Speaker"].Get()
+		$Panel/Panel.visible = true
+	else:
+		$Panel/Panel.visible = false
 	DescriptionText.text = DialogueToSay[0]
 
 	$Timer.start()
@@ -99,7 +103,7 @@ func PopulateOptions():
 func CloseDialogue():
 	visible = false
 	if DialogueData:
-		if DialogueData.has("Owner"):
+		if is_instance_valid(DialogueData.has("Owner")):
 			DialogueData["Owner"].bCanInteract = true
 	Game.BroadcastExitDialogue()
 
