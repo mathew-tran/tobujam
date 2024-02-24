@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueOption" load_steps=3 format=3 uid="uid://ck8hjspriwycp"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="1_4hxy7"]
+[ext_resource type="Resource" uid="uid://n1rg6enniqcg" path="res://Content/Dialogue/WaterCooler/WaterCoolerD1OptionContinueConv.tres" id="1_ca54y"]
+
+[resource]
+script = ExtResource("1_4hxy7")
+OptionName = "Leave it"
+DialogueToPointTo = ExtResource("1_ca54y")

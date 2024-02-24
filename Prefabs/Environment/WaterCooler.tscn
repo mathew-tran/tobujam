@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cji0ukyoc8h76"]
+[gd_scene load_steps=7 format=3 uid="uid://cji0ukyoc8h76"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/Interactable.gd" id="1_pup8k"]
 [ext_resource type="Texture2D" uid="uid://kkyr4ms7a3ip" path="res://Art/WaterCooler.png" id="1_sqnye"]
+[ext_resource type="Resource" uid="uid://7eahbwfor2tf" path="res://Content/Dialogue/WaterCooler/WaterCooler.tres" id="2_64f1t"]
+[ext_resource type="Resource" uid="uid://bpqswyd8c0dc1" path="res://Content/Dialogue/WaterCooler/WaterCoolerD1.tres" id="3_atiqc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxmhn"]
 
@@ -12,8 +14,8 @@ size = Vector2(20, 18)
 position = Vector2(0, 151)
 collision_mask = 4
 script = ExtResource("1_pup8k")
-InteractableName = "Water Cooler"
-InteractableContent = "The water cooler is not working...."
+InteractableName = ExtResource("2_64f1t")
+InteractableContent = ExtResource("3_atiqc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_sqnye")

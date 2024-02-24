@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cfypubh2dgcsh"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_4v0md"]
+
+[resource]
+script = ExtResource("1_4v0md")
+Dialogue = "Someone should replace the water"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])

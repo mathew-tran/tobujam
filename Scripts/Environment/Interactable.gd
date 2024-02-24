@@ -1,7 +1,7 @@
 extends Area2D
 
-@export var InteractableName = "name"
-@export var InteractableContent = "..."
+@export var InteractableName : DialogueOwner
+@export var InteractableContent : DialogueItem
 
 var bCanInteract = false
 

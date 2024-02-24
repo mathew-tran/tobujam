@@ -1,13 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://bayiq4i52kqk7"]
+[gd_scene load_steps=9 format=3 uid="uid://bayiq4i52kqk7"]
 
 [ext_resource type="Script" path="res://Scripts/UI/DialogueUI.gd" id="1_mmxwe"]
 [ext_resource type="Texture2D" uid="uid://bkcnnb7nd2fr3" path="res://Art/Dialogue/ContinueArrow.png" id="2_g12th"]
+[ext_resource type="PackedScene" uid="uid://cor2nr6sd4vgr" path="res://Prefabs/UI/OptionButton.tscn" id="3_kukww"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igkn2"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfsk8"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_nkasd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(306, 35)]
+}
 
 [sub_resource type="Animation" id="Animation_jo7gg"]
 resource_name = "animateArrow"
@@ -23,21 +39,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(306, 35), Vector2(306, 32), Vector2(306, 35)]
-}
-
-[sub_resource type="Animation" id="Animation_nkasd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(306, 35)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w2twd"]
@@ -111,5 +112,29 @@ texture = ExtResource("2_g12th")
 libraries = {
 "": SubResource("AnimationLibrary_w2twd")
 }
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = -145.0
+offset_right = 100.0
+offset_bottom = -29.0
+grow_horizontal = 2
+
+[node name="Button" parent="VBoxContainer" instance=ExtResource("3_kukww")]
+layout_mode = 2
+
+[node name="Button2" parent="VBoxContainer" instance=ExtResource("3_kukww")]
+layout_mode = 2
+
+[node name="Button3" parent="VBoxContainer" instance=ExtResource("3_kukww")]
+layout_mode = 2
+
+[node name="Button4" parent="VBoxContainer" instance=ExtResource("3_kukww")]
+layout_mode = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
