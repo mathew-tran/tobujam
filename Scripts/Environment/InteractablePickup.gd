@@ -3,7 +3,8 @@ extends Interactable
 @export var SetVariable : CustomVariable
 
 func OnUsed():
-	Game.SetData(SetVariable.GetName(), true)
+	if is_instance_valid(SetVariable):
+		Game.SetData(SetVariable.GetName(), true)
 	queue_free()
 
 func _input(event):

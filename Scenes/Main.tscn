@@ -1,38 +1,15 @@
-[gd_scene load_steps=25 format=3 uid="uid://cc0eqh2e32k7c"]
+[gd_scene load_steps=18 format=3 uid="uid://cc0eqh2e32k7c"]
 
 [ext_resource type="PackedScene" uid="uid://bl2xtfoma3ah8" path="res://Prefabs/Player.tscn" id="1_3m6dp"]
 [ext_resource type="TileSet" uid="uid://ds1qfqyikgoae" path="res://Tilesets/TilesetOffice.tres" id="1_kvf7h"]
 [ext_resource type="PackedScene" uid="uid://bayiq4i52kqk7" path="res://Prefabs/UI/DialogueUI.tscn" id="4_8b7hm"]
 [ext_resource type="PackedScene" uid="uid://cji0ukyoc8h76" path="res://Prefabs/Environment/WaterCooler.tscn" id="5_ghh5g"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="5_ol74m"]
-[ext_resource type="Script" path="res://Scripts/Environment/Interactable.gd" id="5_rn36u"]
-[ext_resource type="Script" path="res://Scripts/Resource/DialogueListener.gd" id="6_2035d"]
 [ext_resource type="PackedScene" uid="uid://dwxxq00jhpong" path="res://Prefabs/Environment/WaterBottle.tscn" id="6_tm6be"]
-[ext_resource type="Resource" uid="uid://b2j8g8jde6or2" path="res://Content/Dialogue/WaterBottle/WaterBottlePickup.tres" id="7_0o4kv"]
-[ext_resource type="Resource" uid="uid://fse2wel1evnl" path="res://Content/Variables/VAR_AddedWater.tres" id="7_gpxxp"]
-[ext_resource type="Resource" uid="uid://b7tpdttrlxed8" path="res://Content/Variables/VAR_HasWater.tres" id="11_q44xy"]
 [ext_resource type="Script" path="res://Scripts/DialogueArea.gd" id="13_rm4ax"]
 [ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="14_i6ytu"]
 [ext_resource type="Resource" uid="uid://csbnd4s5u36f0" path="res://Content/Characters/CHAR_Main.tres" id="15_rp1j5"]
 [ext_resource type="Resource" uid="uid://cvqdvawdpan6v" path="res://Content/Characters/CHAR_Narrator.tres" id="16_m7r7q"]
-
-[sub_resource type="Resource" id="Resource_xoand"]
-script = ExtResource("5_ol74m")
-Dialogue = "Water cooler has water."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_3mljp"]
-script = ExtResource("6_2035d")
-VariableName = ExtResource("7_gpxxp")
-Value = true
-DialogueToPointTo = SubResource("Resource_xoand")
-
-[sub_resource type="Resource" id="Resource_kijjm"]
-script = ExtResource("5_ol74m")
-Dialogue = "This water cooler is empty."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="Resource" id="Resource_458mu"]
 script = ExtResource("5_ol74m")
@@ -69,6 +46,12 @@ UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5hch"]
 size = Vector2(19.5, 20)
 
+[sub_resource type="Resource" id="Resource_p4qu1"]
+script = ExtResource("5_ol74m")
+Dialogue = "You drink some water."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -81,22 +64,11 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608,
 [node name="Dialogue" parent="CanvasLayer" instance=ExtResource("4_8b7hm")]
 visible = false
 
-[node name="WaterCooler" parent="." instance=ExtResource("5_ghh5g")]
-position = Vector2(110, 29)
-script = ExtResource("5_rn36u")
-GameSetUpdate = Array[ExtResource("6_2035d")]([SubResource("Resource_3mljp")])
-
-[node name="WaterCooler2" parent="." instance=ExtResource("5_ghh5g")]
-position = Vector2(149, 29)
-InteractableContent = SubResource("Resource_kijjm")
-
 [node name="Player" parent="." instance=ExtResource("1_3m6dp")]
 position = Vector2(213, 243)
 
 [node name="WaterBottle" parent="." instance=ExtResource("6_tm6be")]
 position = Vector2(43, 17)
-SetVariable = ExtResource("11_q44xy")
-InteractableContent = ExtResource("7_0o4kv")
 
 [node name="DialogueArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -204,6 +176,10 @@ offset_right = 421.0
 offset_bottom = -43.0
 text = "Janitor closet
 "
+
+[node name="WaterCooler" parent="." instance=ExtResource("5_ghh5g")]
+position = Vector2(26, 112)
+InteractableContent = SubResource("Resource_p4qu1")
 
 [connection signal="body_entered" from="DialogueArea" to="DialogueArea" method="_on_body_entered"]
 [connection signal="body_entered" from="DialogueArea2" to="DialogueArea2" method="_on_body_entered"]

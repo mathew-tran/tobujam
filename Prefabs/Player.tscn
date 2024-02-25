@@ -1,7 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bl2xtfoma3ah8"]
+[gd_scene load_steps=17 format=3 uid="uid://bl2xtfoma3ah8"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_epckt"]
 [ext_resource type="Texture2D" uid="uid://m0i5ql7fbbn8" path="res://Art/Janitor.png" id="2_vd2i8"]
+[ext_resource type="Script" path="res://Scripts/UI/DayUI.gd" id="3_n31jr"]
+[ext_resource type="Script" path="res://Scripts/UI/TimeUI.gd" id="4_jwmek"]
+[ext_resource type="Script" path="res://Scripts/UI/WorkLevelUI.gd" id="5_fv813"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ih267"]
 atlas = ExtResource("2_vd2i8")
@@ -103,3 +106,34 @@ animation = &"down"
 shape = SubResource("RectangleShape2D_88mbb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 133.0
+offset_bottom = 90.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Day" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "day"
+script = ExtResource("3_n31jr")
+
+[node name="Time" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "time"
+script = ExtResource("4_jwmek")
+
+[node name="WorkLevel" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "work level"
+script = ExtResource("5_fv813")

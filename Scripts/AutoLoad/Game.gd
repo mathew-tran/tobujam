@@ -7,10 +7,20 @@ signal SendDialogue(data)
 var GridSize = Vector2(10, 10)
 
 signal DataUpdate
-
+signal WorkUpdate
 
 var Data = {
 }
+
+var WorkLevel = 0
+
+func IncreaseWorkLevel():
+	WorkLevel += 1
+	emit_signal("WorkUpdate")
+
+func ResetWork():
+	WorkLevel = 0
+	emit_signal("WorkUpdate")
 
 func GetData():
 	return Data

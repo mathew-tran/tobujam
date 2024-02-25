@@ -6,6 +6,7 @@ class_name Interactable
 @export var GameSetUpdate : Array[DialogueListener]
 
 var bCanInteract = false
+@export var  bIncreaseWorkLevel = false
 
 func _ready():
 	Game.connect("DataUpdate", Callable(self, "OnGameDataUpdate"))
@@ -31,6 +32,10 @@ func _input(event):
 			})
 			bCanInteract = false
 			OnUsed()
+			DayTime.IncrementTime()
+			if bIncreaseWorkLevel:
+				Game.IncreaseWorkLevel()
+				bIncreaseWorkLevel = false
 
 func OnUsed():
 	pass
