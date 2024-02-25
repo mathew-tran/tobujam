@@ -15,6 +15,7 @@ func _ready():
 	Game.connect("EnterDialogue", Callable(self, "OnEnterDialogue"))
 	Game.connect("ExitDialogue", Callable(self, "OnExitDialogue"))
 	UpdateAnims()
+	add_to_group("Player")
 
 func OnEnterDialogue():
 	bCanMove = false

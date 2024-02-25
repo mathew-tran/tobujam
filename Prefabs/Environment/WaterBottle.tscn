@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwxxq00jhpong"]
+[gd_scene load_steps=6 format=3 uid="uid://dwxxq00jhpong"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/InteractablePickup.gd" id="1_onied"]
+[ext_resource type="Resource" uid="uid://b2j8g8jde6or2" path="res://Content/Dialogue/WaterBottle/WaterBottlePickup.tres" id="2_ko17w"]
 [ext_resource type="Texture2D" uid="uid://cgscplnecb5wf" path="res://Art/Environment/WaterBottle.png" id="4_u3b6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxmhn"]
@@ -13,6 +14,8 @@ size = Vector2(4, 4)
 position = Vector2(0, 151)
 collision_mask = 4
 script = ExtResource("1_onied")
+InteractableContent = ExtResource("2_ko17w")
+bIncreaseWorkLevel = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("4_u3b6c")
