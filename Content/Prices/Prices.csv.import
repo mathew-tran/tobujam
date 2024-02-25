@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b4p2ct4sn71u8"
+
+[deps]
+
+files=["res://Content/Prices/Prices.1.translation", "res://Content/Prices/Prices.2.translation", "res://Content/Prices/Prices.3.translation", "res://Content/Prices/Prices.4.translation", "res://Content/Prices/Prices.6.translation", "res://Content/Prices/Prices.7.translation"]
+
+source_file="res://Content/Prices/Prices.csv"
+dest_files=["res://Content/Prices/Prices.1.translation", "res://Content/Prices/Prices.2.translation", "res://Content/Prices/Prices.3.translation", "res://Content/Prices/Prices.4.translation", "res://Content/Prices/Prices.6.translation", "res://Content/Prices/Prices.7.translation"]
+
+[params]
+
+compress=true
+delimiter=0
