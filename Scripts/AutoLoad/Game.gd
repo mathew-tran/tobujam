@@ -13,6 +13,19 @@ var Data = {
 }
 
 var WorkLevel = 0
+var Money = 50
+signal MoneyUpdate
+
+var bIsInDialogue = false
+
+func MoveToNextDay():
+	ResetWork()
+	DayTime.MoveNextDay()
+	Game.TeleportPlayer("StartPoint")
+
+func AddMoney(amount):
+	Money += amount
+	emit_signal("MoneyUpdate")
 
 func IncreaseWorkLevel():
 	WorkLevel += 1
@@ -40,7 +53,14 @@ func BroadcastSendDialogue(data):
 
 func BroadcastEnterDialogue():
 	emit_signal("EnterDialogue")
+	bIsInDialogue = true
 
 func BroadcastExitDialogue():
 	emit_signal("ExitDialogue")
+	bIsInDialogue = false
 
+func TeleportPlayer(pointName):
+	var movePoints = get_tree().get_nodes_in_group("MovePoint")
+	for point in movePoints:
+		if point.name == pointName:
+			point.MovePlayer()

@@ -16,11 +16,13 @@ func _ready():
 
 func Reset():
 	CurrentTime = 0
+	emit_signal("Increment")
 
 func MoveNextDay():
 	Reset()
 	Day += 1
 	emit_signal("DayIncrease")
+
 
 func IncrementTime():
 	CurrentTime += Increments
