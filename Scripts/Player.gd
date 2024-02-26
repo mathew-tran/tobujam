@@ -62,8 +62,9 @@ func _physics_process(delta):
 		return
 	get_input()
 	#var collision = move_and_collide(velocity * delta)
+	var pos = global_position
 	var result = move_and_slide()
-	if result:
+	if pos == global_position:
 		StopAnim()
 
 func GetInputVelocity():
