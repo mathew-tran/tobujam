@@ -16,3 +16,5 @@ func Populate(companyName, data):
 		$HBoxContainer/TrendIcon.texture = load("res://Art/TrendUp.png")
 	else:
 		$HBoxContainer/TrendIcon.texture = load("res://Art/TrendDown.png")
+
+	$HBoxContainer/StockAmount.text = str(Game.GetStocksOfCompany(companyName))

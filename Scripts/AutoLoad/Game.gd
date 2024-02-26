@@ -18,6 +18,20 @@ signal MoneyUpdate
 
 var bIsInDialogue = false
 
+var StockData = {}
+var Stocks = {}
+
+func _ready():
+	Game.ReadAndSaveStockData()
+	for company in GetCompanyNames():
+		Stocks[company] = 0
+
+func GetStocksOfCompany(companyName):
+	return Stocks[companyName]
+
+func SetStocksOfCompany(companyName, amount):
+	Stocks[companyName] = amount
+
 func MoveToNextDay():
 	ResetWork()
 	DayTime.MoveNextDay()
@@ -64,3 +78,33 @@ func TeleportPlayer(pointName):
 	for point in movePoints:
 		if point.name == pointName:
 			point.MovePlayer()
+
+func ReadAndSaveStockData():
+	var file = FileAccess.open("res://Content/Prices/Prices.txt", FileAccess.READ)
+	while !file.eof_reached():
+		var line = Array(file.get_csv_line())
+		StockData[StockData.size()] = line
+	file.close()
+
+func GetDataForCompany(companyName):
+	for line in StockData:
+		if StockData[line][0] == companyName:
+			var dataToGet = []
+			var bFirst = true
+			for element in StockData[line]:
+				if bFirst:
+					bFirst = false
+				else:
+					dataToGet.append(element)
+			return dataToGet
+	return []
+
+func GetCompanyNames():
+	var names = []
+	var bFirst = true
+	for line in StockData:
+		if bFirst:
+			bFirst = false
+		else:
+			names.append(StockData[line][0])
+	return names
