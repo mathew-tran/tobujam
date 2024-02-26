@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cor2nr6sd4vgr"]
+[gd_scene load_steps=3 format=3 uid="uid://cor2nr6sd4vgr"]
 
+[ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="1_nexbq"]
 [ext_resource type="Script" path="res://Scripts/UI/OptionButton.gd" id="1_o7kwl"]
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(200, 5)
+theme_override_fonts/font = ExtResource("1_nexbq")
 theme_override_font_sizes/font_size = 13
 text = "Option 1"
 script = ExtResource("1_o7kwl")

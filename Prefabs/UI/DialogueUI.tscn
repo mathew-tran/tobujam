@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bayiq4i52kqk7"]
+[gd_scene load_steps=10 format=3 uid="uid://bayiq4i52kqk7"]
 
 [ext_resource type="Script" path="res://Scripts/UI/DialogueUI.gd" id="1_mmxwe"]
 [ext_resource type="Texture2D" uid="uid://bkcnnb7nd2fr3" path="res://Art/Dialogue/ContinueArrow.png" id="2_g12th"]
+[ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="2_rvbm4"]
 [ext_resource type="PackedScene" uid="uid://cor2nr6sd4vgr" path="res://Prefabs/UI/OptionButton.tscn" id="3_kukww"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igkn2"]
@@ -69,9 +70,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_igkn2")
 [node name="Description" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 5.0
-offset_top = 3.0
+offset_top = 4.0
 offset_right = 311.0
-offset_bottom = 38.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_rvbm4")
 text = "test"
 autowrap_mode = 2
 visible_characters_behavior = 1
@@ -79,9 +81,8 @@ visible_characters_behavior = 1
 [node name="Panel" type="Panel" parent="Panel"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = -17.0
+offset_top = -21.0
 offset_right = 136.0
-offset_bottom = 1.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xfsk8")
 metadata/_edit_group_ = true
 
@@ -91,10 +92,12 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 3.0
-offset_top = -12.0
+offset_top = -7.0
 offset_right = 85.0
-offset_bottom = 11.0
+offset_bottom = 16.0
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_rvbm4")
+theme_override_font_sizes/font_size = 19
 text = "test"
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bl2xtfoma3ah8"]
+[gd_scene load_steps=19 format=3 uid="uid://bl2xtfoma3ah8"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_epckt"]
 [ext_resource type="Texture2D" uid="uid://m0i5ql7fbbn8" path="res://Art/Janitor.png" id="2_vd2i8"]
 [ext_resource type="Script" path="res://Scripts/UI/DayUI.gd" id="3_n31jr"]
+[ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="3_vr6tg"]
 [ext_resource type="Script" path="res://Scripts/UI/TimeUI.gd" id="4_jwmek"]
 [ext_resource type="Script" path="res://Scripts/UI/WorkLevelUI.gd" id="5_fv813"]
 [ext_resource type="Script" path="res://Scripts/UI/MoneyUI.gd" id="6_aqrds"]
@@ -127,20 +128,24 @@ grow_vertical = 2
 
 [node name="Day" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vr6tg")
 text = "day"
 script = ExtResource("3_n31jr")
 
 [node name="Time" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vr6tg")
 text = "time"
 script = ExtResource("4_jwmek")
 
 [node name="WorkLevel" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vr6tg")
 text = "work level"
 script = ExtResource("5_fv813")
 
 [node name="Money" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vr6tg")
 text = "$0"
 script = ExtResource("6_aqrds")
