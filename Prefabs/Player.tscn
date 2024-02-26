@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bl2xtfoma3ah8"]
+[gd_scene load_steps=20 format=3 uid="uid://bl2xtfoma3ah8"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_epckt"]
 [ext_resource type="Texture2D" uid="uid://m0i5ql7fbbn8" path="res://Art/Janitor.png" id="2_vd2i8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/TimeUI.gd" id="4_jwmek"]
 [ext_resource type="Script" path="res://Scripts/UI/WorkLevelUI.gd" id="5_fv813"]
 [ext_resource type="Script" path="res://Scripts/UI/MoneyUI.gd" id="6_aqrds"]
+[ext_resource type="AudioStream" uid="uid://bi1jfujf7pxov" path="res://Audio/Music/Early_Bird_Unfinished.mp3" id="8_3rdgh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ih267"]
 atlas = ExtResource("2_vd2i8")
@@ -149,3 +150,14 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vr6tg")
 text = "$0"
 script = ExtResource("6_aqrds")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_3rdgh")
+autoplay = true
+
+[node name="MusicTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
+[connection signal="timeout" from="MusicTimer" to="." method="_on_music_timer_timeout"]

@@ -117,6 +117,8 @@ func CloseDialogue():
 
 func _on_timer_timeout():
 	DescriptionText.visible_characters += 1
+	$TalkSound.pitch_scale = randf_range(1, 1.1)
+	$TalkSound.play()
 	if IsLineFinished():
 		print("done")
 		$Timer.stop()

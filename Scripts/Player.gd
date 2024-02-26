@@ -14,8 +14,18 @@ var Direction = DIRECTION.LEFT
 func _ready():
 	Game.connect("EnterDialogue", Callable(self, "OnEnterDialogue"))
 	Game.connect("ExitDialogue", Callable(self, "OnExitDialogue"))
+	DayTime.connect("ShiftOver", Callable(self, "OnShiftOver"))
+	DayTime.connect("DayIncrease", Callable(self, "OnDayIncrease"))
+
 	UpdateAnims()
 	add_to_group("Player")
+
+func OnShiftOver():
+	$Music.stop()
+	$MusicTimer.stop()
+
+func OnDayIncrease():
+	$Music.play()
 
 func OnEnterDialogue():
 	bCanMove = false
@@ -88,3 +98,10 @@ func ChangeAnim(newAnim):
 
 	$Sprite2D.play(newAnim)
 	$Sprite2D.frame += 1
+
+
+func _on_music_finished():
+	$MusicTimer.start()
+
+func _on_music_timer_timeout():
+	$Music.play()
