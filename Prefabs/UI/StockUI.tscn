@@ -1,13 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://8eya33vkbhju"]
+[gd_scene load_steps=11 format=3 uid="uid://8eya33vkbhju"]
 
 [ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="1_kq51n"]
-[ext_resource type="PackedScene" uid="uid://c4ktlyamq3st4" path="res://Prefabs/UI/CompanyStockUI.tscn" id="2_4ndkw"]
+[ext_resource type="PackedScene" uid="uid://byhtic5yli25m" path="res://Prefabs/UI/CompanyStockButtonUI.tscn" id="2_avgwl"]
+[ext_resource type="PackedScene" uid="uid://c4ktlyamq3st4" path="res://Prefabs/UI/CompanyStockCashUI.tscn" id="2_cxwi0"]
+[ext_resource type="Script" path="res://Scripts/UI/StockUI.gd" id="2_fjymx"]
+[ext_resource type="PackedScene" uid="uid://ct2qrfpu6wvb3" path="res://Prefabs/UI/CompanyStockTotalUI.tscn" id="4_tj72q"]
 
 [sub_resource type="Theme" id="Theme_0kxdm"]
 default_font = ExtResource("1_kq51n")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nuiyu"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro862"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeorv"]
+bg_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4ris"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="StockUI" type="Panel"]
 anchors_preset = 15
@@ -17,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0kxdm")
 theme_override_styles/panel = SubResource("StyleBoxFlat_nuiyu")
+script = ExtResource("2_fjymx")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -57,32 +70,48 @@ horizontal_alignment = 1
 [node name="Trading" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Control" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+[node name="CompanyStockUI" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
 layout_mode = 2
 
-[node name="Control2" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+[node name="CompanyStockUI2" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
 layout_mode = 2
 
-[node name="Control3" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+[node name="CompanyStockUI3" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
 layout_mode = 2
 
-[node name="Control4" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+[node name="CompanyStockUI4" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
 layout_mode = 2
 
-[node name="Control5" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+[node name="CompanyStockUI5" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
 layout_mode = 2
 
-[node name="Control6" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+[node name="CompanyStockUI6" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
 layout_mode = 2
 
-[node name="Control7" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+[node name="CompanyStockUI7" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
 layout_mode = 2
 
-[node name="Control8" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+[node name="CompanyStockUI8" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
 layout_mode = 2
 
-[node name="Control9" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+[node name="CompanyStockUI9" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
 layout_mode = 2
 
-[node name="Control10" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+[node name="CompanyStockCashUI" parent="VBoxContainer/Trading" instance=ExtResource("2_cxwi0")]
 layout_mode = 2
+
+[node name="CompanyStockTotalUI2" parent="VBoxContainer/Trading" instance=ExtResource("4_tj72q")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Trading"]
+layout_mode = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/Trading/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_ro862")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xeorv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s4ris")
+text = "Confirm"
