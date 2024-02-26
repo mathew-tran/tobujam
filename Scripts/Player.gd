@@ -52,7 +52,9 @@ func _physics_process(delta):
 		return
 	get_input()
 	#var collision = move_and_collide(velocity * delta)
-	move_and_slide()
+	var result = move_and_slide()
+	if result:
+		StopAnim()
 
 func GetInputVelocity():
 	if Direction == DIRECTION.LEFT:
