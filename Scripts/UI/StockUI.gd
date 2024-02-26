@@ -2,14 +2,24 @@ extends Panel
 
 var Data = {}
 
+@onready var CompanyStockButtons = [
+	$VBoxContainer/Trading/CompanyStockUI,
+	$VBoxContainer/Trading/CompanyStockUI2,
+	$VBoxContainer/Trading/CompanyStockUI3,
+	$VBoxContainer/Trading/CompanyStockUI4,
+	$VBoxContainer/Trading/CompanyStockUI5,
+	$VBoxContainer/Trading/CompanyStockUI6,
+	$VBoxContainer/Trading/CompanyStockUI7,
+	$VBoxContainer/Trading/CompanyStockUI8,
+	$VBoxContainer/Trading/CompanyStockUI9,
+]
 func _ready():
 	ReadAndSaveStockData()
-	for company in GetCompanyNames():
-		print(company)
-		var companyData = GetDataForCompany(company)
-		for element in companyData:
-			print(element)
-			pass
+	await get_tree().create_timer(.5).timeout
+	var companyNames = GetCompanyNames()
+	for index in range(0, len(CompanyStockButtons)):
+		CompanyStockButtons[index].Populate(companyNames[index], GetDataForCompany(companyNames[index]))
+
 
 func ReadAndSaveStockData():
 	var file = FileAccess.open("res://Content/Prices/Prices.txt", FileAccess.READ)
@@ -43,3 +53,8 @@ func GetCompanyNames():
 
 func UpdateStockData():
 	pass
+
+
+func _on_visibility_changed():
+	if visible:
+		$VBoxContainer/Day.text = "Day " + str(DayTime.Day)

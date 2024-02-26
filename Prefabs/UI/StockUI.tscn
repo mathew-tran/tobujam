@@ -50,7 +50,7 @@ modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 text = "==============="
 
-[node name="Label3" type="Label" parent="VBoxContainer/TitleBox"]
+[node name="Trading" type="Label" parent="VBoxContainer/TitleBox"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 text = "TRADING"
@@ -115,3 +115,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ro862")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xeorv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s4ris")
 text = "Confirm"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

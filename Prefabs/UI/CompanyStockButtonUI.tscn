@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://byhtic5yli25m"]
+[gd_scene load_steps=7 format=3 uid="uid://byhtic5yli25m"]
 
+[ext_resource type="Script" path="res://Scripts/UI/CompanyStockButtonUI.gd" id="1_o4wnn"]
 [ext_resource type="Texture2D" uid="uid://e50pyseobfoy" path="res://Art/TrendDown.png" id="1_pgvgw"]
 [ext_resource type="Texture2D" uid="uid://ds1xl2kl87grm" path="res://Art/StockIncrementor.png" id="2_0f4rt"]
 
@@ -19,6 +20,7 @@ custom_minimum_size = Vector2(275, 10)
 theme_override_styles/normal = SubResource("StyleBoxFlat_dumrr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pu4qw")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dumrr")
+script = ExtResource("1_o4wnn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(299, 9)
@@ -51,6 +53,7 @@ custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "-21.65%"
+horizontal_alignment = 2
 
 [node name="Divider2" type="Panel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(1, 8)
@@ -99,7 +102,7 @@ modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
-text = "3"
+text = "2"
 horizontal_alignment = 2
 
 [node name="Divider6" type="Panel" parent="HBoxContainer"]
