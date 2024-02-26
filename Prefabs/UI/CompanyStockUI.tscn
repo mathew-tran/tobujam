@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4ktlyamq3st4"]
+
+[ext_resource type="Texture2D" uid="uid://e50pyseobfoy" path="res://Art/TrendDown.png" id="1_2a6xp"]
+[ext_resource type="Texture2D" uid="uid://ds1xl2kl87grm" path="res://Art/StockIncrementor.png" id="2_ystt7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dumrr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu4qw"]
+bg_color = Color(0.517647, 0.517647, 0.517647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usj8i"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="CompanyStockUI" type="Button"]
+custom_minimum_size = Vector2(304, 10)
+theme_override_styles/normal = SubResource("StyleBoxFlat_dumrr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pu4qw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dumrr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(299, 9)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.5
+offset_top = -4.5
+offset_right = 149.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TrendIcon" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_2a6xp")
+stretch_mode = 5
+
+[node name="Divider" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1, 8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usj8i")
+
+[node name="StockChangePercent" type="Label" parent="HBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "-21.65%"
+
+[node name="Divider2" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1, 8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usj8i")
+
+[node name="CompanyName" type="Label" parent="HBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Microserfs"
+
+[node name="Divider3" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1, 8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usj8i")
+
+[node name="StockPrice" type="Label" parent="HBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "$5"
+
+[node name="Divider4" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1, 8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usj8i")
+
+[node name="X" type="Label" parent="HBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+text = "X"
+horizontal_alignment = 1
+
+[node name="Divider5" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1, 8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usj8i")
+
+[node name="StockAmount" type="Label" parent="HBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "3"
+horizontal_alignment = 2
+
+[node name="Divider6" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1, 8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usj8i")
+
+[node name="StockIncrementor" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ystt7")
+stretch_mode = 5
+
+[node name="Divider7" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1, 8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usj8i")

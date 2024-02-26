@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://8eya33vkbhju"]
+
+[ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="1_kq51n"]
+[ext_resource type="PackedScene" uid="uid://c4ktlyamq3st4" path="res://Prefabs/UI/CompanyStockUI.tscn" id="2_4ndkw"]
+
+[sub_resource type="Theme" id="Theme_0kxdm"]
+default_font = ExtResource("1_kq51n")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nuiyu"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="StockUI" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0kxdm")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nuiyu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -152.0
+offset_right = 152.0
+offset_bottom = 193.0
+grow_horizontal = 2
+
+[node name="TitleBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/TitleBox"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "==============="
+
+[node name="Label3" type="Label" parent="VBoxContainer/TitleBox"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "TRADING"
+
+[node name="Label2" type="Label" parent="VBoxContainer/TitleBox"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "==============="
+
+[node name="Day" type="Label" parent="VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Day 1"
+horizontal_alignment = 1
+
+[node name="Trading" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+layout_mode = 2
+
+[node name="Control2" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+layout_mode = 2
+
+[node name="Control3" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+layout_mode = 2
+
+[node name="Control4" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+layout_mode = 2
+
+[node name="Control5" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+layout_mode = 2
+
+[node name="Control6" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+layout_mode = 2
+
+[node name="Control7" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+layout_mode = 2
+
+[node name="Control8" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+layout_mode = 2
+
+[node name="Control9" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+layout_mode = 2
+
+[node name="Control10" parent="VBoxContainer/Trading" instance=ExtResource("2_4ndkw")]
+layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cc0eqh2e32k7c"]
+[gd_scene load_steps=21 format=3 uid="uid://cc0eqh2e32k7c"]
 
 [ext_resource type="PackedScene" uid="uid://bl2xtfoma3ah8" path="res://Prefabs/Player.tscn" id="1_3m6dp"]
 [ext_resource type="TileSet" uid="uid://ds1qfqyikgoae" path="res://Tilesets/TilesetOffice.tres" id="1_kvf7h"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bayiq4i52kqk7" path="res://Prefabs/UI/DialogueUI.tscn" id="4_8b7hm"]
 [ext_resource type="PackedScene" uid="uid://cji0ukyoc8h76" path="res://Prefabs/Environment/WaterCooler.tscn" id="5_ghh5g"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="5_ol74m"]
+[ext_resource type="PackedScene" uid="uid://8eya33vkbhju" path="res://Prefabs/UI/StockUI.tscn" id="5_xujuj"]
 [ext_resource type="PackedScene" uid="uid://dwxxq00jhpong" path="res://Prefabs/Environment/WaterBottle.tscn" id="6_tm6be"]
 [ext_resource type="Script" path="res://Scripts/DialogueArea.gd" id="13_rm4ax"]
 [ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="14_i6ytu"]
@@ -70,11 +71,15 @@ position = Vector2(213, 243)
 script = ExtResource("2_ngnjx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="Dialogue" parent="CanvasLayer" instance=ExtResource("4_8b7hm")]
 visible = false
 
 [node name="WorkPanel" parent="CanvasLayer" instance=ExtResource("3_q88xr")]
+
+[node name="StockUI" parent="CanvasLayer" instance=ExtResource("5_xujuj")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_3m6dp")]
 position = Vector2(213, 243)
