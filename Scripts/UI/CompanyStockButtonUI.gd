@@ -48,13 +48,14 @@ func _on_focus_exited():
 
 func _input(event):
 	if bIsActive == false:
+		StopTimer("not active")
 		return
 
 	if event.is_action("A"):
 		if event.is_pressed():
 			bPositive = true
 			StartButtonTimer()
-			print("a press")
+			#print("a press")
 		elif event.is_action_released("A"):
 			StopTimer("a")
 		return
@@ -63,7 +64,7 @@ func _input(event):
 		if event.is_pressed():
 			bPositive = false
 			StartButtonTimer()
-			print("b press")
+			#print("b press")
 		else:
 			StopTimer("b")
 		return
@@ -72,7 +73,7 @@ func _input(event):
 func StopTimer(who):
 	$UpdateSpeed.stop()
 	$Timer.stop()
-	print(who + "stopped")
+	#print(who + "stopped")
 	bStarted = false
 
 func StartButtonTimer():

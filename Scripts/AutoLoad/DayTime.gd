@@ -5,7 +5,7 @@ var MaxTime = 8
 var Slices = 6
 var Increments = 0
 
-var Day = 2
+var Day = 1
 
 signal ShiftOver
 signal DayIncrease
