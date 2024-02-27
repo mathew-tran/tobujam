@@ -10,3 +10,4 @@ func MovePlayer():
 	var player = get_tree().get_nodes_in_group("Player")
 	player[0].global_position = global_position
 
+

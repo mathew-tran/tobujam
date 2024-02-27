@@ -16,9 +16,18 @@ func _ready():
 	Game.connect("ExitDialogue", Callable(self, "OnExitDialogue"))
 	DayTime.connect("ShiftOver", Callable(self, "OnShiftOver"))
 	DayTime.connect("DayIncrease", Callable(self, "OnDayIncrease"))
+	Game.connect("FadeIn", Callable(self, "OnFadeIn"))
+	Game.connect("FadeOut", Callable(self, "OnFadeOut"))
 
 	UpdateAnims()
 	add_to_group("Player")
+	Game.BroadcastFadeOut()
+
+func OnFadeIn():
+	$CanvasLayer/AnimationPlayer.play("FadeToBlack")
+
+func OnFadeOut():
+	$CanvasLayer/AnimationPlayer.play("FadeOutBlack")
 
 func OnShiftOver():
 	$Music.stop()
@@ -26,6 +35,7 @@ func OnShiftOver():
 
 func OnDayIncrease():
 	$Music.play()
+	Game.BroadcastFadeOut()
 
 func OnEnterDialogue():
 	bCanMove = false
@@ -106,3 +116,7 @@ func _on_music_finished():
 
 func _on_music_timer_timeout():
 	$Music.play()
+
+
+func _on_animation_player_animation_finished(anim_name):
+	pass

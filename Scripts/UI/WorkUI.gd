@@ -20,7 +20,13 @@ func OnExitDialogue():
 
 
 func GivePlayerReward():
+	Game.BroadcastFadeIn()
+	await get_tree().create_timer(.8).timeout
 	Game.TeleportPlayer("JobMovePoint")
+	await get_tree().create_timer(1.0).timeout
+
+	Game.BroadcastFadeOut()
+
 
 	var content = null
 	if Game.WorkLevel == 0:

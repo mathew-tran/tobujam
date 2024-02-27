@@ -10,6 +10,7 @@ signal DataUpdate
 signal WorkUpdate
 
 
+
 var ColorData = {
 	"brown" : "987b4e",
 	"blue" : "4896cd",
@@ -44,6 +45,14 @@ var Stocks = {}
 
 var IncreaseRate = 1
 
+signal FadeIn
+signal FadeOut
+
+func BroadcastFadeIn():
+	emit_signal("FadeIn")
+
+func BroadcastFadeOut():
+	emit_signal("FadeOut")
 
 func _ready():
 	Game.ReadAndSaveStockData()
@@ -60,10 +69,15 @@ func CanAfford(price):
 	return ProposedMoney >= price
 
 func DoTrading():
+	Game.BroadcastFadeIn()
+	await get_tree().create_timer(.8).timeout
+
+
 	var result = get_tree().get_nodes_in_group("StockUI")
 	if result:
 		result[0].visible = true
 	ProposedMoney = Money
+	Game.BroadcastFadeOut()
 
 func MoveToNextDay():
 	ResetWork()
