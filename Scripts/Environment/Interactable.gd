@@ -7,6 +7,7 @@ class_name Interactable
 
 var bCanInteract = false
 @export var  bIncreaseWorkLevel = false
+@export var bIncreaseTime = true
 
 func _ready():
 	Game.connect("DataUpdate", Callable(self, "OnGameDataUpdate"))
@@ -32,7 +33,8 @@ func _input(event):
 			})
 			bCanInteract = false
 			OnUsed()
-			DayTime.IncrementTime()
+			if bIncreaseTime:
+				DayTime.IncrementTime()
 			if bIncreaseWorkLevel:
 				Game.IncreaseWorkLevel()
 				bIncreaseWorkLevel = false

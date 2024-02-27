@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxbmq5o4du6l5"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/Interactable.gd" id="1_3wixq"]
+[ext_resource type="Resource" uid="uid://dqpe0l63mt7ce" path="res://Content/Characters/CHAR_Phone.tres" id="2_chydm"]
+[ext_resource type="Texture2D" uid="uid://cgscplnecb5wf" path="res://Art/Environment/WaterBottle.png" id="3_w38i4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxmhn"]
+size = Vector2(23, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt4ut"]
+size = Vector2(4, 4)
+
+[node name="Phone" type="Area2D"]
+position = Vector2(0, 151)
+collision_mask = 4
+script = ExtResource("1_3wixq")
+InteractableName = ExtResource("2_chydm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_w38i4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pxmhn")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tt4ut")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
