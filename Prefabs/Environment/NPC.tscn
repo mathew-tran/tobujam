@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://o28ov6noy3ay"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/Interactable.gd" id="1_jyrxu"]
+[ext_resource type="Texture2D" uid="uid://dvn6o84bvl3qg" path="res://Art/Stockbroker1.png" id="2_xfrl4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvnte"]
+atlas = ExtResource("2_xfrl4")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrbcl"]
+atlas = ExtResource("2_xfrl4")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k17b8"]
+atlas = ExtResource("2_xfrl4")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0uoek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvnte")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrbcl")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k17b8")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxmhn"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt4ut"]
+size = Vector2(4, 4)
+
+[node name="NPC" type="Area2D"]
+position = Vector2(0, 151)
+collision_mask = 4
+script = ExtResource("1_jyrxu")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0uoek")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pxmhn")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tt4ut")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

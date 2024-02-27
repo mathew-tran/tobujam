@@ -9,9 +9,10 @@ enum DIRECTION {
 	LEFT,
 	RIGHT,
 }
-var Direction = DIRECTION.LEFT
+var Direction = DIRECTION.DOWN
 
 func _ready():
+	$CanvasLayer/BlackScreen.visible = true
 	Game.connect("EnterDialogue", Callable(self, "OnEnterDialogue"))
 	Game.connect("ExitDialogue", Callable(self, "OnExitDialogue"))
 	DayTime.connect("ShiftOver", Callable(self, "OnShiftOver"))

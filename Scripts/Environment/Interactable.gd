@@ -23,7 +23,7 @@ func DisconnectUpdateCheck():
 	Game.disconnect("DataUpdate", Callable(self, "OnGameDataUpdate"))
 
 func _input(event):
-	if bCanInteract:
+	if bCanInteract and Game.CanEnterDialogue():
 		if event.is_action_pressed("A"):
 			Game.BroadcastSendDialogue({
 				"Speaker" : InteractableName,

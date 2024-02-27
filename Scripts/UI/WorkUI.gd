@@ -18,10 +18,16 @@ func OnExitDialogue():
 	Game.disconnect("ExitDialogue", Callable(self, "OnExitDialogue"))
 	GivePlayerReward()
 
+func ShowBoss(bShow):
+	var result = get_tree().get_nodes_in_group("Boss")
+	if result:
+		result[0].visible = bShow
 
 func GivePlayerReward():
+	Game.bBlockDialogue = true
 	Game.BroadcastFadeIn()
 	await get_tree().create_timer(.8).timeout
+	ShowBoss(true)
 	Game.TeleportPlayer("JobMovePoint")
 	await get_tree().create_timer(1.0).timeout
 
@@ -50,5 +56,8 @@ func GivePlayerReward():
 func OnFinishTalking():
 	print("dialogue completed")
 	Game.disconnect("ExitDialogue", Callable(self, "OnFinishTalking"))
+
 	Game.DoTrading()
+	await get_tree().create_timer(.8).timeout
+	ShowBoss(false)
 

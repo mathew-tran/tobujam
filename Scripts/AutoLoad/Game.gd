@@ -39,6 +39,7 @@ var ProposedMoney = 50
 signal MoneyUpdate
 
 var bIsInDialogue = false
+var bBlockDialogue =false
 
 var StockData = {}
 var Stocks = {}
@@ -69,6 +70,7 @@ func CanAfford(price):
 	return ProposedMoney >= price
 
 func DoTrading():
+	bBlockDialogue = true
 	Game.BroadcastFadeIn()
 	await get_tree().create_timer(.8).timeout
 
@@ -83,6 +85,7 @@ func MoveToNextDay():
 	ResetWork()
 	DayTime.MoveNextDay()
 	Game.TeleportPlayer("StartPoint")
+	bBlockDialogue = false
 
 func AddMoney(amount):
 	Money += amount
@@ -108,6 +111,9 @@ func GetProperty(property):
 		return str(Data[property])
 	else:
 		return "null"
+
+func CanEnterDialogue():
+	return bIsInDialogue == false and bBlockDialogue == false
 
 func BroadcastSendDialogue(data):
 	emit_signal("SendDialogue", data)
