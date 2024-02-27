@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://8eya33vkbhju"]
+[gd_scene load_steps=13 format=3 uid="uid://8eya33vkbhju"]
 
 [ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="1_kq51n"]
 [ext_resource type="PackedScene" uid="uid://byhtic5yli25m" path="res://Prefabs/UI/CompanyStockButtonUI.tscn" id="2_avgwl"]
@@ -10,16 +10,25 @@
 default_font = ExtResource("1_kq51n")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nuiyu"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86b7g"]
+bg_color = Color(0.968627, 0.882353, 0.85098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_il851"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro862"]
 bg_color = Color(0, 0, 0, 1)
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeorv"]
 bg_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4ris"]
 bg_color = Color(0, 0, 0, 1)
+corner_detail = 1
 
 [node name="StockUI" type="Panel"]
 anchors_preset = 15
@@ -31,14 +40,40 @@ theme = SubResource("Theme_0kxdm")
 theme_override_styles/panel = SubResource("StyleBoxFlat_nuiyu")
 script = ExtResource("2_fjymx")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_86b7g")
+
+[node name="Panel2" type="Panel" parent="."]
+custom_minimum_size = Vector2(310, 190)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -90.0
+offset_right = 150.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_il851")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -152.0
+offset_top = 9.0
 offset_right = 152.0
-offset_bottom = 193.0
+offset_bottom = 202.0
 grow_horizontal = 2
 
 [node name="TitleBox" type="HBoxContainer" parent="VBoxContainer"]
@@ -46,22 +81,22 @@ layout_mode = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/TitleBox"]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 0.878431, 0, 1)
 layout_mode = 2
 text = "==============="
 
 [node name="Trading" type="Label" parent="VBoxContainer/TitleBox"]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 0.878431, 0, 1)
 layout_mode = 2
 text = "TRADING"
 
 [node name="Label2" type="Label" parent="VBoxContainer/TitleBox"]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 0.878431, 0, 1)
 layout_mode = 2
 text = "==============="
 
 [node name="Day" type="Label" parent="VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 0.878431, 0, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Day 1"
@@ -109,6 +144,7 @@ layout_mode = 2
 alignment = 2
 
 [node name="Button" type="Button" parent="VBoxContainer/Trading/HBoxContainer"]
+modulate = Color(0, 0.878431, 0, 1)
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 5
@@ -116,6 +152,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ro862")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xeorv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s4ris")
 text = "Confirm"
+
+[node name="Label" type="Label" parent="VBoxContainer/Trading"]
+modulate = Color(0, 0.878431, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "z = buy | x = sell"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="button_up" from="VBoxContainer/Trading/HBoxContainer/Button" to="." method="_on_button_button_up"]
