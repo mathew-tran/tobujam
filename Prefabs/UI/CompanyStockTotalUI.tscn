@@ -5,15 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://ds1xl2kl87grm" path="res://Art/StockIncrementor.png" id="2_3f6lt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dumrr"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
 border_width_bottom = 1
-border_color = Color(0, 0.878431, 0, 1)
+border_color = Color(0.666667, 0.713726, 0.603922, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu4qw"]
 bg_color = Color(0.517647, 0.517647, 0.517647, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usj8i"]
-bg_color = Color(0, 0.878431, 0, 1)
+bg_color = Color(0.666667, 0.713726, 0.603922, 1)
 
 [node name="CompanyStockTotalUI" type="Button"]
 custom_minimum_size = Vector2(275, 10)
@@ -60,7 +60,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_usj8i")
 
 [node name="Total" type="Label" parent="HBoxContainer"]
-modulate = Color(0, 0.878431, 0, 1)
+modulate = Color(0.666667, 0.713726, 0.603922, 1)
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
@@ -134,7 +134,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_usj8i")
 
 [node name="Equals2" type="Label" parent="HBoxContainer"]
-modulate = Color(0, 0.878431, 0, 1)
+modulate = Color(0.666667, 0.713726, 0.603922, 1)
 custom_minimum_size = Vector2(2, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
@@ -142,7 +142,7 @@ text = "$"
 horizontal_alignment = 1
 
 [node name="MoneyGained" type="Label" parent="HBoxContainer"]
-modulate = Color(0, 0.878431, 0, 1)
+modulate = Color(0.666667, 0.713726, 0.603922, 1)
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 8

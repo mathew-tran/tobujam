@@ -7,10 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://dc5hiiibkttil" path="res://Audio/SFX/Blip_Select2.wav" id="5_c230y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igkn2"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfsk8"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
 
 [sub_resource type="Animation" id="Animation_nkasd"]
 length = 0.001
@@ -69,6 +69,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_igkn2")
 
 [node name="Description" type="Label" parent="Panel"]
+modulate = Color(0.988235, 0.980392, 0.964706, 1)
 layout_mode = 0
 offset_left = 5.0
 offset_top = 4.0
@@ -88,6 +89,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xfsk8")
 metadata/_edit_group_ = true
 
 [node name="Speaker" type="Label" parent="Panel/Panel"]
+modulate = Color(0.988235, 0.980392, 0.964706, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5

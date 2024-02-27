@@ -13,17 +13,17 @@ default_font = ExtResource("1_kq51n")
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86b7g"]
-bg_color = Color(0.968627, 0.882353, 0.85098, 1)
+bg_color = Color(0.905882, 0.8, 0.705882, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_il851"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro862"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
 corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeorv"]
-bg_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+bg_color = Color(0.603922, 0.647059, 0.74902, 1)
 corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4ris"]
@@ -81,22 +81,22 @@ layout_mode = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/TitleBox"]
-modulate = Color(0, 0.878431, 0, 1)
+modulate = Color(0.666667, 0.713726, 0.603922, 1)
 layout_mode = 2
 text = "==============="
 
 [node name="Trading" type="Label" parent="VBoxContainer/TitleBox"]
-modulate = Color(0, 0.878431, 0, 1)
+modulate = Color(0.666667, 0.713726, 0.603922, 1)
 layout_mode = 2
 text = "TRADING"
 
 [node name="Label2" type="Label" parent="VBoxContainer/TitleBox"]
-modulate = Color(0, 0.878431, 0, 1)
+modulate = Color(0.666667, 0.713726, 0.603922, 1)
 layout_mode = 2
 text = "==============="
 
 [node name="Day" type="Label" parent="VBoxContainer"]
-modulate = Color(0, 0.878431, 0, 1)
+modulate = Color(0.666667, 0.713726, 0.603922, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 11
 text = "Day 1"
@@ -144,7 +144,7 @@ layout_mode = 2
 alignment = 2
 
 [node name="Button" type="Button" parent="VBoxContainer/Trading/HBoxContainer"]
-modulate = Color(0, 0.878431, 0, 1)
+modulate = Color(0.666667, 0.713726, 0.603922, 1)
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 5
@@ -154,7 +154,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_s4ris")
 text = "Confirm"
 
 [node name="Label" type="Label" parent="VBoxContainer/Trading"]
-modulate = Color(0, 0.878431, 0, 1)
+modulate = Color(0.666667, 0.713726, 0.603922, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "z = buy | x = sell"

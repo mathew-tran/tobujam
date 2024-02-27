@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cor2nr6sd4vgr"]
+[gd_scene load_steps=5 format=3 uid="uid://cor2nr6sd4vgr"]
 
 [ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="1_nexbq"]
 [ext_resource type="Script" path="res://Scripts/UI/OptionButton.gd" id="1_o7kwl"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy0mk"]
+bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6d0k"]
+bg_color = Color(0.603922, 0.647059, 0.74902, 1)
+
 [node name="Button" type="Button"]
-custom_minimum_size = Vector2(200, 5)
+custom_minimum_size = Vector2(200, 20)
 theme_override_fonts/font = ExtResource("1_nexbq")
 theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_iy0mk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g6d0k")
 text = "Option 1"
 script = ExtResource("1_o7kwl")
 
