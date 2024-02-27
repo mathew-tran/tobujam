@@ -14,12 +14,16 @@ var Data = {
 
 var WorkLevel = 0
 var Money = 50
+var ProposedMoney = 50
 signal MoneyUpdate
 
 var bIsInDialogue = false
 
 var StockData = {}
 var Stocks = {}
+
+var IncreaseRate = 1
+
 
 func _ready():
 	Game.ReadAndSaveStockData()
@@ -32,10 +36,14 @@ func GetStocksOfCompany(companyName):
 func SetStocksOfCompany(companyName, amount):
 	Stocks[companyName] = amount
 
+func CanAfford(price):
+	return ProposedMoney >= price
+
 func DoTrading():
 	var result = get_tree().get_nodes_in_group("StockUI")
 	if result:
 		result[0].visible = true
+	ProposedMoney = Money
 
 func MoveToNextDay():
 	ResetWork()

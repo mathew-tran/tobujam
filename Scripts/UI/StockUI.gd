@@ -14,13 +14,21 @@ func _ready():
 	$VBoxContainer/Trading/CompanyStockUI7,
 	$VBoxContainer/Trading/CompanyStockUI8,
 	$VBoxContainer/Trading/CompanyStockUI9,
-]
+	]
 	add_to_group("StockUI")
 	var companyNames = Game.GetCompanyNames()
 	for index in range(0, len(CompanyStockButtons)):
 		CompanyStockButtons[index].Populate(companyNames[index], Game.GetDataForCompany(companyNames[index]))
+		CompanyStockButtons[index].connect("UpdateStock", Callable(self, "OnUpdateStock"))
 
+func OnUpdateStock():
+	var price = 0
+	var companyNames = Game.GetCompanyNames()
+	for index in range(0, len(CompanyStockButtons)):
+		price += CompanyStockButtons[index].GetProposedMoney()
 
+	Game.ProposedMoney = Game.Money + price
+	$VBoxContainer/Trading/CompanyStockTotalUI2.UpdateTotal(Game.ProposedMoney)
 
 
 func UpdateStockData():
@@ -40,5 +48,9 @@ func _on_visibility_changed():
 		CompanyStockButtons[0].grab_focus()
 
 func _on_button_button_up():
+	var companyNames = Game.GetCompanyNames()
+	for index in range(0, len(CompanyStockButtons)):
+		CompanyStockButtons[index].LockIn()
+
 	Game.MoveToNextDay()
 	visible = false
