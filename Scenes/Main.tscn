@@ -79,6 +79,7 @@ visible = false
 [node name="WorkPanel" parent="CanvasLayer" instance=ExtResource("3_q88xr")]
 
 [node name="StockUI" parent="CanvasLayer" instance=ExtResource("5_xujuj")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_3m6dp")]
 position = Vector2(213, 243)

@@ -32,6 +32,11 @@ func GetStocksOfCompany(companyName):
 func SetStocksOfCompany(companyName, amount):
 	Stocks[companyName] = amount
 
+func DoTrading():
+	var result = get_tree().get_nodes_in_group("StockUI")
+	if result:
+		result[0].visible = true
+
 func MoveToNextDay():
 	ResetWork()
 	DayTime.MoveNextDay()

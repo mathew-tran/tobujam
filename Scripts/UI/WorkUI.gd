@@ -43,6 +43,6 @@ func GivePlayerReward():
 
 func OnFinishTalking():
 	print("dialogue completed")
-	Game.MoveToNextDay()
 	Game.disconnect("ExitDialogue", Callable(self, "OnFinishTalking"))
+	Game.DoTrading()
 

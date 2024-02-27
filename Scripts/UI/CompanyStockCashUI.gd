@@ -1,5 +1,5 @@
 extends Button
 
 
-func _ready():
+func Update():
 	$HBoxContainer/CashAmount.text = str(Game.Money)
