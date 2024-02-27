@@ -30,6 +30,10 @@ func OnUpdateStock():
 	Game.ProposedMoney = Game.Money + price
 	$VBoxContainer/Trading/CompanyStockTotalUI2.UpdateTotal(Game.ProposedMoney)
 
+func _input(event):
+	if visible:
+		if event.is_action_released("start"):
+			$VBoxContainer/Trading/HBoxContainer/Button.grab_focus()
 
 func UpdateStockData():
 	pass
