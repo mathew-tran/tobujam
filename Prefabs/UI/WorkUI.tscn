@@ -32,7 +32,7 @@ UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 script = ExtResource("2_diat2")
 Dialogue = "Excellent work!
 Here is a bonus!
-*You gained $50\""
+*You gained $50*"
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
