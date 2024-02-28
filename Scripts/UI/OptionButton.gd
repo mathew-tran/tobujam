@@ -4,6 +4,8 @@ var DialogueToContinueTo
 var Speaker
 var OwningActor
 
+signal OptionClicked
+
 func SetDialogue(option, dialogueToContinueto, speaker, owningActor):
 	text = option
 	DialogueToContinueTo = dialogueToContinueto
@@ -13,7 +15,8 @@ func SetDialogue(option, dialogueToContinueto, speaker, owningActor):
 
 
 func _on_button_down():
-		Game.BroadcastSendDialogue({
+	emit_signal("OptionClicked")
+	Game.BroadcastSendDialogue({
 		"Speaker" : Speaker,
 		"Description" : DialogueToContinueTo,
 		"Owner" : OwningActor

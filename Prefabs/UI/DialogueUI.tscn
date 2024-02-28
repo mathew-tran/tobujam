@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bayiq4i52kqk7"]
+[gd_scene load_steps=12 format=3 uid="uid://bayiq4i52kqk7"]
 
 [ext_resource type="Script" path="res://Scripts/UI/DialogueUI.gd" id="1_mmxwe"]
 [ext_resource type="Texture2D" uid="uid://bkcnnb7nd2fr3" path="res://Art/Dialogue/ContinueArrow.png" id="2_g12th"]
 [ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="2_rvbm4"]
 [ext_resource type="PackedScene" uid="uid://cor2nr6sd4vgr" path="res://Prefabs/UI/OptionButton.tscn" id="3_kukww"]
 [ext_resource type="AudioStream" uid="uid://dc5hiiibkttil" path="res://Audio/SFX/Blip_Select2.wav" id="5_c230y"]
+[ext_resource type="AudioStream" uid="uid://8g00sxufwfjw" path="res://Audio/SFX/Blip.wav" id="6_kusih"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igkn2"]
 bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
@@ -166,5 +167,11 @@ layout_mode = 2
 
 [node name="TalkSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_c230y")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="OptionClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_kusih")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

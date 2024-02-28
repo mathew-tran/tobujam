@@ -53,6 +53,9 @@ func SetDialogue(data):
 	visible = true
 
 	DialogueToSay = SplitString(data["Description"].Get(), 80)
+	if data["Description"].GetAudio():
+		$SFX.stream = data["Description"].GetAudio()
+		$SFX.play()
 	data["Description"].SetValue()
 
 	if data.has("Cadence"):
@@ -107,10 +110,15 @@ func PopulateOptions():
 		if option.IsOptionValid():
 			var instance = load("res://Prefabs/UI/OptionButton.tscn").instantiate()
 			instance.SetDialogue(option.GetOptionName(), option.GetDialogueItem(), DialogueData["Speaker"], DialogueData["Owner"])
+			instance.connect("OptionClicked", Callable(self, "OnOptionClicked"))
 			$VBoxContainer.add_child(instance)
 
 	$TextureRect.visible = false
 	$VBoxContainer.get_child(0).grab_focus()
+
+func OnOptionClicked():
+	$OptionClick.play()
+
 func CloseDialogue():
 
 	visible = false
