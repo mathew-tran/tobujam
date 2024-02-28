@@ -5,6 +5,9 @@ extends Panel
 @export var RegularMoneyDialogue : DialogueItem
 @export var MaxMoneyDialogue: DialogueItem
 @export var Speaker : DialogueOwner
+
+@export var TransitionDialogues : Array[DialogueItem]
+
 func _ready():
 	DayTime.connect("ShiftOver", Callable(self, "OnShiftOver"))
 
@@ -56,8 +59,17 @@ func GivePlayerReward():
 func OnFinishTalking():
 	print("dialogue completed")
 	Game.disconnect("ExitDialogue", Callable(self, "OnFinishTalking"))
+	Game.connect("ExitDialogue", Callable(self, "OnFinishTradeDialogue"))
+	Game.BroadcastFadeIn()
+	Game.BroadcastSendDialogue({
+		"Speaker" : load("res://Content/Characters/CHAR_Narrator.tres"),
+		"Description" : TransitionDialogues[DayTime.Day - 1],
+	})
 
+
+func OnFinishTradeDialogue():
 	Game.DoTrading()
+	Game.disconnect("ExitDialogue", Callable(self, "OnFinishTradeDialogue"))
 	await get_tree().create_timer(.8).timeout
 	ShowBoss(false)
 

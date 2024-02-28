@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctomr4kyk71xl"]
+[gd_scene load_steps=16 format=3 uid="uid://ctomr4kyk71xl"]
 
 [ext_resource type="Script" path="res://Scripts/UI/WorkUI.gd" id="1_jatgi"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="2_diat2"]
@@ -36,6 +36,48 @@ Here is a bonus!
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
+[sub_resource type="Resource" id="Resource_kqky3"]
+script = ExtResource("2_diat2")
+Dialogue = "You go home and begin trading stocks.."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_kppdv"]
+script = ExtResource("2_diat2")
+Dialogue = "It's stock trading time!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_wequa"]
+script = ExtResource("2_diat2")
+Dialogue = "It's almost half past the week.. Now on to stock trading!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_pf7n2"]
+script = ExtResource("2_diat2")
+Dialogue = "You go home and begin trading stocks.."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_ixncs"]
+script = ExtResource("2_diat2")
+Dialogue = "You go home and begin trading stocks.."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_eaq1k"]
+script = ExtResource("2_diat2")
+Dialogue = "You go home and begin trading stocks.."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_ooro5"]
+script = ExtResource("2_diat2")
+Dialogue = "You go home and begin trading stocks.."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
 [node name="WorkPanel" type="Panel"]
 visible = false
 anchors_preset = 15
@@ -50,3 +92,4 @@ MinimumMoneyDialogue = SubResource("Resource_mf2lt")
 RegularMoneyDialogue = SubResource("Resource_fpvnh")
 MaxMoneyDialogue = SubResource("Resource_esfic")
 Speaker = ExtResource("3_8qsrj")
+TransitionDialogues = Array[ExtResource("2_diat2")]([SubResource("Resource_kqky3"), SubResource("Resource_kppdv"), SubResource("Resource_wequa"), SubResource("Resource_pf7n2"), SubResource("Resource_ixncs"), SubResource("Resource_eaq1k"), SubResource("Resource_ooro5")])

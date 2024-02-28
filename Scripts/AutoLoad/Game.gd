@@ -71,7 +71,6 @@ func CanAfford(price):
 
 func DoTrading():
 	bBlockDialogue = true
-	Game.BroadcastFadeIn()
 	await get_tree().create_timer(.8).timeout
 
 
