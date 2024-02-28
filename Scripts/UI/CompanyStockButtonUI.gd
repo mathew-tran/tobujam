@@ -94,18 +94,24 @@ func LockIn():
 
 
 func _on_update_speed_timeout():
+	var currentStockAmount = ProposedStockAmount
 	if bPositive:
 		if Game.CanAfford(GetProposedMoney() + (BeginningStockAmount - (ProposedStockAmount + 1) ) * Price * -1):
 			ProposedStockAmount += 1
+			$AudioStreamPlayer2D.pitch_scale = 1
 	else:
 		ProposedStockAmount -= 1
 		if ProposedStockAmount < 0:
 			ProposedStockAmount = 0
+		$AudioStreamPlayer2D.pitch_scale = .8
 	$HBoxContainer/StockAmount.text = str(ProposedStockAmount)
 
 	var moneyToGain = GetProposedMoney()
 	$HBoxContainer/MoneyGained.text = str(moneyToGain)
 	emit_signal("UpdateStock")
+
+	if currentStockAmount != ProposedStockAmount:
+		$AudioStreamPlayer2D.play()
 
 
 func _on_timer_timeout():

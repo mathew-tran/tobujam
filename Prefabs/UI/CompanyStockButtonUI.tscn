@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://byhtic5yli25m"]
+[gd_scene load_steps=8 format=3 uid="uid://byhtic5yli25m"]
 
 [ext_resource type="Script" path="res://Scripts/UI/CompanyStockButtonUI.gd" id="1_o4wnn"]
 [ext_resource type="Texture2D" uid="uid://e50pyseobfoy" path="res://Art/TrendDown.png" id="1_pgvgw"]
 [ext_resource type="Texture2D" uid="uid://ds1xl2kl87grm" path="res://Art/StockIncrementor.png" id="2_0f4rt"]
+[ext_resource type="AudioStream" uid="uid://debiv4ytap2ld" path="res://Audio/SFX/Buy.wav" id="4_y7uxu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dumrr"]
 bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
@@ -153,6 +154,10 @@ horizontal_alignment = 2
 one_shot = true
 
 [node name="UpdateSpeed" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_y7uxu")
+volume_db = -10.0
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
