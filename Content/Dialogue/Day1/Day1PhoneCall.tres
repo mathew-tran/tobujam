@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=9 format=3 uid="uid://mowmsrucm8m5"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_atdtr"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_m3e08"]
+
+[sub_resource type="Resource" id="Resource_8hpm5"]
+script = ExtResource("1_atdtr")
+Dialogue = "Hey! Heard your brother is going to buy the pizza joint he works at!"
+Options = Array[ExtResource("2_m3e08")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_kkgds"]
+script = ExtResource("2_m3e08")
+OptionName = "Mama"
+DialogueToPointTo = SubResource("Resource_8hpm5")
+
+[sub_resource type="Resource" id="Resource_eh325"]
+script = ExtResource("1_atdtr")
+Dialogue = "Hey little brother. Getting anxious about me becoming a business man first?"
+Options = Array[ExtResource("2_m3e08")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_7k2vj"]
+script = ExtResource("2_m3e08")
+OptionName = "Lazlo"
+DialogueToPointTo = SubResource("Resource_eh325")
+
+[sub_resource type="Resource" id="Resource_ac1p7"]
+script = ExtResource("1_atdtr")
+Dialogue = "You hang up the phone."
+Options = Array[ExtResource("2_m3e08")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_ig8c1"]
+script = ExtResource("2_m3e08")
+OptionName = "Leave"
+DialogueToPointTo = SubResource("Resource_ac1p7")
+
+[resource]
+script = ExtResource("1_atdtr")
+Dialogue = "You pick up the phone. Who will you call?"
+Options = Array[ExtResource("2_m3e08")]([SubResource("Resource_kkgds"), SubResource("Resource_7k2vj"), SubResource("Resource_ig8c1")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

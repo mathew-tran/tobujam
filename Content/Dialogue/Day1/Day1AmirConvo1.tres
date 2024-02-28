@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=9 format=3 uid="uid://coovy27l2acyw"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_rh3oj"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_lwgq1"]
+
+[sub_resource type="Resource" id="Resource_o82j2"]
+script = ExtResource("1_rh3oj")
+Dialogue = "Hrmm.. I would go for 2DFX if I were you. It's been quite big for a while.
+Also -- shouldn't you be working?"
+Options = Array[ExtResource("2_lwgq1")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_hpml8"]
+script = ExtResource("2_lwgq1")
+OptionName = "What stocks should I get?"
+DialogueToPointTo = SubResource("Resource_o82j2")
+
+[sub_resource type="Resource" id="Resource_lgdno"]
+script = ExtResource("1_rh3oj")
+Dialogue = "Alright.. Thanks for asking.
+It's gonna be 3 soon and I am going to be hitting my slump.
+"
+Options = Array[ExtResource("2_lwgq1")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_a0ojj"]
+script = ExtResource("2_lwgq1")
+OptionName = "How's it going?"
+DialogueToPointTo = SubResource("Resource_lgdno")
+
+[sub_resource type="Resource" id="Resource_04bt2"]
+script = ExtResource("1_rh3oj")
+Dialogue = "Cheers. Be seeing you."
+Options = Array[ExtResource("2_lwgq1")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_wsuv3"]
+script = ExtResource("2_lwgq1")
+OptionName = "Leave"
+DialogueToPointTo = SubResource("Resource_04bt2")
+
+[resource]
+script = ExtResource("1_rh3oj")
+Dialogue = "Hey!"
+Options = Array[ExtResource("2_lwgq1")]([SubResource("Resource_hpml8"), SubResource("Resource_a0ojj"), SubResource("Resource_wsuv3")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

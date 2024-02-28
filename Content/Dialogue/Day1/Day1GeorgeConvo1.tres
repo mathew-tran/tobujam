@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=9 format=3 uid="uid://bdaspf12kd6r8"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_yelv5"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_urfla"]
+
+[sub_resource type="Resource" id="Resource_eemie"]
+script = ExtResource("1_yelv5")
+Dialogue = "Judging from what I heard. Microserfs looks like a good investment for now.
+Going to finish my drink and go back to check the prices.
+Later."
+Options = Array[ExtResource("2_urfla")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_s78iq"]
+script = ExtResource("2_urfla")
+OptionName = "What stocks should I get?"
+DialogueToPointTo = SubResource("Resource_eemie")
+
+[sub_resource type="Resource" id="Resource_d3ev4"]
+script = ExtResource("1_yelv5")
+Dialogue = "Some seltzer. I need to have a clear mind before trading."
+Options = Array[ExtResource("2_urfla")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_dw1bd"]
+script = ExtResource("2_urfla")
+OptionName = "What are you drinking?"
+DialogueToPointTo = SubResource("Resource_d3ev4")
+
+[sub_resource type="Resource" id="Resource_6lht6"]
+script = ExtResource("1_yelv5")
+Dialogue = "See you around! Be sure to talk to others when you get the chance."
+Options = Array[ExtResource("2_urfla")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_oql7f"]
+script = ExtResource("2_urfla")
+OptionName = "Later"
+DialogueToPointTo = SubResource("Resource_6lht6")
+
+[resource]
+script = ExtResource("1_yelv5")
+Dialogue = "Howdy! Haven't seen you around!"
+Options = Array[ExtResource("2_urfla")]([SubResource("Resource_s78iq"), SubResource("Resource_dw1bd"), SubResource("Resource_oql7f")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

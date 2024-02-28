@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://cc0eqh2e32k7c"]
+[gd_scene load_steps=31 format=3 uid="uid://cc0eqh2e32k7c"]
 
 [ext_resource type="PackedScene" uid="uid://bl2xtfoma3ah8" path="res://Prefabs/Player.tscn" id="1_3m6dp"]
 [ext_resource type="TileSet" uid="uid://ds1qfqyikgoae" path="res://Tilesets/TilesetOffice.tres" id="1_kvf7h"]
@@ -8,293 +8,42 @@
 [ext_resource type="PackedScene" uid="uid://ctomr4kyk71xl" path="res://Prefabs/UI/WorkUI.tscn" id="3_q88xr"]
 [ext_resource type="PackedScene" uid="uid://bayiq4i52kqk7" path="res://Prefabs/UI/DialogueUI.tscn" id="4_8b7hm"]
 [ext_resource type="Resource" uid="uid://bsrvhhxysigvc" path="res://Content/Characters/CHAR_Manager.tres" id="4_scaww"]
+[ext_resource type="Resource" uid="uid://brrvpqiv1r8nc" path="res://Content/Dialogue/Day1/Day1BossLobbyConvo1.tres" id="5_gc55x"]
 [ext_resource type="PackedScene" uid="uid://cji0ukyoc8h76" path="res://Prefabs/Environment/WaterCooler.tscn" id="5_ghh5g"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="5_ol74m"]
 [ext_resource type="PackedScene" uid="uid://8eya33vkbhju" path="res://Prefabs/UI/StockUI.tscn" id="5_xujuj"]
-[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="6_17y3n"]
 [ext_resource type="PackedScene" uid="uid://dwxxq00jhpong" path="res://Prefabs/Environment/WaterBottle.tscn" id="6_tm6be"]
+[ext_resource type="Resource" uid="uid://bdaspf12kd6r8" path="res://Content/Dialogue/Day1/Day1GeorgeConvo1.tres" id="7_5ahd1"]
 [ext_resource type="Resource" uid="uid://f7svb47vdmjq" path="res://Content/Characters/CHAR_George.tres" id="7_fvaxf"]
 [ext_resource type="Resource" uid="uid://dnp2gnkf4otar" path="res://Content/Characters/CHAR_Ayush.tres" id="8_3vg05"]
 [ext_resource type="PackedScene" uid="uid://bxbmq5o4du6l5" path="res://Prefabs/Environment/Phone.tscn" id="8_wlmrp"]
 [ext_resource type="Resource" uid="uid://dr0ceybyx6d2n" path="res://Content/Characters/CHAR_Amir.tres" id="9_hax8v"]
+[ext_resource type="Resource" uid="uid://bhei1xvehye0w" path="res://Content/Dialogue/Day1/Day1AyushConvo1.tres" id="9_mo8pj"]
+[ext_resource type="Resource" uid="uid://coovy27l2acyw" path="res://Content/Dialogue/Day1/Day1AmirConvo1.tres" id="11_si0gt"]
 [ext_resource type="Script" path="res://Scripts/DialogueArea.gd" id="13_rm4ax"]
-[ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="14_i6ytu"]
+[ext_resource type="Resource" uid="uid://mowmsrucm8m5" path="res://Content/Dialogue/Day1/Day1PhoneCall.tres" id="14_428h4"]
 [ext_resource type="Resource" uid="uid://csbnd4s5u36f0" path="res://Content/Characters/CHAR_Main.tres" id="15_rp1j5"]
 [ext_resource type="Resource" uid="uid://cvqdvawdpan6v" path="res://Content/Characters/CHAR_Narrator.tres" id="16_m7r7q"]
-
-[sub_resource type="Resource" id="Resource_ocals"]
-script = ExtResource("5_ol74m")
-Dialogue = "You are here to clean up during the day shift.
-Cleaning up involves picking up trash and cleaning spills.
-... And since you are so keen to learn about trading. Feel free to talk to others.
-But time is a valuable resource ... Don't forget to work or I won't pay you!"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_y82xu"]
-script = ExtResource("6_17y3n")
-OptionName = "Help"
-DialogueToPointTo = SubResource("Resource_ocals")
-
-[sub_resource type="Resource" id="Resource_kkocj"]
-script = ExtResource("5_ol74m")
-Dialogue = "Yeah there is garbage and spills around. Look for them.
-If you do alot. I might even throw in a bonus!"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_fuc4x"]
-script = ExtResource("6_17y3n")
-OptionName = "Cleanup?"
-DialogueToPointTo = SubResource("Resource_kkocj")
-
-[sub_resource type="Resource" id="Resource_sitma"]
-script = ExtResource("5_ol74m")
-Dialogue = "You are at the Stock Exchange!
-If you talk around or investigate..
-I bet you can get some insider information about stocks.
-Be wary, some people don't even know what they are talking about!"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_vmw3h"]
-script = ExtResource("6_17y3n")
-OptionName = "Where am I?"
-DialogueToPointTo = SubResource("Resource_sitma")
-
-[sub_resource type="Resource" id="Resource_l0ylo"]
-script = ExtResource("5_ol74m")
-Dialogue = "I'll pay you end of day! Remember that!"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_n6tk7"]
-script = ExtResource("6_17y3n")
-OptionName = "Later"
-DialogueToPointTo = SubResource("Resource_l0ylo")
-
-[sub_resource type="Resource" id="Resource_j205o"]
-script = ExtResource("5_ol74m")
-Dialogue = "Hey there."
-Options = Array[ExtResource("6_17y3n")]([SubResource("Resource_y82xu"), SubResource("Resource_fuc4x"), SubResource("Resource_vmw3h"), SubResource("Resource_n6tk7")])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_eemie"]
-script = ExtResource("5_ol74m")
-Dialogue = "Judging from what I heard. Microserfs looks like a good investment for now.
-Going to finish my drink and go back to check the prices.
-Later."
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_s78iq"]
-script = ExtResource("6_17y3n")
-OptionName = "What stocks should I get?"
-DialogueToPointTo = SubResource("Resource_eemie")
-
-[sub_resource type="Resource" id="Resource_d3ev4"]
-script = ExtResource("5_ol74m")
-Dialogue = "Some seltzer. I need to have a clear mind before trading."
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_dw1bd"]
-script = ExtResource("6_17y3n")
-OptionName = "What are you drinking?"
-DialogueToPointTo = SubResource("Resource_d3ev4")
-
-[sub_resource type="Resource" id="Resource_6lht6"]
-script = ExtResource("5_ol74m")
-Dialogue = "See you around! Be sure to talk to others when you get the chance."
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_oql7f"]
-script = ExtResource("6_17y3n")
-OptionName = "Later"
-DialogueToPointTo = SubResource("Resource_6lht6")
-
-[sub_resource type="Resource" id="Resource_xwglw"]
-script = ExtResource("5_ol74m")
-Dialogue = "Howdy! Haven't seen you around!"
-Options = Array[ExtResource("6_17y3n")]([SubResource("Resource_s78iq"), SubResource("Resource_dw1bd"), SubResource("Resource_oql7f")])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_btyro"]
-script = ExtResource("5_ol74m")
-Dialogue = "I'd invest in ToiletTech if I were you. Better start now before it's too late!"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_75gq8"]
-script = ExtResource("6_17y3n")
-OptionName = "What stocks should I invest in?"
-DialogueToPointTo = SubResource("Resource_btyro")
-
-[sub_resource type="Resource" id="Resource_nfmvn"]
-script = ExtResource("5_ol74m")
-Dialogue = "George is an old friend of mine.
-He really knows his stuff.
-If you have a chance to meet him at the bar. You should talk to him."
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_2ydfb"]
-script = ExtResource("6_17y3n")
-OptionName = "George"
-DialogueToPointTo = SubResource("Resource_nfmvn")
-
-[sub_resource type="Resource" id="Resource_sydar"]
-script = ExtResource("5_ol74m")
-Dialogue = "The thrill of growing my money! Obviously!"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_re7pk"]
-script = ExtResource("6_17y3n")
-OptionName = "What made you go into trading?"
-DialogueToPointTo = SubResource("Resource_sydar")
-
-[sub_resource type="Resource" id="Resource_vtiwt"]
-script = ExtResource("5_ol74m")
-Dialogue = "Hello there."
-Options = Array[ExtResource("6_17y3n")]([SubResource("Resource_75gq8"), SubResource("Resource_2ydfb"), SubResource("Resource_re7pk")])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_o82j2"]
-script = ExtResource("5_ol74m")
-Dialogue = "Hrmm.. I would go for 2DFX if I were you. It's been quite big for a while.
-Also -- shouldn't you be working?"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_hpml8"]
-script = ExtResource("6_17y3n")
-OptionName = "What stocks should I get?"
-DialogueToPointTo = SubResource("Resource_o82j2")
-
-[sub_resource type="Resource" id="Resource_lgdno"]
-script = ExtResource("5_ol74m")
-Dialogue = "Alright.. Thanks for asking.
-It's gonna be 3 soon and I am going to be hitting my slump.
-"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_a0ojj"]
-script = ExtResource("6_17y3n")
-OptionName = "How's it going?"
-DialogueToPointTo = SubResource("Resource_lgdno")
-
-[sub_resource type="Resource" id="Resource_04bt2"]
-script = ExtResource("5_ol74m")
-Dialogue = "Cheers. Be seeing you."
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_wsuv3"]
-script = ExtResource("6_17y3n")
-OptionName = "Leave"
-DialogueToPointTo = SubResource("Resource_04bt2")
-
-[sub_resource type="Resource" id="Resource_qyg7r"]
-script = ExtResource("5_ol74m")
-Dialogue = "Hey!"
-Options = Array[ExtResource("6_17y3n")]([SubResource("Resource_hpml8"), SubResource("Resource_a0ojj"), SubResource("Resource_wsuv3")])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_8hpm5"]
-script = ExtResource("5_ol74m")
-Dialogue = "Hey! Heard your brother is going to buy the pizza joint he works at!"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_kkgds"]
-script = ExtResource("6_17y3n")
-OptionName = "Mama"
-DialogueToPointTo = SubResource("Resource_8hpm5")
-
-[sub_resource type="Resource" id="Resource_eh325"]
-script = ExtResource("5_ol74m")
-Dialogue = "Hey little brother. Getting anxious about me becoming a business man first?"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_7k2vj"]
-script = ExtResource("6_17y3n")
-OptionName = "Lazlo"
-DialogueToPointTo = SubResource("Resource_eh325")
-
-[sub_resource type="Resource" id="Resource_ac1p7"]
-script = ExtResource("5_ol74m")
-Dialogue = "You hang up the phone."
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_ig8c1"]
-script = ExtResource("6_17y3n")
-OptionName = "Leave"
-DialogueToPointTo = SubResource("Resource_ac1p7")
-
-[sub_resource type="Resource" id="Resource_2snga"]
-script = ExtResource("5_ol74m")
-Dialogue = "You pick up the phone. Who will you call?"
-Options = Array[ExtResource("6_17y3n")]([SubResource("Resource_kkgds"), SubResource("Resource_7k2vj"), SubResource("Resource_ig8c1")])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+[ext_resource type="Resource" uid="uid://blwb2feufq62w" path="res://Content/Dialogue/Day1/Day1EmptyFlowerPot1.tres" id="16_x5485"]
+[ext_resource type="Resource" uid="uid://blg64i7btaum4" path="res://Content/Dialogue/Day1/Day1WaterCooler.tres" id="18_j7t8o"]
+[ext_resource type="Resource" uid="uid://bvd57ii1nrtym" path="res://Content/Dialogue/Day1/Day1NarratorConvo1.tres" id="27_rqtlf"]
 
 [sub_resource type="Resource" id="Resource_36ggu"]
 script = ExtResource("5_ol74m")
 Dialogue = "This computer is my boss's.
 Best not touch it."
-Options = Array[ExtResource("6_17y3n")]([])
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_w2mpr"]
-script = ExtResource("5_ol74m")
-Dialogue = "An empty pot. You found nothing inside."
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_p4qu1"]
-script = ExtResource("5_ol74m")
-Dialogue = "You drink some water."
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_458mu"]
-script = ExtResource("5_ol74m")
-Dialogue = "Hey little brother. I am going to buy out a pizza joint! 
-Better move quick before I leave you behind!"
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5hmd"]
-size = Vector2(97, 20)
 
 [sub_resource type="Resource" id="Resource_l2snf"]
 script = ExtResource("5_ol74m")
 Dialogue = "I am not going to let him win this time! 
 I may be a janitor, but I know I can buy out that pizza joint before he does."
-Options = Array[ExtResource("6_17y3n")]([])
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
-[sub_resource type="Resource" id="Resource_5hkba"]
-script = ExtResource("5_ol74m")
-Dialogue = "You have 7 days to buy and sell stocks. 
-Talk to traders nearby and try to make informed decisions. 
-If you make more than 2,000 dollars to buy the pizza joint before 
-your brother. You win."
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="Resource" id="Resource_ejvd1"]
-script = ExtResource("5_ol74m")
-Dialogue = "It's locked."
-Options = Array[ExtResource("6_17y3n")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5hch"]
-size = Vector2(19.5, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5hmd"]
+size = Vector2(97, 20)
 
 [node name="Main" type="Node2D"]
 
@@ -308,9 +57,10 @@ position = Vector2(110, 301)
 script = ExtResource("2_ngnjx")
 
 [node name="BossLobby" parent="TileMap" instance=ExtResource("3_6t21d")]
-position = Vector2(225, 68)
+position = Vector2(238, 75)
 InteractableName = ExtResource("4_scaww")
-InteractableContent = SubResource("Resource_j205o")
+InteractableContent = ExtResource("5_gc55x")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="TileMap/BossLobby" index="0"]
 animation = &"down"
@@ -318,19 +68,19 @@ animation = &"down"
 [node name="George" parent="TileMap" instance=ExtResource("3_6t21d")]
 position = Vector2(449, 368)
 InteractableName = ExtResource("7_fvaxf")
-InteractableContent = SubResource("Resource_xwglw")
+InteractableContent = ExtResource("7_5ahd1")
 metadata/_edit_group_ = true
 
 [node name="Ayush" parent="TileMap" instance=ExtResource("3_6t21d")]
 position = Vector2(873, 66)
 InteractableName = ExtResource("8_3vg05")
-InteractableContent = SubResource("Resource_vtiwt")
+InteractableContent = ExtResource("9_mo8pj")
 metadata/_edit_group_ = true
 
 [node name="Amir" parent="TileMap" instance=ExtResource("3_6t21d")]
 position = Vector2(-27, -43)
 InteractableName = ExtResource("9_hax8v")
-InteractableContent = SubResource("Resource_qyg7r")
+InteractableContent = ExtResource("11_si0gt")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="TileMap/Amir" index="0"]
@@ -360,7 +110,7 @@ layer_0/tile_data = PackedInt32Array(1114132, 3, 0, 1114133, 2, 0, 1114134, 1, 0
 
 [node name="Phone" parent="TileMap" instance=ExtResource("8_wlmrp")]
 position = Vector2(424, 247)
-InteractableContent = SubResource("Resource_2snga")
+InteractableContent = ExtResource("14_428h4")
 
 [node name="CollisionShape2D" parent="TileMap/Phone" index="1"]
 position = Vector2(5.5, 1)
@@ -374,18 +124,18 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" parent="TileMap/BossComputer" index="1"]
 position = Vector2(5.5, 1)
 
-[node name="BossComputer2" parent="TileMap" instance=ExtResource("8_wlmrp")]
+[node name="EmptyFlowerPot" parent="TileMap" instance=ExtResource("8_wlmrp")]
 position = Vector2(328, 252)
 InteractableName = null
-InteractableContent = SubResource("Resource_w2mpr")
+InteractableContent = ExtResource("16_x5485")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" parent="TileMap/BossComputer2" index="1"]
+[node name="CollisionShape2D" parent="TileMap/EmptyFlowerPot" index="1"]
 position = Vector2(5.5, 1)
 
 [node name="WaterCooler" parent="TileMap" instance=ExtResource("5_ghh5g")]
 position = Vector2(26, 112)
-InteractableContent = SubResource("Resource_p4qu1")
+InteractableContent = ExtResource("18_j7t8o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -437,17 +187,6 @@ position = Vector2(136, 49)
 [node name="WaterBottle8" parent="." instance=ExtResource("6_tm6be")]
 position = Vector2(208, 74)
 
-[node name="DialogueArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
-script = ExtResource("13_rm4ax")
-Speaker = ExtResource("14_i6ytu")
-Dialogue = SubResource("Resource_458mu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea"]
-position = Vector2(217.5, 206)
-shape = SubResource("RectangleShape2D_d5hmd")
-
 [node name="DialogueArea2" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
@@ -465,29 +204,14 @@ collision_layer = 0
 collision_mask = 4
 script = ExtResource("13_rm4ax")
 Speaker = ExtResource("16_m7r7q")
-Dialogue = SubResource("Resource_5hkba")
+Dialogue = ExtResource("27_rqtlf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea3"]
 position = Vector2(218, 182)
 shape = SubResource("RectangleShape2D_d5hmd")
 
-[node name="DialogueArea4" type="Area2D" parent="."]
-position = Vector2(0, -66)
-collision_layer = 0
-collision_mask = 4
-script = ExtResource("13_rm4ax")
-Speaker = ExtResource("15_rp1j5")
-Dialogue = SubResource("Resource_ejvd1")
-bDestroyAfterDialogue = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea4"]
-position = Vector2(450, 157)
-shape = SubResource("RectangleShape2D_g5hch")
-
-[connection signal="body_entered" from="DialogueArea" to="DialogueArea" method="_on_body_entered"]
 [connection signal="body_entered" from="DialogueArea2" to="DialogueArea2" method="_on_body_entered"]
 [connection signal="body_entered" from="DialogueArea3" to="DialogueArea3" method="_on_body_entered"]
-[connection signal="body_entered" from="DialogueArea4" to="DialogueArea4" method="_on_body_entered"]
 
 [editable path="TileMap/BossLobby"]
 [editable path="TileMap/George"]
@@ -496,4 +220,4 @@ shape = SubResource("RectangleShape2D_g5hch")
 [editable path="TileMap/Boss"]
 [editable path="TileMap/Phone"]
 [editable path="TileMap/BossComputer"]
-[editable path="TileMap/BossComputer2"]
+[editable path="TileMap/EmptyFlowerPot"]

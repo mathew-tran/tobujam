@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=11 format=3 uid="uid://brrvpqiv1r8nc"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_36nju"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_gawhq"]
+
+[sub_resource type="Resource" id="Resource_ocals"]
+script = ExtResource("1_36nju")
+Dialogue = "You are here to clean up during the day shift.
+Cleaning up involves picking up trash and cleaning spills.
+... And since you are so keen to learn about trading. Feel free to talk to others.
+But time is a valuable resource ... Don't forget to work or I won't pay you!"
+Options = Array[ExtResource("2_gawhq")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_y82xu"]
+script = ExtResource("2_gawhq")
+OptionName = "Help"
+DialogueToPointTo = SubResource("Resource_ocals")
+
+[sub_resource type="Resource" id="Resource_kkocj"]
+script = ExtResource("1_36nju")
+Dialogue = "Yeah there is garbage and spills around. Look for them.
+If you do alot. I might even throw in a bonus!"
+Options = Array[ExtResource("2_gawhq")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_fuc4x"]
+script = ExtResource("2_gawhq")
+OptionName = "Cleanup?"
+DialogueToPointTo = SubResource("Resource_kkocj")
+
+[sub_resource type="Resource" id="Resource_sitma"]
+script = ExtResource("1_36nju")
+Dialogue = "You are at the Stock Exchange!
+If you talk around or investigate..
+I bet you can get some insider information about stocks.
+Be wary, some people don't even know what they are talking about!"
+Options = Array[ExtResource("2_gawhq")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_vmw3h"]
+script = ExtResource("2_gawhq")
+OptionName = "Where am I?"
+DialogueToPointTo = SubResource("Resource_sitma")
+
+[sub_resource type="Resource" id="Resource_l0ylo"]
+script = ExtResource("1_36nju")
+Dialogue = "I'll pay you end of day! Remember that!"
+Options = Array[ExtResource("2_gawhq")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_n6tk7"]
+script = ExtResource("2_gawhq")
+OptionName = "Later"
+DialogueToPointTo = SubResource("Resource_l0ylo")
+
+[resource]
+script = ExtResource("1_36nju")
+Dialogue = "Hey there."
+Options = Array[ExtResource("2_gawhq")]([SubResource("Resource_y82xu"), SubResource("Resource_fuc4x"), SubResource("Resource_vmw3h"), SubResource("Resource_n6tk7")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
