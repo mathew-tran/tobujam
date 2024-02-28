@@ -68,7 +68,7 @@ func StartText():
 	else:
 		$Panel/Panel.visible = false
 	DescriptionText.text = DialogueToSay[0]
-
+	$Timer.wait_time = DefaultCharacterDelay
 	$Timer.start()
 
 
@@ -77,22 +77,26 @@ func _input(event):
 		return
 
 	if event.is_action_released("B"):
-		DescriptionText.visible_characters = len(DialogueToSay[0])
-		_on_timer_timeout()
+		if DescriptionText.visible_characters != len(DialogueToSay[0]):
+			DescriptionText.visible_characters = len(DialogueToSay[0])
+			_on_timer_timeout()
+			$Timer.wait_time = DefaultCharacterDelay
 
 	if event.is_action_released("A"):
 		if IsLineFinished():
 			if CanGetNextLine():
+				$Timer.wait_time = DefaultCharacterDelay
+				$Timer.start()
 				StartText()
 			else:
 				if HasOptions():
 					PopulateOptions()
 				else:
 					CloseDialogue()
-		else:
-			if $Timer.wait_time != .00005:
-				$Timer.wait_time = .00005
-				$Timer.start()
+	elif event.is_action_pressed("A"):
+		if $Timer.wait_time != .00005:
+			$Timer.wait_time = .00005
+			$Timer.start()
 
 func HasOptions():
 	return DialogueData["Description"].HasOptions()
