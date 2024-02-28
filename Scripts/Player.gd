@@ -69,7 +69,7 @@ func get_input():
 	UpdateAnims()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if bCanMove == false:
+	if bCanMove == false or Game.CanEnterDialogue() == false:
 		return
 	get_input()
 	#var collision = move_and_collide(velocity * delta)
