@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://b2fk33j2cb6yy"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_v6cle"]
+
+[resource]
+script = ExtResource("1_v6cle")
+Dialogue = "Hey little brother. I'll be telling you first that I am going to buy the pizza joint.
+I'll become the first successful businessman in the family.
+And Mama's gonna be more proud of me!
+Have you told her yet, that you work as a janitor?!
+Well.. anyways. It's gonna be a week before I buy the place. 
+It's gonna be 2,000 dollars! I bet you can't even make that kind of money in your life!
+Later. I gotta run to the bank.
+Heh.. Heh...  *Chuckles*
+See you next week!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
