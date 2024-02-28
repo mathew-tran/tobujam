@@ -2,7 +2,7 @@ extends Node
 
 var CurrentTime = 0
 var MaxTime = 8
-var Slices = 6
+var Slices = 8
 var Increments = 0
 
 var Day = 1

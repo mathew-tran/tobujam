@@ -28,6 +28,7 @@ func _ready():
 func SplitString(s: String, length: int):
 	var result = []
 	var start = 0
+	s = s.strip_edges()
 	var splitString = s.split("\n")
 	for split in splitString:
 		result.append(split)

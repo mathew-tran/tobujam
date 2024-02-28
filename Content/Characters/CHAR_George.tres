@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DialogueOwner" load_steps=2 format=3 uid="uid://f7svb47vdmjq"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOwner.gd" id="1_vn5rf"]
+
+[resource]
+script = ExtResource("1_vn5rf")
+Name = "George"

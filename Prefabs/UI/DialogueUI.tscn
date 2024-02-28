@@ -8,9 +8,24 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igkn2"]
 bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.988235, 0.980392, 0.964706, 1)
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfsk8"]
-bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
+bg_color = Color(0.713726, 0.482353, 0.180392, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.988235, 0.980392, 0.964706, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_detail = 20
+anti_aliasing = false
 
 [sub_resource type="Animation" id="Animation_nkasd"]
 length = 0.001
@@ -64,6 +79,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -7.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_igkn2")
@@ -84,7 +101,7 @@ visible_characters_behavior = 1
 layout_mode = 0
 offset_left = 1.0
 offset_top = -21.0
-offset_right = 136.0
+offset_right = 161.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xfsk8")
 metadata/_edit_group_ = true
 
@@ -94,13 +111,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 3.0
-offset_top = -7.0
-offset_right = 85.0
-offset_bottom = 16.0
+offset_left = 4.0
+offset_top = -6.5
+offset_right = 133.0
+offset_bottom = 16.5
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_rvbm4")
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 17
 text = "test"
 
 [node name="Timer" type="Timer" parent="."]
@@ -122,14 +139,18 @@ libraries = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -100.0
-offset_top = -145.0
-offset_right = 100.0
-offset_bottom = -29.0
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -170.0
+offset_right = 110.0
+offset_bottom = -54.0
 grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="Button" parent="VBoxContainer" instance=ExtResource("3_kukww")]
 layout_mode = 2
