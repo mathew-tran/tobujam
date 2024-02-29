@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CustomVariable" load_steps=2 format=3 uid="uid://bg0hcgmdj37mk"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/CustomVariable.gd" id="1_r5eof"]
+
+[resource]
+script = ExtResource("1_r5eof")
+value = 1

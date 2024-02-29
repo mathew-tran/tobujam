@@ -102,7 +102,11 @@ func PopulateOptions():
 			$VBoxContainer.add_child(instance)
 
 	$TextureRect.visible = false
-	$VBoxContainer.get_child(0).grab_focus()
+
+	if $VBoxContainer.get_child_count() <= 0:
+		CloseDialogue()
+	else:
+		$VBoxContainer.get_child(0).grab_focus()
 
 func OnOptionClicked():
 	$OptionClick.play()
