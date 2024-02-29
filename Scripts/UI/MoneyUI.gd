@@ -1,13 +1,15 @@
 extends Label
 
 
+signal MoneyUpdate
+
 
 func _ready():
 	UpdateUI()
-	Game.connect("MoneyUpdate", Callable(self, "OnMoneyUpdate"))
+	PlayerInventory.connect("MoneyUpdate", Callable(self, "OnMoneyUpdate"))
 
 func OnMoneyUpdate():
 	UpdateUI()
 
 func UpdateUI():
-	text = "$" + str(Game.Money)
+	text = "$" + str(PlayerInventory.Cash)

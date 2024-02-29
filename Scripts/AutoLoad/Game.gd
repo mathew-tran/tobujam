@@ -6,65 +6,14 @@ signal SendDialogue(data)
 
 var GridSize = Vector2(10, 10)
 
-signal DataUpdate
-signal WorkUpdate
-
-
-
-var ColorData = {
-	"brown" : "987b4e",
-	"blue" : "4896cd",
-	"grey" : "585b65",
-	"purple" : "734f99",
-	"red": "bb3330",
-	"darkbrown" : "5f372c",
-	"pink" : "e7ccb4",
-	"orange" : "b67b2e",
-	"white" : "fcfaf6",
-	"black" : "13110d",
-	"lightblue": "9aa5bf",
-	"navyblue" : "142c4b",
-	"tourquise" : "426773",
-	"silver" : "91877b",
-	"palegreen" : "aab69a",
-	"darkgreen" : "474f2d"
-}
-
-var Data = {
-}
-
-var WorkLevel = 0
-var Money = 50
-var ProposedMoney = 50
-signal MoneyUpdate
-
 var bIsInDialogue = false
 var bBlockDialogue =false
 
-var StockData = {}
 var Stocks = {}
-
-var IncreaseRate = 1
 
 signal FadeIn
 signal FadeOut
 signal StartTrading
-
-var DayTimeMusicIndex = 0
-
-var TradingMusicTrack = "res://Audio/Music/Righteous.mp3"
-var DaytimeMusicTracks = [
-	"res://Audio/Music/Early_Bird_Unfinished.mp3",
-	"res://Audio/Music/Training_Vid.mp3"
-]
-var CurrentMusic = ""
-
-func DetermineDayTimeMusic():
-	CurrentMusic = DaytimeMusicTracks[DayTimeMusicIndex]
-	DayTimeMusicIndex+= 1
-	if DayTimeMusicIndex >= len(DaytimeMusicTracks):
-		DayTimeMusicIndex = 0
-	return CurrentMusic
 
 func BroadcastFadeIn():
 	emit_signal("FadeIn")
@@ -73,28 +22,12 @@ func BroadcastFadeOut():
 	emit_signal("FadeOut")
 
 func _ready():
-	Game.ReadAndSaveStockData()
-
+	pass
 
 func HardReset():
-	Money = 50
-	ProposedMoney = 50
-	WorkLevel = 0
-
-	Data = {}
-	Stocks = {}
-	for company in GetCompanyNames():
-		Stocks[company] = 0
+	PlayerInventory.Reset()
+	MusicPlayer.Reset()
 	bBlockDialogue = false
-
-func GetStocksOfCompany(companyName):
-	return Stocks[companyName]
-
-func SetStocksOfCompany(companyName, amount):
-	Stocks[companyName] = amount
-
-func CanAfford(price):
-	return ProposedMoney >= price
 
 func DoTrading():
 	bBlockDialogue = true
@@ -105,12 +38,11 @@ func DoTrading():
 	var result = get_tree().get_nodes_in_group("StockUI")
 	if result:
 		result[0].visible = true
-	ProposedMoney = Money
 	Game.BroadcastFadeOut()
 
 func MoveToNextDay():
-	ResetWork()
-	if Game.Money >= 2000:
+	PlayerInventory.ResetWork()
+	if PlayerInventory.GetTotalAssets() >= 2000:
 		get_tree().change_scene_to_file("res://Scenes/GameWin.tscn")
 		return
 	if DayTime.Day + 1 >= 4:
@@ -122,30 +54,6 @@ func MoveToNextDay():
 	Game.TeleportPlayer("StartPoint")
 	bBlockDialogue = false
 
-func AddMoney(amount):
-	Money += amount
-	emit_signal("MoneyUpdate")
-
-func IncreaseWorkLevel():
-	WorkLevel += 1
-	emit_signal("WorkUpdate")
-
-func ResetWork():
-	WorkLevel = 0
-	emit_signal("WorkUpdate")
-
-func GetData():
-	return Data
-
-func SetData(property, value):
-	Data[property] = value
-	emit_signal("DataUpdate")
-
-func GetProperty(property):
-	if Data.has(property):
-		return str(Data[property])
-	else:
-		return "null"
 
 func CanEnterDialogue():
 	return bIsInDialogue == false and bBlockDialogue == false
@@ -167,32 +75,4 @@ func TeleportPlayer(pointName):
 		if point.name == pointName:
 			point.MovePlayer()
 
-func ReadAndSaveStockData():
-	var file = FileAccess.open("res://Content/Prices/Prices.txt", FileAccess.READ)
-	while !file.eof_reached():
-		var line = Array(file.get_csv_line())
-		StockData[StockData.size()] = line
-	file.close()
 
-func GetDataForCompany(companyName):
-	for line in StockData:
-		if StockData[line][0] == companyName:
-			var dataToGet = []
-			var bFirst = true
-			for element in StockData[line]:
-				if bFirst:
-					bFirst = false
-				else:
-					dataToGet.append(element)
-			return dataToGet
-	return []
-
-func GetCompanyNames():
-	var names = []
-	var bFirst = true
-	for line in StockData:
-		if bFirst:
-			bFirst = false
-		else:
-			names.append(StockData[line][0])
-	return names

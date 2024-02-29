@@ -2,4 +2,4 @@ extends Button
 
 
 func Update():
-	$HBoxContainer/CashAmount.text = str(Game.Money)
+	$HBoxContainer/CashAmount.text = str(PlayerInventory.Cash)

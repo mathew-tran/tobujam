@@ -38,17 +38,17 @@ func GivePlayerReward():
 
 
 	var content = null
-	if Game.WorkLevel == 0:
+	if PlayerInventory.WorkLevel == 0:
 		content = NoMoneyDialogue
-	elif Game.WorkLevel == 1:
+	elif PlayerInventory.WorkLevel == 1:
 		content = MinimumMoneyDialogue
-		Game.AddMoney(10)
-	elif Game.WorkLevel == 2:
+		PlayerInventory.AddMoney(10)
+	elif PlayerInventory.WorkLevel == 2:
 		content = RegularMoneyDialogue
-		Game.AddMoney(25)
+		PlayerInventory.AddMoney(25)
 	else:
 		content = MaxMoneyDialogue
-		Game.AddMoney(50)
+		PlayerInventory.AddMoney(50)
 
 	Game.BroadcastSendDialogue({
 		"Speaker" : Speaker,

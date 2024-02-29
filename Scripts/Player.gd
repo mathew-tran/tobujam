@@ -13,7 +13,7 @@ var Direction = DIRECTION.DOWN
 
 func _ready():
 	$CanvasLayer/BlackScreen.visible = true
-	$Music.stream = load(Game.DetermineDayTimeMusic())
+	$Music.stream = load(MusicPlayer.DetermineDayTimeMusic())
 	$Music.play()
 	Game.connect("EnterDialogue", Callable(self, "OnEnterDialogue"))
 	Game.connect("ExitDialogue", Callable(self, "OnExitDialogue"))
@@ -27,7 +27,7 @@ func _ready():
 	Game.BroadcastFadeOut()
 
 func OnStartTrading():
-	SetMusic(Game.TradingMusicTrack)
+	SetMusic(MusicPlayer.TradingMusicTrack)
 
 func SetMusic(musicRes):
 	$Music.stream = load(musicRes)

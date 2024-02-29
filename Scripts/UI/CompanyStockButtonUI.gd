@@ -3,7 +3,6 @@ extends Button
 var bIsActive = false
 
 var ProposedStockAmount = 0
-var BeginningStockAmount = 0
 var Price = 0
 var CompanyName = ""
 signal UpdateStock
@@ -30,9 +29,8 @@ func Populate(companyName, data):
 	else:
 		$HBoxContainer/TrendIcon.texture = load("res://Art/TrendDown.png")
 
-	BeginningStockAmount = Game.GetStocksOfCompany(companyName)
-	ProposedStockAmount = Game.GetStocksOfCompany(companyName)
-	$HBoxContainer/StockAmount.text = str(BeginningStockAmount)
+	ProposedStockAmount =  PlayerInventory.GetStocksOfCompany(companyName)
+	$HBoxContainer/StockAmount.text = str(ProposedStockAmount)
 
 	Price = currentDay
 	$HBoxContainer/MoneyGained.text = str(0)
@@ -86,28 +84,31 @@ func StartButtonTimer():
 	_on_update_speed_timeout()
 
 func GetProposedMoney():
-	return (BeginningStockAmount - ProposedStockAmount) * Price
+	return (ProposedStockAmount) * Price
 
 func LockIn():
-	Game.SetStocksOfCompany(CompanyName, ProposedStockAmount)
-	Game.AddMoney(GetProposedMoney())
+	PlayerInventory.SetStocksOfCompany(CompanyName, ProposedStockAmount)
 
 
 func _on_update_speed_timeout():
 	var currentStockAmount = ProposedStockAmount
 	if bPositive:
-		if Game.CanAfford(GetProposedMoney() + (BeginningStockAmount - (ProposedStockAmount + 1) ) * Price * -1):
+		if PlayerInventory.CanAfford(Price):
 			ProposedStockAmount += 1
 			$AudioStreamPlayer2D.pitch_scale = 1
+			PlayerInventory.RemoveCash(Price)
 	else:
 		ProposedStockAmount -= 1
 		if ProposedStockAmount < 0:
 			ProposedStockAmount = 0
+		else:
+			PlayerInventory.AddMoney(Price)
 		$AudioStreamPlayer2D.pitch_scale = .8
 	$HBoxContainer/StockAmount.text = str(ProposedStockAmount)
 
-	var moneyToGain = GetProposedMoney()
-	$HBoxContainer/MoneyGained.text = str(moneyToGain)
+	LockIn()
+
+	$HBoxContainer/MoneyGained.text = str(ProposedStockAmount * Price)
 	emit_signal("UpdateStock")
 
 	if currentStockAmount != ProposedStockAmount:

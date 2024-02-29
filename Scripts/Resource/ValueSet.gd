@@ -6,4 +6,4 @@ class_name ValueSet
 
 func SetValue():
 	if VariableName.GetName() != "default":
-		Game.SetData(VariableName.GetName(), Value)
+		PlayerInventory.SetDialogueData(VariableName.GetName(), Value)

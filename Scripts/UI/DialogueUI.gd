@@ -8,7 +8,6 @@ var DialogueData = {}
 var DialogueToSay = []
 var DefaultCharacterDelay = .1
 
-
 func _enter_tree():
 	visible = false
 	Game.connect("SendDialogue", Callable(self, "OnSendDialogue"))
@@ -19,11 +18,6 @@ func OnSendDialogue(data):
 func _ready():
 	DescriptionText.visible_characters = 0
 	DescriptionText.text = ""
-	#SetDialogue({
-		#"Speaker" : "Janitor",
-		#"Description" : "Testing dialogue.... this is a long sentence with no point to it oh Testin testing testin",
-		#"Cadence" : .05
-	#})
 
 func SplitString(s: String):
 	var result = []

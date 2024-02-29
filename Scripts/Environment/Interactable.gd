@@ -10,7 +10,7 @@ var bCanInteract = false
 @export var bIncreaseTime = true
 
 func _ready():
-	Game.connect("DataUpdate", Callable(self, "OnGameDataUpdate"))
+	PlayerInventory.connect("DataUpdate", Callable(self, "OnGameDataUpdate"))
 
 func OnGameDataUpdate():
 	for update in GameSetUpdate:
@@ -21,7 +21,7 @@ func OnGameDataUpdate():
 	pass
 
 func DisconnectUpdateCheck():
-	Game.disconnect("DataUpdate", Callable(self, "OnGameDataUpdate"))
+	PlayerInventory.disconnect("DataUpdate", Callable(self, "OnGameDataUpdate"))
 
 func _input(event):
 	if bCanInteract and Game.CanEnterDialogue():
@@ -36,7 +36,7 @@ func _input(event):
 			if bIncreaseTime:
 				DayTime.IncrementTime()
 			if bIncreaseWorkLevel:
-				Game.IncreaseWorkLevel()
+				PlayerInventory.IncreaseWorkLevel()
 				bIncreaseWorkLevel = false
 
 func OnUsed():
