@@ -1,9 +1,28 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://c41oivnedmpik"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=6 format=3 uid="uid://c41oivnedmpik"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_e7l3e"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_lj2ix"]
+
+[sub_resource type="Resource" id="Resource_ln83i"]
+script = ExtResource("1_e7l3e")
+Dialogue = "To: Amir
+From: Bill
+I don't know about putting money into 2DFX.. I feel like 3D is gonna be big soon.
+Maybe check with Ayush and George? They might have some interesting opinions."
+Options = Array[ExtResource("2_lj2ix")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_0a2c3"]
+script = ExtResource("2_lj2ix")
+OptionName = "Check Email Draft"
+DialogueToPointTo = SubResource("Resource_ln83i")
+
+[sub_resource type="Resource" id="Resource_il072"]
+script = ExtResource("2_lj2ix")
+OptionName = "Leave"
 
 [resource]
 script = ExtResource("1_e7l3e")
-Dialogue = "Day 2 Boss computer conversation"
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Dialogue = "Computer seems to be logged on."
+Options = Array[ExtResource("2_lj2ix")]([SubResource("Resource_0a2c3"), SubResource("Resource_il072")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

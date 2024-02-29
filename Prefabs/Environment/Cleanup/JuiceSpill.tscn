@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo46xfv04bvy8"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/InteractablePickup.gd" id="1_vw310"]
+[ext_resource type="AudioStream" uid="uid://ciik5ir76b08y" path="res://Audio/SFX/Clean 2.wav" id="2_35m2q"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="3_8pvr7"]
+[ext_resource type="Texture2D" uid="uid://c1oagja48q1me" path="res://Art/Juice Spill.png" id="4_nshdr"]
+
+[sub_resource type="Resource" id="Resource_0ymxb"]
+script = ExtResource("3_8pvr7")
+Dialogue = "Cleaned up the juice spill."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+AudioSFXToPlay = ExtResource("2_35m2q")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pps61"]
+
+[node name="JuiceSpill" type="Area2D"]
+position = Vector2(164, 64)
+collision_mask = 4
+script = ExtResource("1_vw310")
+InteractableContent = SubResource("Resource_0ymxb")
+bIncreaseWorkLevel = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_nshdr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pps61")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

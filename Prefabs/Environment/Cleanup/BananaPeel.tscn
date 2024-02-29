@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://paswfouhvxb4"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/InteractablePickup.gd" id="1_c3o8w"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="2_men7o"]
+[ext_resource type="Texture2D" uid="uid://dqyjcro10jypq" path="res://Art/Banana Skin.png" id="3_r43f0"]
+
+[sub_resource type="Resource" id="Resource_thxbs"]
+script = ExtResource("2_men7o")
+Dialogue = "Cleaned up the banana peel."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pps61"]
+
+[node name="BananaPeel" type="Area2D"]
+position = Vector2(164, 64)
+collision_mask = 4
+script = ExtResource("1_c3o8w")
+InteractableContent = SubResource("Resource_thxbs")
+bIncreaseWorkLevel = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_r43f0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pps61")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

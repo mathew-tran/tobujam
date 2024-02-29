@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf6pargixyfhj"]
+[gd_scene load_steps=10 format=3 uid="uid://cf6pargixyfhj"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_o8kgr"]
 [ext_resource type="Resource" uid="uid://ciorye23d7c1o" path="res://Content/Dialogue/Day3/Day3AmirConvo1.tres" id="2_ju13j"]
@@ -6,25 +6,52 @@
 [ext_resource type="Resource" uid="uid://cb2js5h6jb3at" path="res://Content/Dialogue/Day3/Day3GeorgeConvo1.tres" id="3_113i5"]
 [ext_resource type="Resource" uid="uid://bgrc45vqtnsdq" path="res://Content/Dialogue/Day3/Day3AyushConvo1.tres" id="4_1df04"]
 [ext_resource type="Resource" uid="uid://bast57hgo7mts" path="res://Content/Dialogue/Day3/Day3PhoneCallConvo1.tres" id="6_6c0w8"]
+[ext_resource type="PackedScene" uid="uid://paswfouhvxb4" path="res://Prefabs/Environment/Cleanup/BananaPeel.tscn" id="7_k76gw"]
+[ext_resource type="PackedScene" uid="uid://bo46xfv04bvy8" path="res://Prefabs/Environment/Cleanup/JuiceSpill.tscn" id="8_f8bem"]
+[ext_resource type="PackedScene" uid="uid://dto1lmjp2mmco" path="res://Prefabs/Environment/Cleanup/WaterSpill.tscn" id="9_7sflt"]
 
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_o8kgr")]
 
 [node name="BossLobby" parent="TileMap" index="1"]
+position = Vector2(75, 330)
 InteractableContent = ExtResource("2_ly8uk")
 
+[node name="Sprite2D" parent="TileMap/BossLobby" index="0"]
+animation = &"left"
+
 [node name="George" parent="TileMap" index="2"]
+position = Vector2(-165, -3)
 InteractableContent = ExtResource("3_113i5")
 
 [node name="Ayush" parent="TileMap" index="3"]
+position = Vector2(228, 3)
 InteractableContent = ExtResource("4_1df04")
+
+[node name="Sprite2D" parent="TileMap/Ayush" index="0"]
+animation = &"down"
 
 [node name="Amir" parent="TileMap" index="4"]
 InteractableContent = ExtResource("2_ju13j")
 
 [node name="Phone" parent="TileMap" index="8"]
 InteractableContent = ExtResource("6_6c0w8")
+
+[node name="BananaPeel" parent="TileMap/DaySpecificObjects" index="0" instance=ExtResource("7_k76gw")]
+position = Vector2(-104, 66)
+
+[node name="BananaPeel2" parent="TileMap/DaySpecificObjects" index="1" instance=ExtResource("7_k76gw")]
+position = Vector2(-77, 56)
+
+[node name="BananaPeel3" parent="TileMap/DaySpecificObjects" index="2" instance=ExtResource("7_k76gw")]
+position = Vector2(-43, 64)
+
+[node name="JuiceSpill" parent="TileMap/DaySpecificObjects" index="3" instance=ExtResource("8_f8bem")]
+position = Vector2(-74, -72)
+
+[node name="WaterSpill" parent="." instance=ExtResource("9_7sflt")]
+position = Vector2(159, 302)
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]

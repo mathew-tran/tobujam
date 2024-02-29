@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbvseebc0xmli"]
+[gd_scene load_steps=11 format=3 uid="uid://bbvseebc0xmli"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_okqoo"]
+[ext_resource type="Resource" uid="uid://bdaspf12kd6r8" path="res://Content/Dialogue/Day1/Day1GeorgeConvo1.tres" id="2_wtpqp"]
 [ext_resource type="Script" path="res://Scripts/DialogueArea.gd" id="3_p7gop"]
 [ext_resource type="Resource" uid="uid://csbnd4s5u36f0" path="res://Content/Characters/CHAR_Main.tres" id="4_82ujt"]
 [ext_resource type="Resource" uid="uid://cytxf3qo5bhll" path="res://Content/Dialogue/Day1/Day1SelfTalk.tres" id="5_rwvyp"]
+[ext_resource type="PackedScene" uid="uid://bo46xfv04bvy8" path="res://Prefabs/Environment/Cleanup/JuiceSpill.tscn" id="6_3mbfq"]
 [ext_resource type="Resource" uid="uid://bvd57ii1nrtym" path="res://Content/Dialogue/Day1/Day1NarratorConvo1.tres" id="7_1fpyd"]
+[ext_resource type="PackedScene" uid="uid://bs60jgfpl4sq0" path="res://Prefabs/Environment/Cleanup/CrumpledPaper.tscn" id="7_5ac3f"]
+[ext_resource type="PackedScene" uid="uid://dto1lmjp2mmco" path="res://Prefabs/Environment/Cleanup/WaterSpill.tscn" id="8_y88ql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pc2ds"]
 size = Vector2(79, 20)
@@ -12,6 +16,9 @@ size = Vector2(79, 20)
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_okqoo")]
+
+[node name="George" parent="TileMap" index="2"]
+InteractableContent = ExtResource("2_wtpqp")
 
 [node name="NarratorTalk" type="Area2D" parent="TileMap/DaySpecificObjects" index="0"]
 position = Vector2(191, 167)
@@ -34,6 +41,20 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/SelfTalk"]
 position = Vector2(29.5, 0)
 shape = SubResource("RectangleShape2D_pc2ds")
+
+[node name="JuiceSpill" parent="TileMap/DaySpecificObjects" index="2" instance=ExtResource("6_3mbfq")]
+
+[node name="JuiceSpill2" parent="TileMap/DaySpecificObjects" index="3" instance=ExtResource("6_3mbfq")]
+position = Vector2(505, 379)
+
+[node name="CrumpledPaper" parent="TileMap/DaySpecificObjects" index="4" instance=ExtResource("7_5ac3f")]
+position = Vector2(804, 146)
+
+[node name="CrumpledPaper2" parent="TileMap/DaySpecificObjects" index="5" instance=ExtResource("7_5ac3f")]
+position = Vector2(693, 209)
+
+[node name="WaterSpill" parent="TileMap/DaySpecificObjects" index="6" instance=ExtResource("8_y88ql")]
+position = Vector2(35, -104)
 
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/NarratorTalk" to="TileMap/DaySpecificObjects/NarratorTalk" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/SelfTalk" to="TileMap/DaySpecificObjects/SelfTalk" method="_on_body_entered"]

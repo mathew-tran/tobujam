@@ -5,9 +5,9 @@
 
 [sub_resource type="Resource" id="Resource_eemie"]
 script = ExtResource("1_yelv5")
-Dialogue = "Judging from what I heard. Microserfs looks like a good investment for now.
-Going to finish my drink and go back to check the prices.
-Later."
+Dialogue = "There’ll be a run on Microserfs stock, I can feel it!
+Entertainment Arghs hid their liabilities in their last investor call. 
+The retail investors will go wild for it!"
 Options = Array[ExtResource("2_urfla")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
