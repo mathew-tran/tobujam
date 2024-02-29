@@ -4,6 +4,8 @@ var Data = {}
 
 @onready var CompanyStockButtons = null
 func _ready():
+
+	$VBoxContainer/Trading/Label.visible =  DayTime.IsLastDay() == false
 	CompanyStockButtons = [
 	$VBoxContainer/Trading/CompanyStockUI,
 	$VBoxContainer/Trading/CompanyStockUI2,

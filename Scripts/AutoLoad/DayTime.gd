@@ -33,3 +33,6 @@ func IncrementTime():
 	if CurrentTime >= MaxTime:
 		emit_signal("ShiftOver")
 	emit_signal("Increment")
+
+func IsLastDay():
+	return Day >= Definitions.FinalDayGoal - 1

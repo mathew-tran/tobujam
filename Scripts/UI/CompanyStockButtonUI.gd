@@ -49,6 +49,9 @@ func _input(event):
 		StopTimer("not active")
 		return
 
+	if DayTime.IsLastDay():
+		return
+
 	if event.is_action("A"):
 		if event.is_pressed():
 			bPositive = true
