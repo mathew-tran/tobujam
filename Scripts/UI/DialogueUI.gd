@@ -25,18 +25,12 @@ func _ready():
 		#"Cadence" : .05
 	#})
 
-func SplitString(s: String, length: int):
+func SplitString(s: String):
 	var result = []
-	var start = 0
 	s = s.strip_edges()
 	var splitString = s.split("\n")
 	for split in splitString:
 		result.append(split)
-	return result
-
-	while start < s.length():
-		result.append(s.substr(start, length))
-		start += length
 	return result
 
 func DeleteOptions():
@@ -52,7 +46,7 @@ func SetDialogue(data):
 	$AnimationPlayer.stop()
 	visible = true
 
-	DialogueToSay = SplitString(data["Description"].Get(), 80)
+	DialogueToSay = SplitString(data["Description"].Get())
 	if data["Description"].GetAudio():
 		$SFX.stream = data["Description"].GetAudio()
 		$SFX.play()

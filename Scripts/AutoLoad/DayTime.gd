@@ -12,7 +12,7 @@ signal DayIncrease
 signal Increment
 
 func _ready():
-	Increments = float(MaxTime / Slices)
+	Increments = float(float(MaxTime) / float(Slices))
 
 func HardReset():
 	CurrentTime = 0

@@ -70,7 +70,7 @@ func _input(event):
 		return
 
 
-func StopTimer(who):
+func StopTimer(_who):
 	$UpdateSpeed.stop()
 	$Timer.stop()
 	#print(who + "stopped")

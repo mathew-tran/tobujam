@@ -68,13 +68,12 @@ func get_input():
 
 	UpdateAnims()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if bCanMove == false or Game.CanEnterDialogue() == false:
 		return
 	get_input()
-	#var collision = move_and_collide(velocity * delta)
 	var pos = global_position
-	var result = move_and_slide()
+	move_and_slide()
 	if pos == global_position:
 		StopAnim()
 
@@ -119,5 +118,5 @@ func _on_music_timer_timeout():
 	$Music.play()
 
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	pass

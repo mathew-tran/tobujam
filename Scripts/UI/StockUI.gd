@@ -23,7 +23,6 @@ func _ready():
 
 func OnUpdateStock():
 	var price = 0
-	var companyNames = Game.GetCompanyNames()
 	for index in range(0, len(CompanyStockButtons)):
 		price += CompanyStockButtons[index].GetProposedMoney()
 
@@ -55,7 +54,6 @@ func _on_button_button_up():
 	$AudioStreamPlayer2D.play()
 	$VBoxContainer/Trading/HBoxContainer/Button.release_focus()
 	await get_tree().create_timer(.8).timeout
-	var companyNames = Game.GetCompanyNames()
 	for index in range(0, len(CompanyStockButtons)):
 		CompanyStockButtons[index].LockIn()
 

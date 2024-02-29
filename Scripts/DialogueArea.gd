@@ -5,7 +5,7 @@ extends Area2D
 
 @export var bDestroyAfterDialogue = true
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	Game.BroadcastSendDialogue({
 			"Speaker" : Speaker,
 			"Description" : Dialogue,
