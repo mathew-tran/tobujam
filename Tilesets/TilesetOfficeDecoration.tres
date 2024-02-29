@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://e7ani4b5cry3"]
+[gd_resource type="TileSet" load_steps=39 format=3 uid="uid://e7ani4b5cry3"]
 
 [ext_resource type="Texture2D" uid="uid://dtn5lkjl354wh" path="res://Art/Bar Beermats.png" id="1_5rd0s"]
 [ext_resource type="Texture2D" uid="uid://ebyt10hkatrh" path="res://Art/Bar Horiz Empty.png" id="2_b3xwf"]
@@ -6,11 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://djkurgpy55gqy" path="res://Art/Curved Desk Top.png" id="4_cp44u"]
 [ext_resource type="Texture2D" uid="uid://bda0poa806uyp" path="res://Art/Curved Desk Corner R.png" id="5_rawxr"]
 [ext_resource type="Texture2D" uid="uid://b0ciwo0f5v7er" path="res://Art/Curved Desk Corner L.png" id="6_ncj6p"]
+[ext_resource type="Texture2D" uid="uid://cmkq5sto8io22" path="res://Art/Computer 3.png" id="7_qrwwc"]
 [ext_resource type="Texture2D" uid="uid://o72ao8a5l0rp" path="res://Art/Bar Horiz.png" id="7_ylep6"]
+[ext_resource type="Texture2D" uid="uid://cu8ofe3nsgbi0" path="res://Art/Computer 2.png" id="8_7ludv"]
 [ext_resource type="Texture2D" uid="uid://b17pq4fp55ypr" path="res://Art/Bar Left.png" id="8_sb26c"]
+[ext_resource type="Texture2D" uid="uid://cqhhcn87cbix8" path="res://Art/Printer.png" id="9_mbm57"]
 [ext_resource type="Texture2D" uid="uid://bnm4nj8wnsih1" path="res://Art/Bar Right.png" id="9_ytpyw"]
 [ext_resource type="Texture2D" uid="uid://bfut5d4s1qgt4" path="res://Art/Computer.png" id="10_67cye"]
+[ext_resource type="Texture2D" uid="uid://dmxwli6hs4ybf" path="res://Art/Desk.png" id="10_inosi"]
 [ext_resource type="Texture2D" uid="uid://d30q6pv31e4gg" path="res://Art/Desk Computer.png" id="11_d6m8j"]
+[ext_resource type="Texture2D" uid="uid://xwfpdacxuox7" path="res://Art/Curved Desk Horiz Flip.png" id="11_r1y7y"]
 [ext_resource type="Texture2D" uid="uid://sjlsvtj7kef3" path="res://Art/Plant.png" id="12_ph1vy"]
 [ext_resource type="Texture2D" uid="uid://bqrguslt5fxfm" path="res://Art/Plant Pot.png" id="13_umnre"]
 [ext_resource type="Texture2D" uid="uid://bei1e4ux678wm" path="res://Art/Desk Phone.png" id="14_njh75"]
@@ -74,6 +79,51 @@ texture_region_size = Vector2i(20, 20)
 0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_1/angular_velocity = 0.0
 0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-6.18719, -10, -6.54074, 10, 10, 10, 10, -10)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17878"]
+texture = ExtResource("7_qrwwc")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emveo"]
+texture = ExtResource("8_7ludv")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lwaku"]
+texture = ExtResource("9_mbm57")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u2m85"]
+texture = ExtResource("10_inosi")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1773"]
+texture = ExtResource("11_r1y7y")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxeiv"]
 texture = ExtResource("7_ylep6")
@@ -174,3 +224,8 @@ sources/10 = SubResource("TileSetAtlasSource_1dbax")
 sources/11 = SubResource("TileSetAtlasSource_lmnwo")
 sources/12 = SubResource("TileSetAtlasSource_jly25")
 sources/13 = SubResource("TileSetAtlasSource_nhyux")
+sources/14 = SubResource("TileSetAtlasSource_17878")
+sources/15 = SubResource("TileSetAtlasSource_emveo")
+sources/16 = SubResource("TileSetAtlasSource_lwaku")
+sources/17 = SubResource("TileSetAtlasSource_u2m85")
+sources/18 = SubResource("TileSetAtlasSource_j1773")
