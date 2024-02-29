@@ -24,6 +24,7 @@ DayTime="*res://Scripts/AutoLoad/DayTime.gd"
 PlayerInventory="*res://Scripts/AutoLoad/PlayerInventory.gd"
 StockData="*res://Scripts/AutoLoad/StockData.gd"
 MusicPlayer="*res://Scripts/AutoLoad/MusicPlayer.gd"
+FadeScreen="*res://Prefabs/AutoLoad/FadeScreen.tscn"
 
 [display]
 

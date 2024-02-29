@@ -28,13 +28,13 @@ func ShowBoss(bShow):
 
 func GivePlayerReward():
 	Game.bBlockDialogue = true
-	Game.BroadcastFadeIn()
+	FadeScreen.FadeIn()
 	await get_tree().create_timer(.8).timeout
 	ShowBoss(true)
 	Game.TeleportPlayer("JobMovePoint")
 	await get_tree().create_timer(1.0).timeout
 
-	Game.BroadcastFadeOut()
+	FadeScreen.FadeOut()
 
 
 	var content = null
@@ -60,7 +60,7 @@ func OnFinishTalking():
 	print("dialogue completed")
 	Game.disconnect("ExitDialogue", Callable(self, "OnFinishTalking"))
 	Game.connect("ExitDialogue", Callable(self, "OnFinishTradeDialogue"))
-	Game.BroadcastFadeIn()
+	FadeScreen.FadeIn()
 	Game.BroadcastSendDialogue({
 		"Speaker" : load("res://Content/Characters/CHAR_Narrator.tres"),
 		"Description" : TransitionDialogues[DayTime.Day - 1],

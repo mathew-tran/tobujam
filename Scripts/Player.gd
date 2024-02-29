@@ -12,28 +12,20 @@ enum DIRECTION {
 var Direction = DIRECTION.DOWN
 
 func _ready():
-	$CanvasLayer/BlackScreen.visible = true
 
 	Game.connect("EnterDialogue", Callable(self, "OnEnterDialogue"))
 	Game.connect("ExitDialogue", Callable(self, "OnExitDialogue"))
 
 	DayTime.connect("DayIncrease", Callable(self, "OnDayIncrease"))
-	Game.connect("FadeIn", Callable(self, "OnFadeIn"))
-	Game.connect("FadeOut", Callable(self, "OnFadeOut"))
 
 	UpdateAnims()
 	add_to_group("Player")
-	Game.BroadcastFadeOut()
+	FadeScreen.FadeOut()
 
-func OnFadeIn():
-	$CanvasLayer/AnimationPlayer.play("FadeToBlack")
-
-func OnFadeOut():
-	$CanvasLayer/AnimationPlayer.play("FadeOutBlack")
 
 
 func OnDayIncrease():
-	Game.BroadcastFadeOut()
+	FadeScreen.FadeOut()
 
 func OnEnterDialogue():
 	bCanMove = false

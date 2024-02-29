@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bl2xtfoma3ah8"]
+[gd_scene load_steps=19 format=3 uid="uid://bl2xtfoma3ah8"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_epckt"]
 [ext_resource type="Texture2D" uid="uid://m0i5ql7fbbn8" path="res://Art/Janitor.png" id="2_vd2i8"]
@@ -92,61 +92,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88mbb"]
 size = Vector2(8, 15)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85ncu"]
-bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
-
-[sub_resource type="Animation" id="Animation_7iuxe"]
-resource_name = "FadeOutBlack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BlackScreen:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_krjb4"]
-resource_name = "FadeToBlack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BlackScreen:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_egj70"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BlackScreen:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7wfv"]
-_data = {
-"FadeOutBlack": SubResource("Animation_7iuxe"),
-"FadeToBlack": SubResource("Animation_krjb4"),
-"RESET": SubResource("Animation_egj70")
-}
-
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 z_as_relative = false
@@ -207,21 +152,3 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vr6tg")
 text = "$0"
 script = ExtResource("6_aqrds")
-
-[node name="BlackScreen" type="Panel" parent="CanvasLayer"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_85ncu")
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
-libraries = {
-"": SubResource("AnimationLibrary_e7wfv")
-}
-speed_scale = 2.0
-
-[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

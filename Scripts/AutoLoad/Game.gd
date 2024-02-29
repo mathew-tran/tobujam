@@ -14,15 +14,9 @@ var bBlockDialogue =false
 
 var Stocks = {}
 
-signal FadeIn
-signal FadeOut
 signal StartTrading
 
-func BroadcastFadeIn():
-	emit_signal("FadeIn")
 
-func BroadcastFadeOut():
-	emit_signal("FadeOut")
 
 func _ready():
 	pass
@@ -42,7 +36,7 @@ func DoTrading():
 	var result = get_tree().get_nodes_in_group("StockUI")
 	if result:
 		result[0].visible = true
-	Game.BroadcastFadeOut()
+	FadeScreen.FadeOut()
 
 func MoveToNextDay():
 	PlayerInventory.ResetWork()
