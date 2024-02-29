@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs60jgfpl4sq0"]
+[gd_scene load_steps=7 format=3 uid="uid://bs60jgfpl4sq0"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/InteractablePickup.gd" id="1_q1a7n"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="2_68lek"]
+[ext_resource type="AudioStream" uid="uid://c41lavxxfuv1i" path="res://Audio/SFX/Clean 3.wav" id="2_nud6y"]
 [ext_resource type="Texture2D" uid="uid://8v0nkon3wfik" path="res://Art/Crumpled Papers.png" id="3_rkiye"]
 
 [sub_resource type="Resource" id="Resource_pkpr6"]
@@ -9,6 +10,7 @@ script = ExtResource("2_68lek")
 Dialogue = "Cleaned up the crumpled paper."
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+AudioSFXToPlay = ExtResource("2_nud6y")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pps61"]
 

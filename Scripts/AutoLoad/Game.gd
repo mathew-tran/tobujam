@@ -48,6 +48,23 @@ var IncreaseRate = 1
 
 signal FadeIn
 signal FadeOut
+signal StartTrading
+
+var DayTimeMusicIndex = 0
+
+var TradingMusicTrack = "res://Audio/Music/Righteous.mp3"
+var DaytimeMusicTracks = [
+	"res://Audio/Music/Early_Bird_Unfinished.mp3",
+	"res://Audio/Music/Training_Vid.mp3"
+]
+var CurrentMusic = ""
+
+func DetermineDayTimeMusic():
+	CurrentMusic = DaytimeMusicTracks[DayTimeMusicIndex]
+	DayTimeMusicIndex+= 1
+	if DayTimeMusicIndex >= len(DaytimeMusicTracks):
+		DayTimeMusicIndex = 0
+	return CurrentMusic
 
 func BroadcastFadeIn():
 	emit_signal("FadeIn")
@@ -82,6 +99,7 @@ func CanAfford(price):
 func DoTrading():
 	bBlockDialogue = true
 	await get_tree().create_timer(.8).timeout
+	emit_signal("StartTrading")
 
 
 	var result = get_tree().get_nodes_in_group("StockUI")

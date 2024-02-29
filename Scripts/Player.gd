@@ -13,16 +13,26 @@ var Direction = DIRECTION.DOWN
 
 func _ready():
 	$CanvasLayer/BlackScreen.visible = true
+	$Music.stream = load(Game.DetermineDayTimeMusic())
+	$Music.play()
 	Game.connect("EnterDialogue", Callable(self, "OnEnterDialogue"))
 	Game.connect("ExitDialogue", Callable(self, "OnExitDialogue"))
 	DayTime.connect("ShiftOver", Callable(self, "OnShiftOver"))
 	DayTime.connect("DayIncrease", Callable(self, "OnDayIncrease"))
 	Game.connect("FadeIn", Callable(self, "OnFadeIn"))
 	Game.connect("FadeOut", Callable(self, "OnFadeOut"))
-
+	Game.connect("StartTrading", Callable(self, "OnStartTrading"))
 	UpdateAnims()
 	add_to_group("Player")
 	Game.BroadcastFadeOut()
+
+func OnStartTrading():
+	SetMusic(Game.TradingMusicTrack)
+
+func SetMusic(musicRes):
+	$Music.stream = load(musicRes)
+	$Music.play()
+
 
 func OnFadeIn():
 	$CanvasLayer/AnimationPlayer.play("FadeToBlack")
@@ -30,12 +40,14 @@ func OnFadeIn():
 func OnFadeOut():
 	$CanvasLayer/AnimationPlayer.play("FadeOutBlack")
 
-func OnShiftOver():
+func StopMusic():
 	$Music.stop()
 	$MusicTimer.stop()
 
+func OnShiftOver():
+	StopMusic()
+
 func OnDayIncrease():
-	$Music.play()
 	Game.BroadcastFadeOut()
 
 func OnEnterDialogue():
