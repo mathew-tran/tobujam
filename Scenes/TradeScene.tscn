@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://bsrvhhxysigvc" path="res://Content/Characters/CHAR_Manager.tres" id="4_bcfv0"]
 [ext_resource type="Resource" uid="uid://brrvpqiv1r8nc" path="res://Content/Dialogue/Day1/Day1BossLobbyConvo1.tres" id="5_ou1hx"]
 [ext_resource type="Resource" uid="uid://f7svb47vdmjq" path="res://Content/Characters/CHAR_George.tres" id="6_3e6ob"]
-[ext_resource type="Resource" uid="uid://bdaspf12kd6r8" path="res://Content/Dialogue/Day1/Day1GeorgeConvo1.tres" id="7_n2v01"]
+[ext_resource type="Resource" uid="uid://dddj8wnffrjvf" path="res://Content/Dialogue/Day2/Day2GeorgeConvo1.tres" id="7_h5x8v"]
 [ext_resource type="Resource" uid="uid://dnp2gnkf4otar" path="res://Content/Characters/CHAR_Ayush.tres" id="8_ro64t"]
 [ext_resource type="Resource" uid="uid://bhei1xvehye0w" path="res://Content/Dialogue/Day1/Day1AyushConvo1.tres" id="9_pfln7"]
 [ext_resource type="Resource" uid="uid://dr0ceybyx6d2n" path="res://Content/Characters/CHAR_Amir.tres" id="10_k3n2k"]
@@ -51,7 +51,7 @@ animation = &"down"
 [node name="George" parent="." instance=ExtResource("3_nkhlc")]
 position = Vector2(449, 368)
 InteractableName = ExtResource("6_3e6ob")
-InteractableContent = ExtResource("7_n2v01")
+InteractableContent = ExtResource("7_h5x8v")
 metadata/_edit_group_ = true
 
 [node name="Ayush" parent="." instance=ExtResource("3_nkhlc")]

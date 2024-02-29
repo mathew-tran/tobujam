@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://bast57hgo7mts"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_2nni3"]
+
+[resource]
+script = ExtResource("1_2nni3")
+Dialogue = "Day 3 Phone conversation"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
