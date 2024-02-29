@@ -42,10 +42,10 @@ func DoTrading():
 
 func MoveToNextDay():
 	PlayerInventory.ResetWork()
-	if PlayerInventory.GetTotalAssets() >= 2000:
+	if PlayerInventory.GetTotalAssets() >= Definitions.TotalAssetGoal:
 		get_tree().change_scene_to_file("res://Scenes/GameWin.tscn")
 		return
-	if DayTime.Day + 1 >= 4:
+	if DayTime.Day + 1 >= Definitions.FinalDayGoal:
 		get_tree().change_scene_to_file("res://Scenes/GameLose.tscn")
 		return
 	var NextDayScene = "res://Scenes/Day" + str(DayTime.Day + 1) + ".tscn"

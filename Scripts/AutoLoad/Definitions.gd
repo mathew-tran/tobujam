@@ -18,3 +18,11 @@ var ColorData = {
 	"palegreen" : "aab69a",
 	"darkgreen" : "474f2d"
 }
+
+var TimePoints = 8
+var StartingCash = 100
+
+# still need to update dialogue..
+var TotalAssetGoal = 2000
+
+var FinalDayGoal = 4

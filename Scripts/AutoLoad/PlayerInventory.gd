@@ -2,7 +2,7 @@ extends Node
 
 var PlayerStocks = {}
 var DialogueData = {}
-var Cash = 50
+var Cash = Definitions.StartingCash
 
 var WorkLevel = 0
 
@@ -19,7 +19,7 @@ func InitializeStocks():
 			PlayerStocks[company] = 0
 
 func Reset():
-	Cash = 50
+	Cash = Definitions.StartingCash
 	WorkLevel = 0
 	InitializeStocks()
 	DialogueData = {}
