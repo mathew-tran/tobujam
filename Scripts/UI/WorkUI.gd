@@ -4,6 +4,8 @@ extends Panel
 @export var MinimumMoneyDialogue:  DialogueItem
 @export var RegularMoneyDialogue : DialogueItem
 @export var MaxMoneyDialogue: DialogueItem
+@export var FinalDayMoneyDialogue : DialogueItem
+
 @export var Speaker : DialogueOwner
 
 @export var TransitionDialogues : Array[DialogueItem]
@@ -38,17 +40,21 @@ func GivePlayerReward():
 
 
 	var content = null
-	if PlayerInventory.WorkLevel == 0:
-		content = NoMoneyDialogue
-	elif PlayerInventory.WorkLevel == 1:
-		content = MinimumMoneyDialogue
-		PlayerInventory.AddMoney(10)
-	elif PlayerInventory.WorkLevel == 2:
-		content = RegularMoneyDialogue
-		PlayerInventory.AddMoney(25)
+	if DayTime.IsLastDay():
+		content = FinalDayMoneyDialogue
+		PlayerInventory.AddMoney(100)
 	else:
-		content = MaxMoneyDialogue
-		PlayerInventory.AddMoney(50)
+		if PlayerInventory.WorkLevel == 0:
+			content = NoMoneyDialogue
+		elif PlayerInventory.WorkLevel == 1:
+			content = MinimumMoneyDialogue
+			PlayerInventory.AddMoney(10)
+		elif PlayerInventory.WorkLevel == 2:
+			content = RegularMoneyDialogue
+			PlayerInventory.AddMoney(25)
+		else:
+			content = MaxMoneyDialogue
+			PlayerInventory.AddMoney(50)
 
 	Game.BroadcastSendDialogue({
 		"Speaker" : Speaker,
