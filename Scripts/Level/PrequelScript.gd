@@ -11,4 +11,5 @@ func _ready():
 	})
 
 func OnExitDialogue():
+	DayTime.MoveNextDay()
 	get_tree().change_scene_to_file("res://Scenes/Day1.tscn")

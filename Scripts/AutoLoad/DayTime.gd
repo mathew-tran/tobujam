@@ -5,7 +5,7 @@ var MaxTime = 8
 var Slices = Definitions.TimePoints
 var Increments = 0
 
-var Day = 1
+var Day = 0
 
 signal ShiftOver
 signal DayIncrease
@@ -16,7 +16,7 @@ func _ready():
 
 func HardReset():
 	CurrentTime = 0
-	Day = 1
+	Day = 0
 
 func Reset():
 	CurrentTime = 0

@@ -3,6 +3,9 @@ extends Node
 signal EnterDialogue
 signal ExitDialogue
 signal SendDialogue(data)
+signal GameWin
+signal GameLose
+signal StartPrequel
 
 var GridSize = Vector2(10, 10)
 
@@ -25,6 +28,7 @@ func _ready():
 	pass
 
 func HardReset():
+	emit_signal("StartPrequel")
 	PlayerInventory.Reset()
 	MusicPlayer.Reset()
 	bBlockDialogue = false
@@ -43,9 +47,11 @@ func DoTrading():
 func MoveToNextDay():
 	PlayerInventory.ResetWork()
 	if PlayerInventory.GetTotalAssets() >= Definitions.TotalAssetGoal:
+		emit_signal("GameWin")
 		get_tree().change_scene_to_file("res://Scenes/GameWin.tscn")
 		return
 	if DayTime.Day + 1 >= Definitions.FinalDayGoal:
+		emit_signal("GameLose")
 		get_tree().change_scene_to_file("res://Scenes/GameLose.tscn")
 		return
 	var NextDayScene = "res://Scenes/Day" + str(DayTime.Day + 1) + ".tscn"
