@@ -6,6 +6,7 @@ var Data = {}
 func _ready():
 
 	$VBoxContainer/Trading/Label.visible =  DayTime.IsLastDay() == false
+	$VBoxContainer/Trading/FinalDayText.visible = DayTime.IsLastDay()
 	CompanyStockButtons = [
 	$VBoxContainer/Trading/CompanyStockUI,
 	$VBoxContainer/Trading/CompanyStockUI2,

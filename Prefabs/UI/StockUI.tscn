@@ -160,6 +160,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "z = buy | x = sell"
 
+[node name="FinalDayText" type="Label" parent="VBoxContainer/Trading"]
+modulate = Color(0.733333, 0.2, 0.188235, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Final Day. Trading is not available."
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_e6pmm")
 
