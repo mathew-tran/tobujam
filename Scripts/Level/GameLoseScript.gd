@@ -11,4 +11,4 @@ func _ready():
 	})
 
 func OnExitDialogue():
-	get_tree().change_scene_to_file("res://Scenes/Day1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Title.tscn")

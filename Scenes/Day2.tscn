@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsu3pyb720p83"]
+
+[ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_svxbx"]
+[ext_resource type="Resource" uid="uid://cep0dfe2sp3q4" path="res://Content/Dialogue/Day2/Day2BossConvo1.tres" id="2_xuhrm"]
+
+[node name="Main" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_svxbx")]
+
+[node name="BossLobby" parent="TileMap" index="1"]
+position = Vector2(304, 175)
+InteractableContent = ExtResource("2_xuhrm")
+
+[editable path="TileMap"]
+[editable path="TileMap/BossLobby"]
+[editable path="TileMap/George"]
+[editable path="TileMap/Ayush"]
+[editable path="TileMap/Amir"]
+[editable path="TileMap/Boss"]
+[editable path="TileMap/Phone"]
+[editable path="TileMap/BossComputer"]
+[editable path="TileMap/EmptyFlowerPot"]

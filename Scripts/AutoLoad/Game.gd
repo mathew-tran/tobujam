@@ -57,8 +57,18 @@ func BroadcastFadeOut():
 
 func _ready():
 	Game.ReadAndSaveStockData()
+
+
+func HardReset():
+	Money = 50
+	ProposedMoney = 50
+	WorkLevel = 0
+
+	Data = {}
+	Stocks = {}
 	for company in GetCompanyNames():
 		Stocks[company] = 0
+	bBlockDialogue = false
 
 func GetStocksOfCompany(companyName):
 	return Stocks[companyName]
@@ -82,6 +92,14 @@ func DoTrading():
 
 func MoveToNextDay():
 	ResetWork()
+	if Game.Money >= 2000:
+		get_tree().change_scene_to_file("res://Scenes/GameWin.tscn")
+		return
+	if DayTime.Day + 1 >= 4:
+		get_tree().change_scene_to_file("res://Scenes/GameLose.tscn")
+		return
+	var NextDayScene = "res://Scenes/Day" + str(DayTime.Day + 1) + ".tscn"
+	get_tree().change_scene_to_file(NextDayScene)
 	DayTime.MoveNextDay()
 	Game.TeleportPlayer("StartPoint")
 	bBlockDialogue = false

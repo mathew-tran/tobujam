@@ -14,6 +14,10 @@ signal Increment
 func _ready():
 	Increments = float(MaxTime / Slices)
 
+func HardReset():
+	CurrentTime = 0
+	Day = 1
+
 func Reset():
 	CurrentTime = 0
 	emit_signal("Increment")

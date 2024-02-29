@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cytxf3qo5bhll"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_f21lc"]
+
+[resource]
+script = ExtResource("1_f21lc")
+Dialogue = "There's no way I am going to let Lazlo step all over me again!
+I am going to make the 2,000 dollars and buy the pizza joint before him!
+That'll show him!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
