@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://db05fpr8obmvp"]
+[gd_scene load_steps=44 format=3 uid="uid://db05fpr8obmvp"]
 
 [ext_resource type="TileSet" uid="uid://ds1qfqyikgoae" path="res://Tilesets/TilesetOffice.tres" id="1_ab3dv"]
 [ext_resource type="Script" path="res://Scripts/Environment/JobMovePoint.gd" id="2_balut"]
@@ -41,6 +41,7 @@
 [ext_resource type="Resource" uid="uid://cxnvdg6edge4x" path="res://Content/Dialogue/Day1/Day1Bookshelf13.tres" id="28_sn5i7"]
 [ext_resource type="Resource" uid="uid://boe3grrc68o2x" path="res://Content/Dialogue/Day1/Day1Bookshelf14.tres" id="29_o10ql"]
 [ext_resource type="Resource" uid="uid://cyb2liydtgs2s" path="res://Content/Dialogue/Day1/Day1Bookshelf15.tres" id="30_abk2v"]
+[ext_resource type="PackedScene" uid="uid://b4d72eugouwcl" path="res://Prefabs/Environment/CashPickup.tscn" id="42_8uarh"]
 
 [sub_resource type="Resource" id="Resource_36ggu"]
 script = ExtResource("15_kvpft")
@@ -359,6 +360,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CashPickup" parent="." instance=ExtResource("42_8uarh")]
+position = Vector2(415, -74)
+bOneTimeInteract = true
+
+[node name="CashPickup2" parent="." instance=ExtResource("42_8uarh")]
+position = Vector2(914, 305)
+bOneTimeInteract = true
+
+[node name="CashPickup3" parent="." instance=ExtResource("42_8uarh")]
+position = Vector2(-176, 78)
+bOneTimeInteract = true
 
 [editable path="BossLobby"]
 [editable path="George"]

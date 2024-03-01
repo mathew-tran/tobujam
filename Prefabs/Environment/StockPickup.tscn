@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://deo3e6j463t35"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/InteractablePickup.gd" id="1_stodw"]
+[ext_resource type="Script" path="res://Scripts/Resource/StockGift.gd" id="2_2ye0v"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="3_3cfr2"]
+[ext_resource type="Texture2D" uid="uid://cdoc1jwow4yxa" path="res://Art/Stocks.png" id="4_4cmly"]
+
+[sub_resource type="Resource" id="Resource_46asf"]
+script = ExtResource("2_2ye0v")
+Amount = 2
+StockNameIndex = 1
+
+[sub_resource type="Resource" id="Resource_dimcj"]
+script = ExtResource("3_3cfr2")
+Dialogue = "You picked up some stocks!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+DialogueGift = SubResource("Resource_46asf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxmhn"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt4ut"]
+size = Vector2(4, 4)
+
+[node name="StockPickup" type="Area2D"]
+position = Vector2(0, 151)
+scale = Vector2(0.5, 0.5)
+collision_mask = 4
+script = ExtResource("1_stodw")
+InteractableContent = SubResource("Resource_dimcj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_4cmly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pxmhn")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tt4ut")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbvseebc0xmli"]
+[gd_scene load_steps=17 format=3 uid="uid://bbvseebc0xmli"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_okqoo"]
 [ext_resource type="Resource" uid="uid://bdaspf12kd6r8" path="res://Content/Dialogue/Day1/Day1GeorgeConvo1.tres" id="2_wtpqp"]
@@ -10,9 +10,25 @@
 [ext_resource type="Resource" uid="uid://bvd57ii1nrtym" path="res://Content/Dialogue/Day1/Day1NarratorConvo1.tres" id="7_1fpyd"]
 [ext_resource type="PackedScene" uid="uid://bs60jgfpl4sq0" path="res://Prefabs/Environment/Cleanup/CrumpledPaper.tscn" id="7_5ac3f"]
 [ext_resource type="PackedScene" uid="uid://dto1lmjp2mmco" path="res://Prefabs/Environment/Cleanup/WaterSpill.tscn" id="8_y88ql"]
+[ext_resource type="PackedScene" uid="uid://deo3e6j463t35" path="res://Prefabs/Environment/StockPickup.tscn" id="11_lqird"]
+[ext_resource type="Script" path="res://Scripts/Resource/StockGift.gd" id="12_dlc7h"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="13_whml1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pc2ds"]
 size = Vector2(79, 20)
+
+[sub_resource type="Resource" id="Resource_aagb0"]
+script = ExtResource("12_dlc7h")
+Amount = 3
+StockNameIndex = 0
+
+[sub_resource type="Resource" id="Resource_e30mn"]
+script = ExtResource("13_whml1")
+Dialogue = "You picked up some stocks of Noogle!
+What a steal!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+DialogueGift = SubResource("Resource_aagb0")
 
 [node name="Main" type="Node2D"]
 
@@ -59,6 +75,10 @@ position = Vector2(35, -104)
 
 [node name="WaterSpill2" parent="TileMap/DaySpecificObjects" index="7" instance=ExtResource("8_y88ql")]
 position = Vector2(218, -103)
+
+[node name="StockPickup" parent="TileMap/DaySpecificObjects" index="8" instance=ExtResource("11_lqird")]
+position = Vector2(925, 162)
+InteractableContent = SubResource("Resource_e30mn")
 
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/NarratorTalk" to="TileMap/DaySpecificObjects/NarratorTalk" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/SelfTalk" to="TileMap/DaySpecificObjects/SelfTalk" method="_on_body_entered"]

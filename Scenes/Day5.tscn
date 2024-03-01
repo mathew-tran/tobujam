@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://7txgjy56oow5"]
+[gd_scene load_steps=6 format=3 uid="uid://7txgjy56oow5"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_mh3en"]
 [ext_resource type="Resource" uid="uid://d2qvfl3fs6xhd" path="res://Content/Dialogue/Day5/Day5GeorgeConvo1.tres" id="3_qjyd5"]
 [ext_resource type="Resource" uid="uid://dod2nkeonbn4d" path="res://Content/Dialogue/Day5/Day5AyushConvo1.tres" id="4_b08w7"]
+[ext_resource type="PackedScene" uid="uid://b4d72eugouwcl" path="res://Prefabs/Environment/CashPickup.tscn" id="5_30kny"]
 [ext_resource type="Resource" uid="uid://n3an5qnfdsg" path="res://Content/Dialogue/Day5/Day5AmirConvo1.tres" id="5_nqwnm"]
 
 [node name="Main" type="Node2D"]
@@ -17,6 +18,15 @@ InteractableContent = ExtResource("4_b08w7")
 
 [node name="Amir" parent="TileMap" index="5"]
 InteractableContent = ExtResource("5_nqwnm")
+
+[node name="CashPickup" parent="TileMap/DaySpecificObjects" index="0" instance=ExtResource("5_30kny")]
+position = Vector2(32, 338)
+
+[node name="CashPickup2" parent="TileMap/DaySpecificObjects" index="1" instance=ExtResource("5_30kny")]
+position = Vector2(769, -23)
+
+[node name="CashPickup3" parent="TileMap/DaySpecificObjects" index="2" instance=ExtResource("5_30kny")]
+position = Vector2(306, -46)
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]
