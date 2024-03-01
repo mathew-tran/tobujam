@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8eya33vkbhju"]
+[gd_scene load_steps=15 format=3 uid="uid://8eya33vkbhju"]
 
 [ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="1_kq51n"]
 [ext_resource type="PackedScene" uid="uid://byhtic5yli25m" path="res://Prefabs/UI/CompanyStockButtonUI.tscn" id="2_avgwl"]
@@ -30,6 +30,9 @@ corner_detail = 1
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4ris"]
 bg_color = Color(0, 0, 0, 1)
 corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28cb2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="StockUI" type="Panel"]
 anchors_preset = 15
@@ -168,6 +171,15 @@ text = "Final Day. Trading is not available."
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_e6pmm")
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_28cb2")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="button_up" from="VBoxContainer/Trading/HBoxContainer/Button" to="." method="_on_button_button_up"]
