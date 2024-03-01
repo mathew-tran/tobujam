@@ -33,7 +33,7 @@ func Populate(companyName, data):
 	$HBoxContainer/StockAmount.text = str(ProposedStockAmount)
 
 	Price = currentDay
-	$HBoxContainer/MoneyGained.text = str(0)
+	$HBoxContainer/MoneyGained.text = str(ProposedStockAmount * Price)
 	emit_signal("UpdateStock")
 
 
