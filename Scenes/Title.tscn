@@ -73,7 +73,7 @@ offset_right = 292.0
 offset_bottom = 30.0
 theme_override_fonts/font = ExtResource("2_b7dil")
 theme_override_font_sizes/font_size = 21
-text = "Janitor in the Stock Trade"
+text = "Cleaning Up"
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(0.988235, 0.980392, 0.964706, 1)
