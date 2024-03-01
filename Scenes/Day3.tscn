@@ -1,20 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://cf6pargixyfhj"]
+[gd_scene load_steps=11 format=3 uid="uid://cf6pargixyfhj"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_o8kgr"]
 [ext_resource type="Resource" uid="uid://ciorye23d7c1o" path="res://Content/Dialogue/Day3/Day3AmirConvo1.tres" id="2_ju13j"]
-[ext_resource type="Resource" uid="uid://bchh2hoi4x3x6" path="res://Content/Dialogue/Day3/Day3BossConvo1.tres" id="2_ly8uk"]
 [ext_resource type="Resource" uid="uid://cb2js5h6jb3at" path="res://Content/Dialogue/Day3/Day3GeorgeConvo1.tres" id="3_113i5"]
 [ext_resource type="Resource" uid="uid://bgrc45vqtnsdq" path="res://Content/Dialogue/Day3/Day3AyushConvo1.tres" id="4_1df04"]
-[ext_resource type="Resource" uid="uid://bast57hgo7mts" path="res://Content/Dialogue/Day3/Day3PhoneCallConvo1.tres" id="6_6c0w8"]
+[ext_resource type="PackedScene" uid="uid://deo3e6j463t35" path="res://Prefabs/Environment/StockPickup.tscn" id="6_2l0qt"]
+[ext_resource type="Script" path="res://Scripts/Resource/StockGift.gd" id="7_nlmce"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="8_gcode"]
 [ext_resource type="PackedScene" uid="uid://dto1lmjp2mmco" path="res://Prefabs/Environment/Cleanup/WaterSpill.tscn" id="9_7sflt"]
+
+[sub_resource type="Resource" id="Resource_opplc"]
+script = ExtResource("7_nlmce")
+Amount = 3
+StockNameIndex = 4
+
+[sub_resource type="Resource" id="Resource_awmym"]
+script = ExtResource("8_gcode")
+Dialogue = "You pick up some stocks of Dull.
+Someone must have been upset.
+Whelp, more wealth for me!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+DialogueGift = SubResource("Resource_opplc")
 
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_o8kgr")]
 
 [node name="BossLobby" parent="TileMap" index="2"]
-position = Vector2(75, 330)
-InteractableContent = ExtResource("2_ly8uk")
+position = Vector2(21, 339)
 
 [node name="Sprite2D" parent="TileMap/BossLobby" index="0"]
 animation = &"left"
@@ -33,11 +47,21 @@ animation = &"down"
 [node name="Amir" parent="TileMap" index="5"]
 InteractableContent = ExtResource("2_ju13j")
 
-[node name="Phone" parent="TileMap" index="8"]
-InteractableContent = ExtResource("6_6c0w8")
+[node name="WaterSpill" parent="TileMap/DaySpecificObjects" index="0" instance=ExtResource("9_7sflt")]
+position = Vector2(88, -133)
 
-[node name="WaterSpill" parent="." instance=ExtResource("9_7sflt")]
-position = Vector2(159, 302)
+[node name="WaterSpill2" parent="TileMap/DaySpecificObjects" index="1" instance=ExtResource("9_7sflt")]
+position = Vector2(64, -110)
+
+[node name="WaterSpill3" parent="TileMap/DaySpecificObjects" index="2" instance=ExtResource("9_7sflt")]
+position = Vector2(-33, -71)
+
+[node name="WaterSpill4" parent="TileMap/DaySpecificObjects" index="3" instance=ExtResource("9_7sflt")]
+position = Vector2(18, -108)
+
+[node name="StockPickup" parent="TileMap/DaySpecificObjects" index="4" instance=ExtResource("6_2l0qt")]
+position = Vector2(22, -85)
+InteractableContent = SubResource("Resource_awmym")
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]
@@ -45,7 +69,6 @@ position = Vector2(159, 302)
 [editable path="TileMap/Ayush"]
 [editable path="TileMap/Amir"]
 [editable path="TileMap/Boss"]
-[editable path="TileMap/Phone"]
 [editable path="TileMap/OldDrink"]
 [editable path="TileMap/MysteryBusinessComputer"]
 [editable path="TileMap/BookShelf1"]

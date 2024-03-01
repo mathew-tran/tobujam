@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4d72eugouwcl"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/InteractablePickup.gd" id="1_js6x7"]
+[ext_resource type="Script" path="res://Scripts/Resource/MonetaryGift.gd" id="2_2afoq"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="3_1qx2t"]
+[ext_resource type="Texture2D" uid="uid://mea8ajf5w0n0" path="res://Art/Munzos.png" id="4_nu4fp"]
+
+[sub_resource type="Resource" id="Resource_3rkor"]
+script = ExtResource("2_2afoq")
+Amount = 10
+
+[sub_resource type="Resource" id="Resource_su6w2"]
+script = ExtResource("3_1qx2t")
+Dialogue = "You picked up 10 dollars!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+DialogueGift = SubResource("Resource_3rkor")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxmhn"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt4ut"]
+size = Vector2(4, 4)
+
+[node name="CashPickup" type="Area2D"]
+position = Vector2(0, 151)
+collision_mask = 4
+script = ExtResource("1_js6x7")
+InteractableContent = SubResource("Resource_su6w2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_nu4fp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pxmhn")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tt4ut")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

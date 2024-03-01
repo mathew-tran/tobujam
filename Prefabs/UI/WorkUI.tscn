@@ -62,25 +62,27 @@ UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="Resource" id="Resource_wequa"]
 script = ExtResource("2_diat2")
-Dialogue = "It's almost half past the week.. Now on to stock trading!"
+Dialogue = "It's getting closer to Friday... Now on to stock trading!"
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="Resource" id="Resource_pf7n2"]
 script = ExtResource("2_diat2")
-Dialogue = "You go home and begin trading stocks.."
+Dialogue = "You go home and begin to trade stocks. 
+This is your last chance to strike it big!"
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="Resource" id="Resource_ixncs"]
 script = ExtResource("2_diat2")
-Dialogue = "You go home and begin trading stocks.."
+Dialogue = "Time to see if you can pay for the pizza joint.."
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="Resource" id="Resource_eaq1k"]
 script = ExtResource("2_diat2")
-Dialogue = "You go home and begin trading stocks.."
+Dialogue = "You do stock trading.
+"
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 

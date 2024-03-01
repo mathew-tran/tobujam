@@ -13,7 +13,6 @@
 [ext_resource type="Resource" uid="uid://coovy27l2acyw" path="res://Content/Dialogue/Day1/Day1AmirConvo1.tres" id="11_0b35n"]
 [ext_resource type="TileSet" uid="uid://e7ani4b5cry3" path="res://Tilesets/TilesetOfficeDecoration.tres" id="12_w2rxd"]
 [ext_resource type="PackedScene" uid="uid://bxbmq5o4du6l5" path="res://Prefabs/Environment/Phone.tscn" id="13_308t5"]
-[ext_resource type="Resource" uid="uid://mowmsrucm8m5" path="res://Content/Dialogue/Day1/Day1PhoneCall.tres" id="14_plgw4"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="15_kvpft"]
 [ext_resource type="Resource" uid="uid://esfw2lxmdld2" path="res://Content/Dialogue/Day1/Day1OldDrink.tres" id="15_nklqk"]
 [ext_resource type="Resource" uid="uid://cvpfgm6uauuq4" path="res://Content/Dialogue/Day1/Day1MysteryBusinessComputer.tres" id="16_j0o5i"]
@@ -42,6 +41,7 @@
 [ext_resource type="Resource" uid="uid://cxnvdg6edge4x" path="res://Content/Dialogue/Day1/Day1Bookshelf13.tres" id="28_sn5i7"]
 [ext_resource type="Resource" uid="uid://boe3grrc68o2x" path="res://Content/Dialogue/Day1/Day1Bookshelf14.tres" id="29_o10ql"]
 [ext_resource type="Resource" uid="uid://cyb2liydtgs2s" path="res://Content/Dialogue/Day1/Day1Bookshelf15.tres" id="30_abk2v"]
+[ext_resource type="PackedScene" uid="uid://b4d72eugouwcl" path="res://Prefabs/Environment/CashPickup.tscn" id="42_8uarh"]
 
 [sub_resource type="Resource" id="Resource_36ggu"]
 script = ExtResource("15_kvpft")
@@ -68,6 +68,7 @@ script = ExtResource("2_balut")
 position = Vector2(221, 66)
 InteractableName = ExtResource("4_bcfv0")
 InteractableContent = ExtResource("5_ou1hx")
+bIncreaseTime = false
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="BossLobby" index="0"]
@@ -110,13 +111,6 @@ disabled = true
 [node name="StartPoint" type="Node2D" parent="."]
 position = Vector2(213, 243)
 script = ExtResource("2_balut")
-
-[node name="Phone" parent="." instance=ExtResource("13_308t5")]
-position = Vector2(424, 247)
-InteractableContent = ExtResource("14_plgw4")
-
-[node name="CollisionShape2D" parent="Phone" index="1"]
-position = Vector2(5.5, 1)
 
 [node name="OldDrink" parent="." instance=ExtResource("13_308t5")]
 position = Vector2(326, -33)
@@ -367,12 +361,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CashPickup" parent="." instance=ExtResource("42_8uarh")]
+position = Vector2(415, -74)
+bOneTimeInteract = true
+
+[node name="CashPickup2" parent="." instance=ExtResource("42_8uarh")]
+position = Vector2(914, 305)
+bOneTimeInteract = true
+
+[node name="CashPickup3" parent="." instance=ExtResource("42_8uarh")]
+position = Vector2(-176, 78)
+bOneTimeInteract = true
+
 [editable path="BossLobby"]
 [editable path="George"]
 [editable path="Ayush"]
 [editable path="Amir"]
 [editable path="Boss"]
-[editable path="Phone"]
 [editable path="OldDrink"]
 [editable path="MysteryBusinessComputer"]
 [editable path="BookShelf1"]

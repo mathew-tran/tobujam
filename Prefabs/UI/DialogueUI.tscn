@@ -94,7 +94,7 @@ offset_top = 4.0
 offset_right = 311.0
 offset_bottom = 39.0
 theme_override_fonts/font = ExtResource("2_rvbm4")
-text = "test"
+text = "123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 12345678"
 autowrap_mode = 2
 visible_characters_behavior = 1
 

@@ -24,7 +24,19 @@ func SplitString(s: String):
 	s = s.strip_edges()
 	var splitString = s.split("\n")
 	for split in splitString:
-		result.append(split)
+		if len(split) >= 100:
+			var words = split.split(" ")
+			var sentence = ""
+			for word in words:
+				if len(sentence) + len(word) < 100:
+					sentence += word + " "
+				else:
+					result.append(sentence)
+					sentence = word + " "
+			if sentence != "":
+				result.append(sentence)
+		else:
+			result.append(split)
 	return result
 
 func DeleteOptions():
