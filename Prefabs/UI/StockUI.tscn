@@ -134,9 +134,6 @@ layout_mode = 2
 [node name="CompanyStockUI8" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
 layout_mode = 2
 
-[node name="CompanyStockUI9" parent="VBoxContainer/Trading" instance=ExtResource("2_avgwl")]
-layout_mode = 2
-
 [node name="CompanyStockCashUI" parent="VBoxContainer/Trading" instance=ExtResource("2_cxwi0")]
 layout_mode = 2
 
