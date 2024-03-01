@@ -4,7 +4,7 @@ class_name DialogueItem
 @export_multiline  var Dialogue = "test"
 @export var Options : Array[DialogueOption]
 @export var UpdateVariables : Array[ValueSet]
-@export var DialogueGift : Gift
+@export var DialogueGift : Action
 @export var AudioSFXToPlay : AudioStream
 
 func Get():

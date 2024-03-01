@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=9 format=3 uid="uid://bhei1xvehye0w"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=21 format=3 uid="uid://bhei1xvehye0w"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_ufnkm"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_0mclg"]
+[ext_resource type="Script" path="res://Scripts/Resource/StockGift.gd" id="3_1gsep"]
+[ext_resource type="Script" path="res://Scripts/Resource/TakeMoney.gd" id="4_gx7sg"]
+[ext_resource type="Script" path="res://Scripts/Resource/OptionConditionPlayerCash.gd" id="5_k4gqk"]
 
 [sub_resource type="Resource" id="Resource_btyro"]
 script = ExtResource("1_ufnkm")
@@ -38,8 +41,59 @@ script = ExtResource("2_0mclg")
 OptionName = "What made you go into trading?"
 DialogueToPointTo = SubResource("Resource_sydar")
 
+[sub_resource type="Resource" id="Resource_rgerv"]
+script = ExtResource("3_1gsep")
+Amount = 12
+StockNameIndex = 1
+
+[sub_resource type="Resource" id="Resource_xg3m7"]
+script = ExtResource("4_gx7sg")
+Amount = 20
+
+[sub_resource type="Resource" id="Resource_s57w2"]
+script = ExtResource("1_ufnkm")
+Dialogue = "Thanks. Pleasure doing business.
+*You hand 20 dollars over*"
+Options = Array[ExtResource("2_0mclg")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+DialogueGift = SubResource("Resource_xg3m7")
+
+[sub_resource type="Resource" id="Resource_vacr4"]
+script = ExtResource("2_0mclg")
+OptionName = "Give Money"
+DialogueToPointTo = SubResource("Resource_s57w2")
+
+[sub_resource type="Resource" id="Resource_106if"]
+script = ExtResource("1_ufnkm")
+Dialogue = "Here you go.
+*Hands you 12 stocks of ToiletTech*"
+Options = Array[ExtResource("2_0mclg")]([SubResource("Resource_vacr4")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+DialogueGift = SubResource("Resource_rgerv")
+
+[sub_resource type="Resource" id="Resource_1sm71"]
+script = ExtResource("2_0mclg")
+OptionName = "Sure"
+DialogueToPointTo = SubResource("Resource_106if")
+
+[sub_resource type="Resource" id="Resource_8r47i"]
+script = ExtResource("1_ufnkm")
+Dialogue = "Yeah I have some from ToiletTech. I'll sell you 12 stocks for 20 dollars!"
+Options = Array[ExtResource("2_0mclg")]([SubResource("Resource_1sm71")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_nu3vr"]
+script = ExtResource("5_k4gqk")
+CashAmount = 20
+
+[sub_resource type="Resource" id="Resource_bheug"]
+script = ExtResource("2_0mclg")
+OptionName = "You have Stocks?"
+OptionUnlockCode = SubResource("Resource_nu3vr")
+DialogueToPointTo = SubResource("Resource_8r47i")
+
 [resource]
 script = ExtResource("1_ufnkm")
 Dialogue = "Hello there."
-Options = Array[ExtResource("2_0mclg")]([SubResource("Resource_75gq8"), SubResource("Resource_2ydfb"), SubResource("Resource_re7pk")])
+Options = Array[ExtResource("2_0mclg")]([SubResource("Resource_75gq8"), SubResource("Resource_2ydfb"), SubResource("Resource_re7pk"), SubResource("Resource_bheug")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

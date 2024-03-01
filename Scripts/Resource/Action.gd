@@ -1,5 +1,5 @@
 extends Resource
-class_name Gift
+class_name Action
 
 
 func Give():

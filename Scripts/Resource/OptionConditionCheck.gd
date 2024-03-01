@@ -1,5 +1,5 @@
-extends Resource
-class_name Condition
+extends OptionCondition
+class_name OptionConditionCheck
 
 @export var VariableReference : CustomVariable
 

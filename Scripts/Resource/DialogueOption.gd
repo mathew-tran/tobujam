@@ -2,7 +2,7 @@ extends Resource
 class_name DialogueOption
 
 @export var OptionName = "test"
-@export var OptionUnlockCode : Condition
+@export var OptionUnlockCode : OptionCondition
 @export var DialogueToPointTo : DialogueItem
 
 

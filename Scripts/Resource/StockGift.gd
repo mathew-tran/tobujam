@@ -1,4 +1,4 @@
-extends Gift
+extends Action
 class_name StockGift
 
 @export var Amount = 10

@@ -9,12 +9,12 @@
 [sub_resource type="Resource" id="Resource_3b8c2"]
 script = ExtResource("1_bmieo")
 VariableName = ExtResource("1_o7fr7")
-Value = true
+Value = 0
 
 [sub_resource type="Resource" id="Resource_kat4a"]
 script = ExtResource("1_bmieo")
 VariableName = ExtResource("3_spcrs")
-Value = false
+Value = 0
 
 [sub_resource type="Resource" id="Resource_q4to6"]
 script = ExtResource("1_vof28")
