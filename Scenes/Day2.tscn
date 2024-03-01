@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsu3pyb720p83"]
+[gd_scene load_steps=8 format=3 uid="uid://bsu3pyb720p83"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_svxbx"]
 [ext_resource type="Resource" uid="uid://dlsyiiglcmfhk" path="res://Content/Dialogue/Day2/Day2AyushConvo1.tres" id="3_tdsj6"]
 [ext_resource type="Resource" uid="uid://cw5dfbi6vwoe3" path="res://Content/Dialogue/Day2/Day2AmirConvo1.tres" id="4_b0vqt"]
-[ext_resource type="Resource" uid="uid://buudp3xvwywa0" path="res://Content/Dialogue/Day2/Day2PhoneCall.tres" id="5_mtj64"]
 [ext_resource type="Resource" uid="uid://c41oivnedmpik" path="res://Content/Dialogue/Day2/Day2BossComputer.tres" id="6_5vkav"]
 [ext_resource type="PackedScene" uid="uid://paswfouhvxb4" path="res://Prefabs/Environment/Cleanup/BananaPeel.tscn" id="7_x4vs4"]
 [ext_resource type="PackedScene" uid="uid://bo46xfv04bvy8" path="res://Prefabs/Environment/Cleanup/JuiceSpill.tscn" id="8_yxr7m"]
@@ -30,10 +29,7 @@ InteractableContent = ExtResource("4_b0vqt")
 [node name="Sprite2D" parent="TileMap/Amir" index="0"]
 animation = &"down"
 
-[node name="Phone" parent="TileMap" index="8"]
-InteractableContent = ExtResource("5_mtj64")
-
-[node name="BossComputer" parent="TileMap" index="29"]
+[node name="BossComputer" parent="TileMap" index="28"]
 InteractableContent = ExtResource("6_5vkav")
 
 [node name="BananaPeel" parent="TileMap/DaySpecificObjects" index="0" instance=ExtResource("7_x4vs4")]
@@ -69,7 +65,6 @@ position = Vector2(139, -95)
 [editable path="TileMap/Ayush"]
 [editable path="TileMap/Amir"]
 [editable path="TileMap/Boss"]
-[editable path="TileMap/Phone"]
 [editable path="TileMap/OldDrink"]
 [editable path="TileMap/MysteryBusinessComputer"]
 [editable path="TileMap/BookShelf1"]

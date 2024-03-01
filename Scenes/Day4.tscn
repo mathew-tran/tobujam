@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://gmry2xu11wgp"]
+[gd_scene load_steps=9 format=3 uid="uid://gmry2xu11wgp"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_yyjlm"]
 [ext_resource type="Resource" uid="uid://dwgrs280wnnna" path="res://Content/Dialogue/Day4/Day4GeorgeConvo1.tres" id="3_x2lak"]
 [ext_resource type="Resource" uid="uid://du2fe7suhr545" path="res://Content/Dialogue/Day4/Day4AyushConvo1.tres" id="4_2sgm8"]
 [ext_resource type="Resource" uid="uid://dw83hlv3a7cui" path="res://Content/Dialogue/Day4/Day4AmirConvo1.tres" id="5_ivj1j"]
-[ext_resource type="Resource" uid="uid://dfjsnwxjgofiw" path="res://Content/Dialogue/Day4/Day4PhoneCallConvo1.tres" id="6_kwo32"]
+[ext_resource type="PackedScene" uid="uid://bs60jgfpl4sq0" path="res://Prefabs/Environment/Cleanup/CrumpledPaper.tscn" id="5_xvhhq"]
+[ext_resource type="PackedScene" uid="uid://paswfouhvxb4" path="res://Prefabs/Environment/Cleanup/BananaPeel.tscn" id="6_wksek"]
+[ext_resource type="PackedScene" uid="uid://bo46xfv04bvy8" path="res://Prefabs/Environment/Cleanup/JuiceSpill.tscn" id="7_bfmcq"]
+[ext_resource type="PackedScene" uid="uid://dto1lmjp2mmco" path="res://Prefabs/Environment/Cleanup/WaterSpill.tscn" id="8_l40ql"]
 
 [node name="Main" type="Node2D"]
 
@@ -19,8 +22,17 @@ InteractableContent = ExtResource("4_2sgm8")
 [node name="Amir" parent="TileMap" index="5"]
 InteractableContent = ExtResource("5_ivj1j")
 
-[node name="Phone" parent="TileMap" index="8"]
-InteractableContent = ExtResource("6_kwo32")
+[node name="CrumpledPaper" parent="TileMap/DaySpecificObjects" index="0" instance=ExtResource("5_xvhhq")]
+position = Vector2(125, 338)
+
+[node name="BananaPeel" parent="TileMap/DaySpecificObjects" index="1" instance=ExtResource("6_wksek")]
+position = Vector2(-175, -48)
+
+[node name="JuiceSpill" parent="TileMap/DaySpecificObjects" index="2" instance=ExtResource("7_bfmcq")]
+position = Vector2(320, 186)
+
+[node name="WaterSpill" parent="TileMap/DaySpecificObjects" index="3" instance=ExtResource("8_l40ql")]
+position = Vector2(9, -136)
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]
@@ -28,7 +40,6 @@ InteractableContent = ExtResource("6_kwo32")
 [editable path="TileMap/Ayush"]
 [editable path="TileMap/Amir"]
 [editable path="TileMap/Boss"]
-[editable path="TileMap/Phone"]
 [editable path="TileMap/OldDrink"]
 [editable path="TileMap/MysteryBusinessComputer"]
 [editable path="TileMap/BookShelf1"]

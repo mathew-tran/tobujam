@@ -24,7 +24,6 @@ InteractableContent = ExtResource("5_nqwnm")
 [editable path="TileMap/Ayush"]
 [editable path="TileMap/Amir"]
 [editable path="TileMap/Boss"]
-[editable path="TileMap/Phone"]
 [editable path="TileMap/OldDrink"]
 [editable path="TileMap/MysteryBusinessComputer"]
 [editable path="TileMap/BookShelf1"]
