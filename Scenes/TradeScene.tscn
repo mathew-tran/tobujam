@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://db05fpr8obmvp"]
+[gd_scene load_steps=44 format=3 uid="uid://db05fpr8obmvp"]
 
 [ext_resource type="TileSet" uid="uid://ds1qfqyikgoae" path="res://Tilesets/TilesetOffice.tres" id="1_ab3dv"]
 [ext_resource type="Script" path="res://Scripts/Environment/JobMovePoint.gd" id="2_balut"]
@@ -16,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://mowmsrucm8m5" path="res://Content/Dialogue/Day1/Day1PhoneCall.tres" id="14_plgw4"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="15_kvpft"]
 [ext_resource type="Resource" uid="uid://esfw2lxmdld2" path="res://Content/Dialogue/Day1/Day1OldDrink.tres" id="15_nklqk"]
+[ext_resource type="Resource" uid="uid://cvpfgm6uauuq4" path="res://Content/Dialogue/Day1/Day1MysteryBusinessComputer.tres" id="16_j0o5i"]
 [ext_resource type="Resource" uid="uid://c3gk73p3rpbca" path="res://Content/Dialogue/Day1/Day1Bookshelf1.tres" id="16_lk4kf"]
 [ext_resource type="Resource" uid="uid://blwb2feufq62w" path="res://Content/Dialogue/Day1/Day1EmptyFlowerPot1.tres" id="16_wifwp"]
 [ext_resource type="Resource" uid="uid://cyqywoj0xjhnk" path="res://Content/Dialogue/Day1/Day1Bookshelf2.tres" id="17_j1qnc"]
@@ -124,6 +125,15 @@ InteractableContent = ExtResource("15_nklqk")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="OldDrink" index="1"]
+position = Vector2(5.5, 1)
+
+[node name="MysteryBusinessComputer" parent="." instance=ExtResource("13_308t5")]
+position = Vector2(325, -72)
+InteractableName = null
+InteractableContent = ExtResource("16_j0o5i")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="MysteryBusinessComputer" index="1"]
 position = Vector2(5.5, 1)
 
 [node name="BookShelf1" parent="." instance=ExtResource("13_308t5")]
@@ -345,6 +355,7 @@ grow_vertical = 2
 [editable path="Boss"]
 [editable path="Phone"]
 [editable path="OldDrink"]
+[editable path="MysteryBusinessComputer"]
 [editable path="BookShelf1"]
 [editable path="BookShelf2"]
 [editable path="BookShelf3"]

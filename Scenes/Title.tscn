@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://das2nh2earlr7"]
+[gd_scene load_steps=11 format=3 uid="uid://das2nh2earlr7"]
 
 [ext_resource type="Script" path="res://Scripts/Title/StartButton.gd" id="1_3r6h0"]
 [ext_resource type="TileSet" uid="uid://ds1qfqyikgoae" path="res://Tilesets/TilesetOffice.tres" id="1_8f1c7"]
+[ext_resource type="Script" path="res://Scripts/Level/Title.gd" id="1_aewfm"]
 [ext_resource type="TileSet" uid="uid://e7ani4b5cry3" path="res://Tilesets/TilesetOfficeDecoration.tres" id="2_8fs7n"]
 [ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="2_b7dil"]
 
@@ -25,6 +26,7 @@ bg_color = Color(0.282353, 0.588235, 0.803922, 1)
 [node name="Node2D" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_aewfm")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_8f1c7")
