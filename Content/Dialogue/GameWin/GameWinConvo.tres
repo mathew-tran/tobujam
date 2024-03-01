@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://bjdckrw1cmqsn"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_5y6o2"]
+
+[resource]
+script = ExtResource("1_5y6o2")
+Dialogue = "Darn you! I was supposed to get the pizza joint!
+How did this happen?!
+*You won the game*
+*Take it easy on your brother, he's going through some things*"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

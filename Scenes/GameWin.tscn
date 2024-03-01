@@ -1,23 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjq6vdocsqry5"]
+[gd_scene load_steps=13 format=3 uid="uid://cjq6vdocsqry5"]
 
 [ext_resource type="Script" path="res://Scripts/Level/GameWinScript.gd" id="1_pvr41"]
 [ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="2_bp8eg"]
-[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="3_kn6mw"]
+[ext_resource type="Resource" uid="uid://bjdckrw1cmqsn" path="res://Content/Dialogue/GameWin/GameWinConvo.tres" id="3_xednr"]
 [ext_resource type="PackedScene" uid="uid://cro46cploj113" path="res://Scenes/Pizzaria.tscn" id="4_xg1tw"]
 [ext_resource type="Texture2D" uid="uid://dvn6o84bvl3qg" path="res://Art/Stockbroker1.png" id="5_mlc0h"]
 [ext_resource type="Texture2D" uid="uid://m0i5ql7fbbn8" path="res://Art/Janitor.png" id="6_p6kyt"]
 [ext_resource type="PackedScene" uid="uid://bayiq4i52kqk7" path="res://Prefabs/UI/DialogueUI.tscn" id="7_peb3v"]
 [ext_resource type="PackedScene" uid="uid://ctomr4kyk71xl" path="res://Prefabs/UI/WorkUI.tscn" id="8_b6yfo"]
 [ext_resource type="PackedScene" uid="uid://8eya33vkbhju" path="res://Prefabs/UI/StockUI.tscn" id="9_6k6r4"]
-
-[sub_resource type="Resource" id="Resource_403rq"]
-script = ExtResource("3_kn6mw")
-Dialogue = "Darn you! I was supposed to get the pizza joint!
-How did this happen?!
-*You won the game*
-*Take it easy on your brother, he's going through some things*"
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibiyu"]
 atlas = ExtResource("5_mlc0h")
@@ -49,7 +40,7 @@ animations = [{
 [node name="GameWinScript" type="Node2D"]
 script = ExtResource("1_pvr41")
 Speaker = ExtResource("2_bp8eg")
-Content = SubResource("Resource_403rq")
+Content = ExtResource("3_xednr")
 
 [node name="TileMap" parent="." instance=ExtResource("4_xg1tw")]
 

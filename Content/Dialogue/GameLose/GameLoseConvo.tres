@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://dms0ehq6l3yy7"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_42031"]
+
+[resource]
+script = ExtResource("1_42031")
+Dialogue = "Pizza shop is mine now. I knew you couldn't pull of that kinda money in a week!
+Smell you later!
+*You lost the game*
+*Try better next time*"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

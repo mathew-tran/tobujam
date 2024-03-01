@@ -1,23 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://btk43efqw8dls"]
+[gd_scene load_steps=13 format=3 uid="uid://btk43efqw8dls"]
 
 [ext_resource type="Script" path="res://Scripts/Level/GameLoseScript.gd" id="1_synbn"]
 [ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="2_hoibd"]
-[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="3_a4cjg"]
+[ext_resource type="Resource" uid="uid://dms0ehq6l3yy7" path="res://Content/Dialogue/GameLose/GameLoseConvo.tres" id="3_c23pl"]
 [ext_resource type="PackedScene" uid="uid://cro46cploj113" path="res://Scenes/Pizzaria.tscn" id="4_2c2uw"]
 [ext_resource type="Texture2D" uid="uid://dvn6o84bvl3qg" path="res://Art/Stockbroker1.png" id="5_duk0p"]
 [ext_resource type="Texture2D" uid="uid://m0i5ql7fbbn8" path="res://Art/Janitor.png" id="6_bd4nq"]
 [ext_resource type="PackedScene" uid="uid://bayiq4i52kqk7" path="res://Prefabs/UI/DialogueUI.tscn" id="7_etulo"]
 [ext_resource type="PackedScene" uid="uid://ctomr4kyk71xl" path="res://Prefabs/UI/WorkUI.tscn" id="8_bey4k"]
 [ext_resource type="PackedScene" uid="uid://8eya33vkbhju" path="res://Prefabs/UI/StockUI.tscn" id="9_co5lx"]
-
-[sub_resource type="Resource" id="Resource_5r6f4"]
-script = ExtResource("3_a4cjg")
-Dialogue = "Pizza shop is mine now. I knew you couldn't pull of that kinda money in a week!
-Smell you later!
-*You lost the game*
-*Try better next time*"
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibiyu"]
 atlas = ExtResource("5_duk0p")
@@ -49,7 +40,7 @@ animations = [{
 [node name="GameLose" type="Node2D"]
 script = ExtResource("1_synbn")
 Speaker = ExtResource("2_hoibd")
-Content = SubResource("Resource_5r6f4")
+Content = ExtResource("3_c23pl")
 
 [node name="TileMap" parent="." instance=ExtResource("4_2c2uw")]
 
