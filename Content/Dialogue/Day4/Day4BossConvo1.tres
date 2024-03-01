@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=7 format=3 uid="uid://chfan70qo0100"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_a0fjd"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_uiis1"]
+
+[sub_resource type="Resource" id="Resource_auuah"]
+script = ExtResource("1_a0fjd")
+Dialogue = "Good to hear!
+I knew you had a good head on your shoulders!"
+Options = null
+UpdateVariables = null
+
+[sub_resource type="Resource" id="Resource_r6dgp"]
+script = ExtResource("2_uiis1")
+OptionName = "It's going"
+DialogueToPointTo = SubResource("Resource_auuah")
+
+[sub_resource type="Resource" id="Resource_kr3ok"]
+script = ExtResource("1_a0fjd")
+Dialogue = "Better luck next time!
+Don't give up. The dream is right behind the corner!"
+Options = null
+UpdateVariables = null
+
+[sub_resource type="Resource" id="Resource_lk8nc"]
+script = ExtResource("2_uiis1")
+OptionName = "Meh"
+DialogueToPointTo = SubResource("Resource_kr3ok")
+
+[resource]
+script = ExtResource("1_a0fjd")
+Dialogue = "Day 4 Boss
+"
+Options = Array[ExtResource("2_uiis1")]([SubResource("Resource_r6dgp"), SubResource("Resource_lk8nc")])
+UpdateVariables = null

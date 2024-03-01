@@ -1,7 +1,53 @@
-[gd_scene load_steps=2 format=3 uid="uid://7txgjy56oow5"]
+[gd_scene load_steps=6 format=3 uid="uid://7txgjy56oow5"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_mh3en"]
+[ext_resource type="Resource" uid="uid://bwgbjrxl7bdmv" path="res://Content/Dialogue/Day5/Day5BossConvo1.tres" id="2_63qts"]
+[ext_resource type="Resource" uid="uid://d2qvfl3fs6xhd" path="res://Content/Dialogue/Day5/Day5GeorgeConvo1.tres" id="3_qjyd5"]
+[ext_resource type="Resource" uid="uid://dod2nkeonbn4d" path="res://Content/Dialogue/Day5/Day5AyushConvo1.tres" id="4_b08w7"]
+[ext_resource type="Resource" uid="uid://n3an5qnfdsg" path="res://Content/Dialogue/Day5/Day5AmirConvo1.tres" id="5_nqwnm"]
 
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_mh3en")]
+
+[node name="BossLobby" parent="TileMap" index="2"]
+InteractableContent = ExtResource("2_63qts")
+
+[node name="George" parent="TileMap" index="3"]
+InteractableContent = ExtResource("3_qjyd5")
+
+[node name="Ayush" parent="TileMap" index="4"]
+InteractableContent = ExtResource("4_b08w7")
+
+[node name="Amir" parent="TileMap" index="5"]
+InteractableContent = ExtResource("5_nqwnm")
+
+[editable path="TileMap"]
+[editable path="TileMap/BossLobby"]
+[editable path="TileMap/George"]
+[editable path="TileMap/Ayush"]
+[editable path="TileMap/Amir"]
+[editable path="TileMap/Boss"]
+[editable path="TileMap/Phone"]
+[editable path="TileMap/OldDrink"]
+[editable path="TileMap/MysteryBusinessComputer"]
+[editable path="TileMap/BookShelf1"]
+[editable path="TileMap/BookShelf2"]
+[editable path="TileMap/BookShelf3"]
+[editable path="TileMap/BookShelf4"]
+[editable path="TileMap/BookShelf5"]
+[editable path="TileMap/BookShelf6"]
+[editable path="TileMap/BookShelf7"]
+[editable path="TileMap/BookShelf8"]
+[editable path="TileMap/BookShelf9"]
+[editable path="TileMap/BookShelf16"]
+[editable path="TileMap/BookShelf17"]
+[editable path="TileMap/BookShelf18"]
+[editable path="TileMap/BookShelf10"]
+[editable path="TileMap/BookShelf11"]
+[editable path="TileMap/BookShelf12"]
+[editable path="TileMap/BookShelf13"]
+[editable path="TileMap/BookShelf14"]
+[editable path="TileMap/BookShelf15"]
+[editable path="TileMap/BossComputer"]
+[editable path="TileMap/EmptyFlowerPot"]

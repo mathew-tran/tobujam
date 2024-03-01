@@ -25,4 +25,4 @@ var StartingCash = 100
 # still need to update dialogue..
 var TotalAssetGoal = 2000
 
-var FinalDayGoal = 4
+var FinalDayGoal = 6
