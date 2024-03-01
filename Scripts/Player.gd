@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 80
+var speed = 60
 
 var bCanMove = true
 enum DIRECTION {
