@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://7txgjy56oow5"]
+[gd_scene load_steps=5 format=3 uid="uid://7txgjy56oow5"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_mh3en"]
-[ext_resource type="Resource" uid="uid://bwgbjrxl7bdmv" path="res://Content/Dialogue/Day5/Day5BossConvo1.tres" id="2_63qts"]
 [ext_resource type="Resource" uid="uid://d2qvfl3fs6xhd" path="res://Content/Dialogue/Day5/Day5GeorgeConvo1.tres" id="3_qjyd5"]
 [ext_resource type="Resource" uid="uid://dod2nkeonbn4d" path="res://Content/Dialogue/Day5/Day5AyushConvo1.tres" id="4_b08w7"]
 [ext_resource type="Resource" uid="uid://n3an5qnfdsg" path="res://Content/Dialogue/Day5/Day5AmirConvo1.tres" id="5_nqwnm"]
@@ -9,9 +8,6 @@
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_mh3en")]
-
-[node name="BossLobby" parent="TileMap" index="2"]
-InteractableContent = ExtResource("2_63qts")
 
 [node name="George" parent="TileMap" index="3"]
 InteractableContent = ExtResource("3_qjyd5")

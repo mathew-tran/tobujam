@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cf6pargixyfhj"]
+[gd_scene load_steps=7 format=3 uid="uid://cf6pargixyfhj"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_o8kgr"]
 [ext_resource type="Resource" uid="uid://ciorye23d7c1o" path="res://Content/Dialogue/Day3/Day3AmirConvo1.tres" id="2_ju13j"]
-[ext_resource type="Resource" uid="uid://bchh2hoi4x3x6" path="res://Content/Dialogue/Day3/Day3BossConvo1.tres" id="2_ly8uk"]
 [ext_resource type="Resource" uid="uid://cb2js5h6jb3at" path="res://Content/Dialogue/Day3/Day3GeorgeConvo1.tres" id="3_113i5"]
 [ext_resource type="Resource" uid="uid://bgrc45vqtnsdq" path="res://Content/Dialogue/Day3/Day3AyushConvo1.tres" id="4_1df04"]
 [ext_resource type="Resource" uid="uid://bast57hgo7mts" path="res://Content/Dialogue/Day3/Day3PhoneCallConvo1.tres" id="6_6c0w8"]
@@ -14,7 +13,6 @@
 
 [node name="BossLobby" parent="TileMap" index="2"]
 position = Vector2(75, 330)
-InteractableContent = ExtResource("2_ly8uk")
 
 [node name="Sprite2D" parent="TileMap/BossLobby" index="0"]
 animation = &"left"

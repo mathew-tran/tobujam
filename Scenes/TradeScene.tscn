@@ -68,6 +68,7 @@ script = ExtResource("2_balut")
 position = Vector2(221, 66)
 InteractableName = ExtResource("4_bcfv0")
 InteractableContent = ExtResource("5_ou1hx")
+bIncreaseTime = false
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="BossLobby" index="0"]

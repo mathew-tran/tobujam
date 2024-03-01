@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsu3pyb720p83"]
+[gd_scene load_steps=9 format=3 uid="uid://bsu3pyb720p83"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_svxbx"]
-[ext_resource type="Resource" uid="uid://cep0dfe2sp3q4" path="res://Content/Dialogue/Day2/Day2BossConvo1.tres" id="2_xuhrm"]
 [ext_resource type="Resource" uid="uid://dlsyiiglcmfhk" path="res://Content/Dialogue/Day2/Day2AyushConvo1.tres" id="3_tdsj6"]
 [ext_resource type="Resource" uid="uid://cw5dfbi6vwoe3" path="res://Content/Dialogue/Day2/Day2AmirConvo1.tres" id="4_b0vqt"]
 [ext_resource type="Resource" uid="uid://buudp3xvwywa0" path="res://Content/Dialogue/Day2/Day2PhoneCall.tres" id="5_mtj64"]
@@ -16,7 +15,6 @@
 
 [node name="BossLobby" parent="TileMap" index="2"]
 position = Vector2(304, 175)
-InteractableContent = ExtResource("2_xuhrm")
 
 [node name="George" parent="TileMap" index="3"]
 position = Vector2(771, 206)
