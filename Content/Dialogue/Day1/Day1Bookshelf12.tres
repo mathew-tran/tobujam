@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://b3u0cqcqke40d"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_eq8ct"]
+
+[resource]
+script = ExtResource("1_eq8ct")
+Dialogue = "You find a hidden drawing notebook that seems to be owned by Bill.
+He seems to really like drawing crabs for some reason.
+Weirdo."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

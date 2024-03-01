@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://bwqqpy2xlebig"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_u1010"]
+
+[resource]
+script = ExtResource("1_u1010")
+Dialogue = "A book title reads, \"Trading for Traitors - a How To On Insider Trading\", by Bill
+.. Isn't this my manager?"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

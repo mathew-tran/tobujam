@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cxnvdg6edge4x"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_506ry"]
+
+[resource]
+script = ExtResource("1_506ry")
+Dialogue = "Book reads, \"Computers for the inept\", published by BMI
+You read the quotes on the back.
+\"Don't know how to turn on the computer?\" 
+\"Don't know how to turn it off?\"
+\"You'd be surprised that you can use the same button for both!\""
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

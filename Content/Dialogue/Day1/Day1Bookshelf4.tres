@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://c1e5xxkwsip4h"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_lk7qf"]
+
+[resource]
+script = ExtResource("1_lk7qf")
+Dialogue = "The book title reads, \"Business for Bozo's\"
+On the cover is a picture of a clown pointing at you with a cheeky grin."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

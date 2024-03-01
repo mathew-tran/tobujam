@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://dbybn4qoqectl"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_5nctf"]
+
+[resource]
+script = ExtResource("1_5nctf")
+Dialogue = "Book title reads, \"How to sleep in the most optimal way possible\" by Doctor Gains
+.. You read into it ..
+.. \"If you want to sleep in the most optimal way, be sure to have a heavy breakfast\"
+.. \"Followed by a heavy lunch\"
+.. \"Followed by a heavy dinner\"
+.. \"Don't forget to exercise!\"
+.. \"Then the final clincher. Which side do you sleep, on the left, right, face up, face down?\"
+.. \"Well I am a face down sorta person, Cause I like to just see complete blackness\"
+.. \"till I pass out from my massive food coma\"
+.. \"But you do you\""
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://bg8w47pfcpg56"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_8q4hp"]
+
+[resource]
+script = ExtResource("1_8q4hp")
+Dialogue = "Book title reads, \"Do these easy office chair exercises!  -- \"
+\"-- Gaining muscles while waiting for your connection to go through!\"
+.. You read a bit ..
+.. \"5 Chair lifts\"
+.. \"5 Chair Crunches\"
+.. \"5 Chair seated presses\"
+.. \"5 Chair throws\"
+.. \"You should see improvements within 12 weeks --\"
+ .. \"-- but improvements will become more noticeable with a better diet!\""
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

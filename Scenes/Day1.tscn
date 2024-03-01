@@ -18,7 +18,7 @@ size = Vector2(79, 20)
 
 [node name="TileMap" parent="." instance=ExtResource("1_okqoo")]
 
-[node name="George" parent="TileMap" index="2"]
+[node name="George" parent="TileMap" index="3"]
 InteractableContent = ExtResource("2_wtpqp")
 
 [node name="NarratorTalk" type="Area2D" parent="TileMap/DaySpecificObjects" index="0"]
@@ -56,6 +56,9 @@ position = Vector2(693, 209)
 
 [node name="WaterSpill" parent="TileMap/DaySpecificObjects" index="6" instance=ExtResource("8_y88ql")]
 position = Vector2(35, -104)
+
+[node name="WaterSpill2" parent="TileMap/DaySpecificObjects" index="7" instance=ExtResource("8_y88ql")]
+position = Vector2(218, -103)
 
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/NarratorTalk" to="TileMap/DaySpecificObjects/NarratorTalk" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/SelfTalk" to="TileMap/DaySpecificObjects/SelfTalk" method="_on_body_entered"]

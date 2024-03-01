@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cyb2liydtgs2s"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_gvci4"]
+
+[resource]
+script = ExtResource("1_gvci4")
+Dialogue = "You see a bunch of dated travel books to various exotic countries."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

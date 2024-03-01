@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=5 format=3 uid="uid://c2fuwgbj5u7q3"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_gqtwd"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_ui3qx"]
+
+[sub_resource type="Resource" id="Resource_m44m5"]
+script = ExtResource("1_gqtwd")
+Dialogue = "... \"2DFX first started in a garage\"
+.. \"The founder had a thought of making the big leap from going 1D to 2D\"
+.. \"2DFX is now the most profitable company of the century. \"
+... \"And anyone who wants to invest, should invest in them\""
+Options = Array[ExtResource("2_ui3qx")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_i3da0"]
+script = ExtResource("2_ui3qx")
+OptionName = "Read"
+DialogueToPointTo = SubResource("Resource_m44m5")
+
+[resource]
+script = ExtResource("1_gqtwd")
+Dialogue = "Book title reads, \"2DFX -- Modest Beginnings\", by 2D4U"
+Options = Array[ExtResource("2_ui3qx")]([SubResource("Resource_i3da0")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

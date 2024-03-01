@@ -12,25 +12,25 @@
 
 [node name="TileMap" parent="." instance=ExtResource("1_o8kgr")]
 
-[node name="BossLobby" parent="TileMap" index="1"]
+[node name="BossLobby" parent="TileMap" index="2"]
 position = Vector2(75, 330)
 InteractableContent = ExtResource("2_ly8uk")
 
 [node name="Sprite2D" parent="TileMap/BossLobby" index="0"]
 animation = &"left"
 
-[node name="George" parent="TileMap" index="2"]
+[node name="George" parent="TileMap" index="3"]
 position = Vector2(-165, -3)
 InteractableContent = ExtResource("3_113i5")
 
-[node name="Ayush" parent="TileMap" index="3"]
+[node name="Ayush" parent="TileMap" index="4"]
 position = Vector2(228, 3)
 InteractableContent = ExtResource("4_1df04")
 
 [node name="Sprite2D" parent="TileMap/Ayush" index="0"]
 animation = &"down"
 
-[node name="Amir" parent="TileMap" index="4"]
+[node name="Amir" parent="TileMap" index="5"]
 InteractableContent = ExtResource("2_ju13j")
 
 [node name="Phone" parent="TileMap" index="8"]

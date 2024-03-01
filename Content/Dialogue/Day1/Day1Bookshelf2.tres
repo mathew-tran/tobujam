@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cyqywoj0xjhnk"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_cxnx4"]
+
+[resource]
+script = ExtResource("1_cxnx4")
+Dialogue = "The book title reads, \"The one man startup\"
+On the back you see a man smiling holding money with the darkest bags under his eyes."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

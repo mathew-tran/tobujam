@@ -1,22 +1,58 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=9 format=3 uid="uid://mowmsrucm8m5"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=15 format=3 uid="uid://mowmsrucm8m5"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_atdtr"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_m3e08"]
 
+[sub_resource type="Resource" id="Resource_he2tn"]
+script = ExtResource("1_atdtr")
+Dialogue = "Well good for him. I hear you are working at the Stock Exchange now!
+My kids are gonna be rich!
+Later! <3"
+Options = Array[ExtResource("2_m3e08")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_jncvg"]
+script = ExtResource("2_m3e08")
+OptionName = "I know."
+DialogueToPointTo = SubResource("Resource_he2tn")
+
 [sub_resource type="Resource" id="Resource_8hpm5"]
 script = ExtResource("1_atdtr")
 Dialogue = "Hey! Heard your brother is going to buy the pizza joint he works at!"
-Options = Array[ExtResource("2_m3e08")]([])
+Options = Array[ExtResource("2_m3e08")]([SubResource("Resource_jncvg")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="Resource" id="Resource_kkgds"]
 script = ExtResource("2_m3e08")
-OptionName = "Mama"
+OptionName = "Mom"
 DialogueToPointTo = SubResource("Resource_8hpm5")
+
+[sub_resource type="Resource" id="Resource_yd2a2"]
+script = ExtResource("1_atdtr")
+Dialogue = "That's good. Well I should run now. Later."
+Options = Array[ExtResource("2_m3e08")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_wmkm8"]
+script = ExtResource("2_m3e08")
+OptionName = "Good"
+DialogueToPointTo = SubResource("Resource_yd2a2")
+
+[sub_resource type="Resource" id="Resource_ogt4p"]
+script = ExtResource("1_atdtr")
+Dialogue = "Hey Son. How are you doing?"
+Options = Array[ExtResource("2_m3e08")]([SubResource("Resource_wmkm8")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_iwq8i"]
+script = ExtResource("2_m3e08")
+OptionName = "Dad"
+DialogueToPointTo = SubResource("Resource_ogt4p")
 
 [sub_resource type="Resource" id="Resource_eh325"]
 script = ExtResource("1_atdtr")
-Dialogue = "Hey little brother. Getting anxious about me becoming a business man first?"
+Dialogue = "Hey little brother. Getting anxious about me becoming a business man first?
+.. I err unfortunately have some banking troubles. But I am definitely going to buy it soon!"
 Options = Array[ExtResource("2_m3e08")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
@@ -39,5 +75,5 @@ DialogueToPointTo = SubResource("Resource_ac1p7")
 [resource]
 script = ExtResource("1_atdtr")
 Dialogue = "You pick up the phone. Who will you call?"
-Options = Array[ExtResource("2_m3e08")]([SubResource("Resource_kkgds"), SubResource("Resource_7k2vj"), SubResource("Resource_ig8c1")])
+Options = Array[ExtResource("2_m3e08")]([SubResource("Resource_kkgds"), SubResource("Resource_iwq8i"), SubResource("Resource_7k2vj"), SubResource("Resource_ig8c1")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

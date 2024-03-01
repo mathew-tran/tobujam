@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=7 format=3 uid="uid://bnrwjkntckutq"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_4fhns"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_y1n0w"]
+
+[sub_resource type="Resource" id="Resource_hocyb"]
+script = ExtResource("1_4fhns")
+Dialogue = "... \"To beat your brother, it is quite simple. Invest all your money in Microbros.\"
+... \"After that, watch the money print itself\"
+There is a diclosure on the bottom saying, \"We are not responsible for financial loss\""
+Options = Array[ExtResource("2_y1n0w")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_e4mvi"]
+script = ExtResource("2_y1n0w")
+OptionName = "Read"
+DialogueToPointTo = SubResource("Resource_hocyb")
+
+[sub_resource type="Resource" id="Resource_gj2n3"]
+script = ExtResource("1_4fhns")
+Dialogue = "You choose not read read further."
+Options = Array[ExtResource("2_y1n0w")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_4edql"]
+script = ExtResource("2_y1n0w")
+OptionName = "Don't Read"
+DialogueToPointTo = SubResource("Resource_gj2n3")
+
+[resource]
+script = ExtResource("1_4fhns")
+Dialogue = "Book title reads, \"Got an over-achieving brother? Read this to learn how to beat him\" by MicroCorp"
+Options = Array[ExtResource("2_y1n0w")]([SubResource("Resource_e4mvi"), SubResource("Resource_4edql")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

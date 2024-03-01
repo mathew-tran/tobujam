@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://ctj1332pudwyq"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_jr0ed"]
+
+[resource]
+script = ExtResource("1_jr0ed")
+Dialogue = "Book title reads, \"The magic of thinking small\", by Dan Serfman
+The front of reads, \"An in depth and highly accurate retelling of how MicroSerfs was created\""
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

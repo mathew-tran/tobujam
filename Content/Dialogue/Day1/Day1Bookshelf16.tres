@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://df2jifxc61dnq"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_x06bt"]
+
+[resource]
+script = ExtResource("1_x06bt")
+Dialogue = "You see a bunch of fad diet books with the emphasis that each particular diet will make you smarter"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
