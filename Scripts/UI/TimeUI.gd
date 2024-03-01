@@ -10,4 +10,4 @@ func OnIncrement():
 	UpdateUI()
 
 func UpdateUI():
-	text = "Time:" + str(DayTime.CurrentTime) + "/" + str(DayTime.MaxTime)
+	text = "TIME:" + str(DayTime.CurrentTime) + "/" + str(DayTime.MaxTime)

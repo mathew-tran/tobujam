@@ -9,4 +9,4 @@ func OnDayIncrease():
 	UpdateUI()
 
 func UpdateUI():
-	text = "Day:" + str(DayTime.Day)
+	text = DayTime.GetDayString()

@@ -12,4 +12,4 @@ func OnMoneyUpdate():
 	UpdateUI()
 
 func UpdateUI():
-	text = "$" + str(PlayerInventory.Cash)
+	text = str(PlayerInventory.Cash)

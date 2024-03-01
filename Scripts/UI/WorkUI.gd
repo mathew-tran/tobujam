@@ -44,12 +44,12 @@ func GivePlayerReward():
 		content = FinalDayMoneyDialogue
 		PlayerInventory.AddMoney(100)
 	else:
-		if PlayerInventory.WorkLevel == 0:
+		if PlayerInventory.WorkLevel == Definitions.WorkPoor:
 			content = NoMoneyDialogue
-		elif PlayerInventory.WorkLevel == 1:
+		elif PlayerInventory.WorkLevel == Definitions.WorkMinimal:
 			content = MinimumMoneyDialogue
 			PlayerInventory.AddMoney(10)
-		elif PlayerInventory.WorkLevel == 2:
+		elif PlayerInventory.WorkLevel == Definitions.WorkGreat:
 			content = RegularMoneyDialogue
 			PlayerInventory.AddMoney(25)
 		else:

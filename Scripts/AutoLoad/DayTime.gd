@@ -14,6 +14,18 @@ signal Increment
 func _ready():
 	Increments = float(float(MaxTime) / float(Slices))
 
+func GetDayString():
+	if Day == 1:
+		return "MONDAY"
+	elif Day == 2:
+		return "TUESDAY"
+	elif Day == 3:
+		return "WEDNESDAY"
+	elif Day == 4:
+		return "THURSDAY"
+	elif Day == 5:
+		return "FRIDAY"
+
 func HardReset():
 	CurrentTime = 0
 	Day = 0

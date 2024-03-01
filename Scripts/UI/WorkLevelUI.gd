@@ -10,4 +10,7 @@ func OnWorkLevel():
 	UpdateUI()
 
 func UpdateUI():
-	text = "Work Level:" + str(PlayerInventory.WorkLevel)
+	if DayTime.IsLastDay() == false:
+		text = "WORK:" + str(Definitions.GetWorkRating(PlayerInventory.WorkLevel))
+	else:
+		text = "FINAL DAY"

@@ -26,3 +26,16 @@ var StartingCash = 100
 var TotalAssetGoal = 2000
 
 var FinalDayGoal = 6
+
+var WorkPoor = 0
+var WorkMinimal = 1
+var WorkGreat = 2
+
+func GetWorkRating(amount):
+	if amount == WorkPoor:
+		return "POOR"
+	if amount == WorkMinimal:
+		return "MINIMAL"
+	if amount == WorkGreat:
+		return "GREAT"
+	return "PERFECT"
