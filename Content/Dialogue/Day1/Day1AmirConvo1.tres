@@ -5,8 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_o82j2"]
 script = ExtResource("1_rh3oj")
-Dialogue = "Hrmm.. I would go for 2DFX if I were you. It's been quite big for a while.
-Also -- shouldn't you be working?"
+Dialogue = "Stock tips? Take it from me son, it’s nothing but a roll of the dice."
 Options = Array[ExtResource("2_lwgq1")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
@@ -17,8 +16,7 @@ DialogueToPointTo = SubResource("Resource_o82j2")
 
 [sub_resource type="Resource" id="Resource_lgdno"]
 script = ExtResource("1_rh3oj")
-Dialogue = "Alright.. Thanks for asking.
-It's gonna be 3 soon and I am going to be hitting my slump.
+Dialogue = "It's nearly 3 soon and I am going to be hitting my slump.
 "
 Options = Array[ExtResource("2_lwgq1")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

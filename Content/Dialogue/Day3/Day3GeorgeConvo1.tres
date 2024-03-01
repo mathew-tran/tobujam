@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_h1hmw")
-Dialogue = "Day 3 George conversation"
+Dialogue = "BMI are gonna make massive gains."
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

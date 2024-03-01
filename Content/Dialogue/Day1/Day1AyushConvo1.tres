@@ -8,26 +8,24 @@
 
 [sub_resource type="Resource" id="Resource_btyro"]
 script = ExtResource("1_ufnkm")
-Dialogue = "I'd invest in ToiletTech if I were you. Better start now before it's too late!"
+Dialogue = "I never got excited about Noogle. But I never get excited about anything."
 Options = Array[ExtResource("2_0mclg")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="Resource" id="Resource_75gq8"]
 script = ExtResource("2_0mclg")
-OptionName = "What stocks should I invest in?"
+OptionName = "Any stock trading tips?"
 DialogueToPointTo = SubResource("Resource_btyro")
 
 [sub_resource type="Resource" id="Resource_nfmvn"]
 script = ExtResource("1_ufnkm")
-Dialogue = "George is an old friend of mine.
-He really knows his stuff.
-If you have a chance to meet him at the bar. You should talk to him."
+Dialogue = "George tends to be optimistic but he can sniff out a growth opportunity. Find him at the bar!"
 Options = Array[ExtResource("2_0mclg")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="Resource" id="Resource_2ydfb"]
 script = ExtResource("2_0mclg")
-OptionName = "George"
+OptionName = "What about that George guy?"
 DialogueToPointTo = SubResource("Resource_nfmvn")
 
 [sub_resource type="Resource" id="Resource_sydar"]

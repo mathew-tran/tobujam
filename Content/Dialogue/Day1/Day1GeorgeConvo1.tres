@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=9 format=3 uid="uid://bdaspf12kd6r8"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=11 format=3 uid="uid://bdaspf12kd6r8"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_yelv5"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_urfla"]
 
 [sub_resource type="Resource" id="Resource_eemie"]
 script = ExtResource("1_yelv5")
-Dialogue = "There’ll be a run on Microserfs stock, I can feel it!
-Entertainment Arghs hid their liabilities in their last investor call. 
-The retail investors will go wild for it!"
+Dialogue = "There’ll be a run on Microserfs stock, I can feel it!"
 Options = Array[ExtResource("2_urfla")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
@@ -27,6 +25,17 @@ script = ExtResource("2_urfla")
 OptionName = "What are you drinking?"
 DialogueToPointTo = SubResource("Resource_d3ev4")
 
+[sub_resource type="Resource" id="Resource_bnqdq"]
+script = ExtResource("1_yelv5")
+Dialogue = "Ayush can be a downer but he knows his stuff!"
+Options = Array[ExtResource("2_urfla")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_vjc02"]
+script = ExtResource("2_urfla")
+OptionName = "What about that Ayush guy?"
+DialogueToPointTo = SubResource("Resource_bnqdq")
+
 [sub_resource type="Resource" id="Resource_6lht6"]
 script = ExtResource("1_yelv5")
 Dialogue = "See you around! Be sure to talk to others when you get the chance."
@@ -41,5 +50,5 @@ DialogueToPointTo = SubResource("Resource_6lht6")
 [resource]
 script = ExtResource("1_yelv5")
 Dialogue = "Howdy! Haven't seen you around!"
-Options = Array[ExtResource("2_urfla")]([SubResource("Resource_s78iq"), SubResource("Resource_dw1bd"), SubResource("Resource_oql7f")])
+Options = Array[ExtResource("2_urfla")]([SubResource("Resource_s78iq"), SubResource("Resource_dw1bd"), SubResource("Resource_vjc02"), SubResource("Resource_oql7f")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

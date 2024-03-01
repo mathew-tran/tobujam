@@ -4,13 +4,11 @@
 
 [resource]
 script = ExtResource("1_v6cle")
-Dialogue = "Hey little brother. I'll be telling you first that I am going to buy the pizza joint.
-I'll become the first successful businessman in the family.
-And Mama's gonna be more proud of me!
+Dialogue = "Hey little brother. You shoulda joined the pizza trade. I earn so much managing this place that next week I'm buying them out!
+First successful businessman in the family... Mama will be proud.
 Have you told her yet, that you work as a janitor?!
-Well.. anyways. It's gonna be a week before I buy the place. 
-It's gonna be 2,000 dollars! I bet you can't even make that kind of money in your life!
-Later. I gotta run to the bank.
+Well.. anyways. 
+I gotta run to the bank.
 Heh.. Heh...  *Chuckles*
 See you next week!"
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
