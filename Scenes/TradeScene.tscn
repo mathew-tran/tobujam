@@ -140,6 +140,7 @@ position = Vector2(5.5, 1)
 position = Vector2(-196, -128)
 InteractableName = null
 InteractableContent = ExtResource("16_lk4kf")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf1" index="1"]
@@ -149,6 +150,7 @@ position = Vector2(5.5, 1)
 position = Vector2(-161, -129)
 InteractableName = null
 InteractableContent = ExtResource("17_j1qnc")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf2" index="1"]
@@ -158,6 +160,7 @@ position = Vector2(5.5, 1)
 position = Vector2(-117, -127)
 InteractableName = null
 InteractableContent = ExtResource("18_ww6c4")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf3" index="1"]
@@ -167,6 +170,7 @@ position = Vector2(5.5, 1)
 position = Vector2(-75, -128)
 InteractableName = null
 InteractableContent = ExtResource("19_qv65q")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf4" index="1"]
@@ -176,6 +180,7 @@ position = Vector2(5.5, 1)
 position = Vector2(-214, -90)
 InteractableName = null
 InteractableContent = ExtResource("20_hybee")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf5" index="1"]
@@ -185,15 +190,17 @@ position = Vector2(5.5, 1)
 position = Vector2(-156, -89)
 InteractableName = null
 InteractableContent = ExtResource("21_sincd")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf6" index="1"]
 position = Vector2(5.5, 1)
 
 [node name="BookShelf7" parent="." instance=ExtResource("13_308t5")]
-position = Vector2(-118, -89)
+position = Vector2(-117, -89)
 InteractableName = null
 InteractableContent = ExtResource("22_wbhsx")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf7" index="1"]
@@ -203,6 +210,7 @@ position = Vector2(5.5, 1)
 position = Vector2(-72, -87)
 InteractableName = null
 InteractableContent = ExtResource("23_7gvmi")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf8" index="1"]
@@ -212,6 +220,7 @@ position = Vector2(5.5, 1)
 position = Vector2(526, 168)
 InteractableName = null
 InteractableContent = ExtResource("24_453yi")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf9" index="1"]
@@ -221,6 +230,7 @@ position = Vector2(5.5, 1)
 position = Vector2(525, 9)
 InteractableName = null
 InteractableContent = ExtResource("25_b4mpo")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf16" index="1"]
@@ -230,6 +240,7 @@ position = Vector2(5.5, 1)
 position = Vector2(552, 10)
 InteractableName = null
 InteractableContent = ExtResource("26_q5qaq")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf17" index="1"]
@@ -239,6 +250,7 @@ position = Vector2(5.5, 1)
 position = Vector2(583, 11)
 InteractableName = null
 InteractableContent = ExtResource("27_afeyn")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf18" index="1"]
@@ -248,6 +260,7 @@ position = Vector2(5.5, 1)
 position = Vector2(562, 167)
 InteractableName = null
 InteractableContent = ExtResource("25_272nt")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf10" index="1"]
@@ -257,6 +270,7 @@ position = Vector2(5.5, 1)
 position = Vector2(7, 367)
 InteractableName = null
 InteractableContent = ExtResource("26_sofd8")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf11" index="1"]
@@ -266,6 +280,7 @@ position = Vector2(5.5, 1)
 position = Vector2(36, 367)
 InteractableName = null
 InteractableContent = ExtResource("27_3s1j8")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf12" index="1"]
@@ -275,6 +290,7 @@ position = Vector2(5.5, 1)
 position = Vector2(71, 366)
 InteractableName = null
 InteractableContent = ExtResource("28_sn5i7")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf13" index="1"]
@@ -284,6 +300,7 @@ position = Vector2(5.5, 1)
 position = Vector2(104, 366)
 InteractableName = null
 InteractableContent = ExtResource("29_o10ql")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf14" index="1"]
@@ -293,6 +310,7 @@ position = Vector2(5.5, 1)
 position = Vector2(138, 366)
 InteractableName = null
 InteractableContent = ExtResource("30_abk2v")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="BookShelf15" index="1"]
@@ -311,6 +329,7 @@ position = Vector2(5.5, 1)
 position = Vector2(328, 252)
 InteractableName = null
 InteractableContent = ExtResource("16_wifwp")
+bOneTimeInteract = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="EmptyFlowerPot" index="1"]

@@ -8,9 +8,13 @@ class_name Interactable
 var bCanInteract = false
 @export var  bIncreaseWorkLevel = false
 @export var bIncreaseTime = true
+@export var bOneTimeInteract = false
 
 func _ready():
 	PlayerInventory.connect("DataUpdate", Callable(self, "OnGameDataUpdate"))
+	if bOneTimeInteract:
+		if PlayerInventory.GetDialogueDataProperty(name) != "null":
+			queue_free()
 
 func OnGameDataUpdate():
 	for update in GameSetUpdate:
@@ -38,6 +42,9 @@ func _input(event):
 			if bIncreaseWorkLevel:
 				PlayerInventory.IncreaseWorkLevel()
 				bIncreaseWorkLevel = false
+			if bOneTimeInteract:
+				PlayerInventory.SetDialogueData(name, "HasBeenRead")
+				queue_free()
 
 func OnUsed():
 	pass
