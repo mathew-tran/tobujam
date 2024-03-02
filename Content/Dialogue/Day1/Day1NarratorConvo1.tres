@@ -4,9 +4,8 @@
 
 [resource]
 script = ExtResource("1_ur3e2")
-Dialogue = "You have 7 days to buy and sell stocks. 
+Dialogue = "You have until Friday to buy and sell stocks. 
 Talk to traders nearby and try to make informed decisions. 
-If you make more than 2,000 dollars to buy the pizza joint before 
-your brother. You win."
+If you make more than 2,000 dollars to buy the pizza joint before your brother. You win."
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
