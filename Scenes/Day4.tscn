@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://gmry2xu11wgp"]
+[gd_scene load_steps=14 format=3 uid="uid://gmry2xu11wgp"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_yyjlm"]
 [ext_resource type="Resource" uid="uid://dwgrs280wnnna" path="res://Content/Dialogue/Day4/Day4GeorgeConvo1.tres" id="3_x2lak"]
@@ -9,6 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://paswfouhvxb4" path="res://Prefabs/Environment/Cleanup/BananaPeel.tscn" id="6_wksek"]
 [ext_resource type="PackedScene" uid="uid://bo46xfv04bvy8" path="res://Prefabs/Environment/Cleanup/JuiceSpill.tscn" id="7_bfmcq"]
 [ext_resource type="PackedScene" uid="uid://dto1lmjp2mmco" path="res://Prefabs/Environment/Cleanup/WaterSpill.tscn" id="8_l40ql"]
+[ext_resource type="Script" path="res://Scripts/DialogueArea.gd" id="10_uyapu"]
+[ext_resource type="Resource" uid="uid://bsrvhhxysigvc" path="res://Content/Characters/CHAR_Manager.tres" id="11_p7c75"]
+[ext_resource type="Resource" uid="uid://dsfbqrrhab5jl" path="res://Content/Dialogue/Day4/Day4BossEnter.tres" id="12_81u2o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sfqw"]
+size = Vector2(79, 42)
 
 [node name="Main" type="Node2D"]
 
@@ -51,6 +57,20 @@ position = Vector2(320, 186)
 [node name="WaterSpill" parent="TileMap/DaySpecificObjects" index="3" instance=ExtResource("8_l40ql")]
 position = Vector2(9, -136)
 
+[node name="Day4ManagerEnter" type="Area2D" parent="TileMap/DaySpecificObjects" index="4"]
+position = Vector2(192, 77)
+collision_mask = 4
+script = ExtResource("10_uyapu")
+Speaker = ExtResource("11_p7c75")
+Dialogue = ExtResource("12_81u2o")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day4ManagerEnter"]
+position = Vector2(29.5, -11)
+shape = SubResource("RectangleShape2D_3sfqw")
+
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter" to="TileMap/DaySpecificObjects/Day4ManagerEnter" method="_on_body_entered"]
+
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]
 [editable path="TileMap/George"]
@@ -79,6 +99,7 @@ position = Vector2(9, -136)
 [editable path="TileMap/BookShelf14"]
 [editable path="TileMap/BookShelf15"]
 [editable path="TileMap/BossComputer"]
+[editable path="TileMap/CoffeeMaker"]
 [editable path="TileMap/EmptyFlowerPot"]
 [editable path="TileMap/EmptyFlowerPot2"]
 [editable path="TileMap/EmptyFlowerPot3"]

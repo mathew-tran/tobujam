@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bbvseebc0xmli"]
+[gd_scene load_steps=21 format=3 uid="uid://bbvseebc0xmli"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_okqoo"]
 [ext_resource type="Resource" uid="uid://bdaspf12kd6r8" path="res://Content/Dialogue/Day1/Day1GeorgeConvo1.tres" id="2_wtpqp"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://deo3e6j463t35" path="res://Prefabs/Environment/StockPickup.tscn" id="11_lqird"]
 [ext_resource type="Script" path="res://Scripts/Resource/StockGift.gd" id="12_dlc7h"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="13_whml1"]
+[ext_resource type="Resource" uid="uid://e25qaxp7iyik" path="res://Content/Dialogue/Day1/Day1BarSelfTalk.tres" id="14_ewpna"]
+[ext_resource type="Resource" uid="uid://c1qx3aqwlfsam" path="res://Content/Dialogue/Day1/Day1ManagerTip.tres" id="15_fo8eu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pc2ds"]
 size = Vector2(79, 20)
@@ -29,6 +31,12 @@ What a steal!"
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 DialogueGift = SubResource("Resource_aagb0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic022"]
+size = Vector2(79, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uho12"]
+size = Vector2(79, 42)
 
 [node name="Main" type="Node2D"]
 
@@ -89,8 +97,33 @@ position = Vector2(218, -103)
 position = Vector2(925, 162)
 InteractableContent = SubResource("Resource_e30mn")
 
+[node name="BarSelfTalk" type="Area2D" parent="TileMap/DaySpecificObjects" index="9"]
+position = Vector2(355, 306)
+script = ExtResource("3_p7gop")
+Speaker = ExtResource("4_82ujt")
+Dialogue = ExtResource("14_ewpna")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/BarSelfTalk"]
+position = Vector2(29.5, 0)
+shape = SubResource("RectangleShape2D_ic022")
+
+[node name="Day1ManagerTip" type="Area2D" parent="TileMap/DaySpecificObjects" index="10"]
+position = Vector2(192, 76)
+collision_mask = 4
+script = ExtResource("3_p7gop")
+Speaker = ExtResource("4_7e56u")
+Dialogue = ExtResource("15_fo8eu")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day1ManagerTip"]
+position = Vector2(29.5, -11)
+shape = SubResource("RectangleShape2D_uho12")
+
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/NarratorTalk" to="TileMap/DaySpecificObjects/NarratorTalk" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/SelfTalk" to="TileMap/DaySpecificObjects/SelfTalk" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/BarSelfTalk" to="TileMap/DaySpecificObjects/BarSelfTalk" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day1ManagerTip" to="TileMap/DaySpecificObjects/Day1ManagerTip" method="_on_body_entered"]
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]
@@ -120,6 +153,7 @@ InteractableContent = SubResource("Resource_e30mn")
 [editable path="TileMap/BookShelf14"]
 [editable path="TileMap/BookShelf15"]
 [editable path="TileMap/BossComputer"]
+[editable path="TileMap/CoffeeMaker"]
 [editable path="TileMap/EmptyFlowerPot"]
 [editable path="TileMap/EmptyFlowerPot2"]
 [editable path="TileMap/EmptyFlowerPot3"]

@@ -12,7 +12,6 @@ enum DIRECTION {
 var Direction = DIRECTION.DOWN
 
 func _ready():
-
 	Game.connect("EnterDialogue", Callable(self, "OnEnterDialogue"))
 	Game.connect("ExitDialogue", Callable(self, "OnExitDialogue"))
 
@@ -22,6 +21,8 @@ func _ready():
 	add_to_group("Player")
 	FadeScreen.FadeOut()
 
+	await get_tree().create_timer(.4).timeout
+	#$CollisionShape2D.disabled = false
 
 
 func OnDayIncrease():

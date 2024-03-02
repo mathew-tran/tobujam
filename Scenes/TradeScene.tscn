@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://db05fpr8obmvp"]
+[gd_scene load_steps=52 format=3 uid="uid://db05fpr8obmvp"]
 
 [ext_resource type="TileSet" uid="uid://ds1qfqyikgoae" path="res://Tilesets/TilesetOffice.tres" id="1_ab3dv"]
 [ext_resource type="Script" path="res://Scripts/Environment/JobMovePoint.gd" id="2_balut"]
@@ -47,6 +47,7 @@
 [ext_resource type="Resource" uid="uid://cxnvdg6edge4x" path="res://Content/Dialogue/Day1/Day1Bookshelf13.tres" id="28_sn5i7"]
 [ext_resource type="Resource" uid="uid://boe3grrc68o2x" path="res://Content/Dialogue/Day1/Day1Bookshelf14.tres" id="29_o10ql"]
 [ext_resource type="Resource" uid="uid://cyb2liydtgs2s" path="res://Content/Dialogue/Day1/Day1Bookshelf15.tres" id="30_abk2v"]
+[ext_resource type="Resource" uid="uid://deu0s4f7uyxx5" path="res://Content/Dialogue/Day1/Day1CoffeeMaker.tres" id="41_3wd0h"]
 [ext_resource type="Resource" uid="uid://cc7ptmh1i2oae" path="res://Content/Dialogue/Day1/Day1EmptyFlowerPot2.tres" id="41_n06tb"]
 [ext_resource type="PackedScene" uid="uid://b4d72eugouwcl" path="res://Prefabs/Environment/CashPickup.tscn" id="42_8uarh"]
 
@@ -341,6 +342,16 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" parent="BossComputer" index="1"]
 position = Vector2(5.5, 1)
 
+[node name="CoffeeMaker" parent="." instance=ExtResource("13_308t5")]
+position = Vector2(-117, 49)
+InteractableName = null
+InteractableContent = ExtResource("41_3wd0h")
+bOneTimeInteract = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="CoffeeMaker" index="1"]
+position = Vector2(15, 1)
+
 [node name="EmptyFlowerPot" parent="." instance=ExtResource("13_308t5")]
 position = Vector2(329, 246)
 InteractableName = null
@@ -452,6 +463,7 @@ bOneTimeInteract = true
 [editable path="BookShelf14"]
 [editable path="BookShelf15"]
 [editable path="BossComputer"]
+[editable path="CoffeeMaker"]
 [editable path="EmptyFlowerPot"]
 [editable path="EmptyFlowerPot2"]
 [editable path="EmptyFlowerPot3"]

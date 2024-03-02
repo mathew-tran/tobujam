@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://c1qx3aqwlfsam"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_imnsy"]
+
+[resource]
+script = ExtResource("1_imnsy")
+Dialogue = "Talking to your manager does not spend any ENERGY.
+So talk away."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

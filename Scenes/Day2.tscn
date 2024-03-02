@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsu3pyb720p83"]
+[gd_scene load_steps=15 format=3 uid="uid://bsu3pyb720p83"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_svxbx"]
 [ext_resource type="Resource" uid="uid://dlsyiiglcmfhk" path="res://Content/Dialogue/Day2/Day2AyushConvo1.tres" id="3_tdsj6"]
@@ -7,7 +7,15 @@
 [ext_resource type="Resource" uid="uid://c41oivnedmpik" path="res://Content/Dialogue/Day2/Day2BossComputer.tres" id="6_5vkav"]
 [ext_resource type="PackedScene" uid="uid://paswfouhvxb4" path="res://Prefabs/Environment/Cleanup/BananaPeel.tscn" id="7_x4vs4"]
 [ext_resource type="PackedScene" uid="uid://bo46xfv04bvy8" path="res://Prefabs/Environment/Cleanup/JuiceSpill.tscn" id="8_yxr7m"]
+[ext_resource type="Script" path="res://Scripts/DialogueArea.gd" id="9_4k65i"]
 [ext_resource type="PackedScene" uid="uid://dto1lmjp2mmco" path="res://Prefabs/Environment/Cleanup/WaterSpill.tscn" id="9_vjikr"]
+[ext_resource type="Resource" uid="uid://csbnd4s5u36f0" path="res://Content/Characters/CHAR_Main.tres" id="10_efx0d"]
+[ext_resource type="Resource" uid="uid://dym8wxeg5l1vo" path="res://Content/Characters/CHAR_Greg.tres" id="10_gwwjg"]
+[ext_resource type="Resource" uid="uid://ngsrgdwgmhip" path="res://Content/Dialogue/Day2/Day2SelfTalk.tres" id="11_dwhq4"]
+[ext_resource type="Resource" uid="uid://cwidgq3anknf1" path="res://Content/Dialogue/Day2/Day2GregEnter.tres" id="11_rwfgb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfosa"]
+size = Vector2(79, 42)
 
 [node name="Main" type="Node2D"]
 
@@ -67,6 +75,31 @@ position = Vector2(159, -111)
 [node name="WaterSpill3" parent="TileMap/DaySpecificObjects" index="8" instance=ExtResource("9_vjikr")]
 position = Vector2(139, -95)
 
+[node name="Day2GregEnter" type="Area2D" parent="TileMap/DaySpecificObjects" index="9"]
+position = Vector2(344, -26)
+script = ExtResource("9_4k65i")
+Speaker = ExtResource("10_gwwjg")
+Dialogue = ExtResource("11_rwfgb")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day2GregEnter"]
+position = Vector2(29.5, -11)
+shape = SubResource("RectangleShape2D_jfosa")
+
+[node name="Day2SelfTalk" type="Area2D" parent="TileMap/DaySpecificObjects" index="10"]
+position = Vector2(73, -88)
+script = ExtResource("9_4k65i")
+Speaker = ExtResource("10_efx0d")
+Dialogue = ExtResource("11_dwhq4")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day2SelfTalk"]
+position = Vector2(29.5, -11)
+shape = SubResource("RectangleShape2D_jfosa")
+
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2GregEnter" to="TileMap/DaySpecificObjects/Day2GregEnter" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk" to="TileMap/DaySpecificObjects/Day2SelfTalk" method="_on_body_entered"]
+
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]
 [editable path="TileMap/George"]
@@ -95,6 +128,7 @@ position = Vector2(139, -95)
 [editable path="TileMap/BookShelf14"]
 [editable path="TileMap/BookShelf15"]
 [editable path="TileMap/BossComputer"]
+[editable path="TileMap/CoffeeMaker"]
 [editable path="TileMap/EmptyFlowerPot"]
 [editable path="TileMap/EmptyFlowerPot2"]
 [editable path="TileMap/EmptyFlowerPot3"]

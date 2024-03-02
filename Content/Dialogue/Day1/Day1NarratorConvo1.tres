@@ -1,11 +1,37 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://bvd57ii1nrtym"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=7 format=3 uid="uid://bvd57ii1nrtym"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_ur3e2"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_pll86"]
+
+[sub_resource type="Resource" id="Resource_bhdkb"]
+script = ExtResource("1_ur3e2")
+Dialogue = "Also.. being a janitor here. You also should do some cleaning daily if you like to get paid.
+....
+However, keep in mind everything costs ENERGY. Once you run out, the day is over.
+"
+Options = Array[ExtResource("2_pll86")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_ix1dt"]
+script = ExtResource("2_pll86")
+OptionName = "Anything else?"
+DialogueToPointTo = SubResource("Resource_bhdkb")
+
+[sub_resource type="Resource" id="Resource_k6m5q"]
+script = ExtResource("1_ur3e2")
+Dialogue = "You will need to buy and sell stocks to make that kind of money!!
+Seeing as you are new to the business -- making an informed decision wouldn't hurt. So try talking to others to learn what may be a good investment."
+Options = Array[ExtResource("2_pll86")]([SubResource("Resource_ix1dt")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_vxjix"]
+script = ExtResource("2_pll86")
+OptionName = "How do I do that?"
+DialogueToPointTo = SubResource("Resource_k6m5q")
 
 [resource]
 script = ExtResource("1_ur3e2")
-Dialogue = "You have until Friday to buy and sell stocks. 
-Talk to traders nearby and try to make informed decisions. 
-If you make more than 2,000 dollars to buy the pizza joint before your brother. You win."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Dialogue = "You want to beat your pesky brother Lazlo. Who is always showing you up.
+If you make 2,000 dollars to buy the pizza joint by Friday, you finally get to shut him up."
+Options = Array[ExtResource("2_pll86")]([SubResource("Resource_vxjix")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
