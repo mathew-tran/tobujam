@@ -6,7 +6,9 @@ var DialogueData = {}
 @onready var TitleText = $Panel/Panel/Speaker
 
 var DialogueToSay = []
-var DefaultCharacterDelay = .1
+var DefaultCharacterDelay = .08
+var DefaultWordDelay = .01
+var bSpedUp = false
 
 func _enter_tree():
 	visible = false
@@ -74,6 +76,7 @@ func StartText():
 	DescriptionText.text = DialogueToSay[0]
 	$Timer.wait_time = DefaultCharacterDelay
 	$Timer.start()
+	bSpedUp = false
 
 
 func _input(event):
@@ -101,6 +104,7 @@ func _input(event):
 		if $Timer.wait_time != .00005:
 			$Timer.wait_time = .00005
 			$Timer.start()
+			bSpedUp = true
 
 func HasOptions():
 	return DialogueData["Description"].HasOptions()
@@ -134,8 +138,18 @@ func CloseDialogue():
 
 func _on_timer_timeout():
 	DescriptionText.visible_characters += 1
-	$TalkSound.pitch_scale = randf_range(1, 1.1)
-	$TalkSound.play()
+	if bSpedUp == false:
+		var index = DescriptionText.visible_characters - 1
+		if len(DescriptionText.text) > index:
+			if DescriptionText.text[index] == ' ':
+				$Timer.wait_time = DefaultWordDelay
+
+			else:
+				$Timer.wait_time = DefaultCharacterDelay
+				if $TalkSound.playing == false:
+					$TalkSound.play()
+	$TalkSound.pitch_scale = randf_range(1, 1.2)
+
 	if IsLineFinished():
 		$Timer.stop()
 		$TextureRect.visible = true
