@@ -10,14 +10,32 @@
 
 [node name="TileMap" parent="." instance=ExtResource("1_mh3en")]
 
+[node name="BossLobby" parent="TileMap" index="2"]
+position = Vector2(91, 247)
+
+[node name="Sprite2D" parent="TileMap/BossLobby" index="0"]
+animation = &"up"
+
 [node name="George" parent="TileMap" index="3"]
+position = Vector2(952, 128)
 InteractableContent = ExtResource("3_qjyd5")
 
+[node name="Sprite2D" parent="TileMap/George" index="0"]
+animation = &"up"
+
 [node name="Ayush" parent="TileMap" index="4"]
+position = Vector2(772, 128)
 InteractableContent = ExtResource("4_b08w7")
 
+[node name="Sprite2D" parent="TileMap/Ayush" index="0"]
+animation = &"up"
+
 [node name="Amir" parent="TileMap" index="5"]
+position = Vector2(769, 209)
 InteractableContent = ExtResource("5_nqwnm")
+
+[node name="Sprite2D" parent="TileMap/Amir" index="0"]
+animation = &"up"
 
 [node name="CashPickup" parent="TileMap/DaySpecificObjects" index="0" instance=ExtResource("5_30kny")]
 position = Vector2(32, 338)
