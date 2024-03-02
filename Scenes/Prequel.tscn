@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dn80gnthcpb7n"]
+[gd_scene load_steps=16 format=3 uid="uid://dn80gnthcpb7n"]
 
 [ext_resource type="Script" path="res://Scripts/Level/PrequelScript.gd" id="1_p03gr"]
 [ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="2_88hmn"]
@@ -6,9 +6,25 @@
 [ext_resource type="Resource" uid="uid://b2fk33j2cb6yy" path="res://Content/Dialogue/Prequel/PrequelLazloConvo1.tres" id="3_amrq7"]
 [ext_resource type="PackedScene" uid="uid://cro46cploj113" path="res://Scenes/Pizzaria.tscn" id="4_4sw7t"]
 [ext_resource type="Texture2D" uid="uid://m0i5ql7fbbn8" path="res://Art/Janitor.png" id="4_t55wh"]
+[ext_resource type="Texture2D" uid="uid://bi6fhlsxq1p0b" path="res://Art/Lazlo.png" id="5_e0plu"]
 [ext_resource type="PackedScene" uid="uid://bayiq4i52kqk7" path="res://Prefabs/UI/DialogueUI.tscn" id="7_l2i7p"]
 [ext_resource type="PackedScene" uid="uid://ctomr4kyk71xl" path="res://Prefabs/UI/WorkUI.tscn" id="8_xlpnu"]
 [ext_resource type="PackedScene" uid="uid://8eya33vkbhju" path="res://Prefabs/UI/StockUI.tscn" id="9_evjcw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpvk5"]
+atlas = ExtResource("5_e0plu")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4mcfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpvk5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibiyu"]
 atlas = ExtResource("3_0f56d")
@@ -46,7 +62,7 @@ Content = ExtResource("3_amrq7")
 
 [node name="Brother" type="AnimatedSprite2D" parent="."]
 position = Vector2(153, 77)
-sprite_frames = SubResource("SpriteFrames_jr3h0")
+sprite_frames = SubResource("SpriteFrames_4mcfa")
 
 [node name="Brother2" type="AnimatedSprite2D" parent="."]
 position = Vector2(153, 102)

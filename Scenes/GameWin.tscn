@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjq6vdocsqry5"]
+[gd_scene load_steps=16 format=3 uid="uid://cjq6vdocsqry5"]
 
 [ext_resource type="Script" path="res://Scripts/Level/GameWinScript.gd" id="1_pvr41"]
 [ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="2_bp8eg"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bayiq4i52kqk7" path="res://Prefabs/UI/DialogueUI.tscn" id="7_peb3v"]
 [ext_resource type="PackedScene" uid="uid://ctomr4kyk71xl" path="res://Prefabs/UI/WorkUI.tscn" id="8_b6yfo"]
 [ext_resource type="PackedScene" uid="uid://8eya33vkbhju" path="res://Prefabs/UI/StockUI.tscn" id="9_6k6r4"]
+[ext_resource type="Texture2D" uid="uid://bi6fhlsxq1p0b" path="res://Art/Lazlo.png" id="10_ixiy3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibiyu"]
 atlas = ExtResource("5_mlc0h")
@@ -37,16 +38,27 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_owrrs"]
+atlas = ExtResource("10_ixiy3")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ccvcj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owrrs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="GameWinScript" type="Node2D"]
 script = ExtResource("1_pvr41")
 Speaker = ExtResource("2_bp8eg")
 Content = ExtResource("3_xednr")
 
 [node name="TileMap" parent="." instance=ExtResource("4_xg1tw")]
-
-[node name="Brother" type="AnimatedSprite2D" parent="."]
-position = Vector2(153, 77)
-sprite_frames = SubResource("SpriteFrames_jr3h0")
 
 [node name="Brother2" type="AnimatedSprite2D" parent="."]
 position = Vector2(153, 102)
@@ -72,3 +84,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Brother" type="AnimatedSprite2D" parent="."]
+position = Vector2(153, 77)
+sprite_frames = SubResource("SpriteFrames_ccvcj")

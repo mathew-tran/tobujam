@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://db05fpr8obmvp"]
+[gd_scene load_steps=50 format=3 uid="uid://db05fpr8obmvp"]
 
 [ext_resource type="TileSet" uid="uid://ds1qfqyikgoae" path="res://Tilesets/TilesetOffice.tres" id="1_ab3dv"]
 [ext_resource type="Script" path="res://Scripts/Environment/JobMovePoint.gd" id="2_balut"]
@@ -20,10 +20,13 @@
 [ext_resource type="Resource" uid="uid://esfw2lxmdld2" path="res://Content/Dialogue/Day1/Day1OldDrink.tres" id="15_nklqk"]
 [ext_resource type="Resource" uid="uid://cvpfgm6uauuq4" path="res://Content/Dialogue/Day1/Day1MysteryBusinessComputer.tres" id="16_j0o5i"]
 [ext_resource type="Resource" uid="uid://c3gk73p3rpbca" path="res://Content/Dialogue/Day1/Day1Bookshelf1.tres" id="16_lk4kf"]
+[ext_resource type="Resource" uid="uid://dym8wxeg5l1vo" path="res://Content/Characters/CHAR_Greg.tres" id="16_vtx7p"]
 [ext_resource type="Resource" uid="uid://blwb2feufq62w" path="res://Content/Dialogue/Day1/Day1EmptyFlowerPot1.tres" id="16_wifwp"]
 [ext_resource type="Resource" uid="uid://cyqywoj0xjhnk" path="res://Content/Dialogue/Day1/Day1Bookshelf2.tres" id="17_j1qnc"]
+[ext_resource type="Resource" uid="uid://df8boqmvdjra6" path="res://Content/Dialogue/Day1/Day1GregConvo1.tres" id="17_jmw6l"]
 [ext_resource type="PackedScene" uid="uid://cji0ukyoc8h76" path="res://Prefabs/Environment/WaterCooler.tscn" id="17_ntubq"]
 [ext_resource type="Resource" uid="uid://blg64i7btaum4" path="res://Content/Dialogue/Day1/Day1WaterCooler.tres" id="18_eunkf"]
+[ext_resource type="SpriteFrames" uid="uid://bm6dtvly4ykyi" path="res://Animations/Broker5.tres" id="18_lt23i"]
 [ext_resource type="Resource" uid="uid://ds2gs4jra7p14" path="res://Content/Dialogue/Day1/Day1Bookshelf3.tres" id="18_ww6c4"]
 [ext_resource type="PackedScene" uid="uid://bl2xtfoma3ah8" path="res://Prefabs/Player.tscn" id="19_agcmk"]
 [ext_resource type="Resource" uid="uid://c1e5xxkwsip4h" path="res://Content/Dialogue/Day1/Day1Bookshelf4.tres" id="19_qv65q"]
@@ -45,12 +48,6 @@
 [ext_resource type="Resource" uid="uid://boe3grrc68o2x" path="res://Content/Dialogue/Day1/Day1Bookshelf14.tres" id="29_o10ql"]
 [ext_resource type="Resource" uid="uid://cyb2liydtgs2s" path="res://Content/Dialogue/Day1/Day1Bookshelf15.tres" id="30_abk2v"]
 [ext_resource type="PackedScene" uid="uid://b4d72eugouwcl" path="res://Prefabs/Environment/CashPickup.tscn" id="42_8uarh"]
-
-[sub_resource type="Resource" id="Resource_x6ahp"]
-script = ExtResource("15_kvpft")
-Dialogue = "New CharacterDialogue"
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
-UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="Resource" id="Resource_36ggu"]
 script = ExtResource("15_kvpft")
@@ -110,11 +107,14 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" parent="Amir" index="0"]
 animation = &"left"
 
-[node name="NewBroker" parent="." instance=ExtResource("3_nkhlc")]
+[node name="Greg" parent="." instance=ExtResource("3_nkhlc")]
 position = Vector2(92, -90)
-InteractableName = ExtResource("10_k3n2k")
-InteractableContent = SubResource("Resource_x6ahp")
+InteractableName = ExtResource("16_vtx7p")
+InteractableContent = ExtResource("17_jmw6l")
 metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Greg" index="0"]
+sprite_frames = ExtResource("18_lt23i")
 
 [node name="Boss" parent="." groups=["Boss"] instance=ExtResource("3_nkhlc")]
 visible = false
@@ -398,7 +398,7 @@ bOneTimeInteract = true
 [editable path="George"]
 [editable path="Ayush"]
 [editable path="Amir"]
-[editable path="NewBroker"]
+[editable path="Greg"]
 [editable path="Boss"]
 [editable path="OldDrink"]
 [editable path="MysteryBusinessComputer"]

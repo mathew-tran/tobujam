@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://7txgjy56oow5"]
+[gd_scene load_steps=7 format=3 uid="uid://7txgjy56oow5"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_mh3en"]
 [ext_resource type="Resource" uid="uid://d2qvfl3fs6xhd" path="res://Content/Dialogue/Day5/Day5GeorgeConvo1.tres" id="3_qjyd5"]
 [ext_resource type="Resource" uid="uid://dod2nkeonbn4d" path="res://Content/Dialogue/Day5/Day5AyushConvo1.tres" id="4_b08w7"]
+[ext_resource type="Resource" uid="uid://d2dtgyio0jb5y" path="res://Content/Dialogue/Day5/Day5GregConvo1.tres" id="5_5ljcs"]
 [ext_resource type="PackedScene" uid="uid://b4d72eugouwcl" path="res://Prefabs/Environment/CashPickup.tscn" id="5_30kny"]
 [ext_resource type="Resource" uid="uid://n3an5qnfdsg" path="res://Content/Dialogue/Day5/Day5AmirConvo1.tres" id="5_nqwnm"]
 
@@ -37,6 +38,14 @@ InteractableContent = ExtResource("5_nqwnm")
 [node name="Sprite2D" parent="TileMap/Amir" index="0"]
 animation = &"up"
 
+[node name="Greg" parent="TileMap" index="6"]
+position = Vector2(651, 269)
+InteractableContent = ExtResource("5_5ljcs")
+
+[node name="Sprite2D" parent="TileMap/Greg" index="0"]
+scale = Vector2(-1, 1)
+animation = &"left"
+
 [node name="CashPickup" parent="TileMap/DaySpecificObjects" index="0" instance=ExtResource("5_30kny")]
 position = Vector2(32, 338)
 
@@ -51,6 +60,7 @@ position = Vector2(306, -46)
 [editable path="TileMap/George"]
 [editable path="TileMap/Ayush"]
 [editable path="TileMap/Amir"]
+[editable path="TileMap/Greg"]
 [editable path="TileMap/Boss"]
 [editable path="TileMap/OldDrink"]
 [editable path="TileMap/MysteryBusinessComputer"]

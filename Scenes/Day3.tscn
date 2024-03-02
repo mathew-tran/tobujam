@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cf6pargixyfhj"]
+[gd_scene load_steps=12 format=3 uid="uid://cf6pargixyfhj"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_o8kgr"]
 [ext_resource type="Resource" uid="uid://ciorye23d7c1o" path="res://Content/Dialogue/Day3/Day3AmirConvo1.tres" id="2_ju13j"]
 [ext_resource type="Resource" uid="uid://cb2js5h6jb3at" path="res://Content/Dialogue/Day3/Day3GeorgeConvo1.tres" id="3_113i5"]
 [ext_resource type="Resource" uid="uid://bgrc45vqtnsdq" path="res://Content/Dialogue/Day3/Day3AyushConvo1.tres" id="4_1df04"]
+[ext_resource type="Resource" uid="uid://uark2bihnxda" path="res://Content/Dialogue/Day3/Day3GregConvo1.tres" id="5_bcmy6"]
 [ext_resource type="PackedScene" uid="uid://deo3e6j463t35" path="res://Prefabs/Environment/StockPickup.tscn" id="6_2l0qt"]
 [ext_resource type="Script" path="res://Scripts/Resource/StockGift.gd" id="7_nlmce"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="8_gcode"]
@@ -44,6 +45,14 @@ InteractableContent = ExtResource("4_1df04")
 [node name="Amir" parent="TileMap" index="5"]
 InteractableContent = ExtResource("2_ju13j")
 
+[node name="Greg" parent="TileMap" index="6"]
+position = Vector2(159, 96)
+InteractableContent = ExtResource("5_bcmy6")
+
+[node name="Sprite2D" parent="TileMap/Greg" index="0"]
+scale = Vector2(-1, 1)
+animation = &"left"
+
 [node name="WaterSpill" parent="TileMap/DaySpecificObjects" index="0" instance=ExtResource("9_7sflt")]
 position = Vector2(88, -133)
 
@@ -65,7 +74,7 @@ InteractableContent = SubResource("Resource_awmym")
 [editable path="TileMap/George"]
 [editable path="TileMap/Ayush"]
 [editable path="TileMap/Amir"]
-[editable path="TileMap/NewBroker"]
+[editable path="TileMap/Greg"]
 [editable path="TileMap/Boss"]
 [editable path="TileMap/OldDrink"]
 [editable path="TileMap/MysteryBusinessComputer"]

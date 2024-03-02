@@ -13,6 +13,7 @@ config_version=5
 config/name="Tobujam"
 run/main_scene="res://Scenes/Title.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+run/max_fps=30
 config/icon="res://icon.svg"
 
 [autoload]

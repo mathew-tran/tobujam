@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://df8boqmvdjra6"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_li54n"]
+
+[resource]
+script = ExtResource("1_li54n")
+Dialogue = "2DFX’s cutting-edge graphics technology is taking the market by storm."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
