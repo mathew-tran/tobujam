@@ -10,6 +10,6 @@ Have you told her yet, that you work as a janitor?!
 Well.. anyways. 
 I gotta run to the bank.
 Heh.. Heh...  *Chuckles*
-See you next week!"
+I'll be getting it Friday at the latest!"
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
