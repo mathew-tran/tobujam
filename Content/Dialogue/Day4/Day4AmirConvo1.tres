@@ -1,9 +1,21 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://dw83hlv3a7cui"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=5 format=3 uid="uid://dw83hlv3a7cui"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_wktix"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_jy7cx"]
+
+[sub_resource type="Resource" id="Resource_h5rb3"]
+script = ExtResource("1_wktix")
+Dialogue = "If you want stability I would recommend Dull."
+Options = Array[ExtResource("2_jy7cx")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_dvf2h"]
+script = ExtResource("2_jy7cx")
+OptionName = "... Any stock tips?"
+DialogueToPointTo = SubResource("Resource_h5rb3")
 
 [resource]
 script = ExtResource("1_wktix")
 Dialogue = "Some call it insider trading. I just call it trading."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Options = Array[ExtResource("2_jy7cx")]([SubResource("Resource_dvf2h")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_4vxc7")
 Dialogue = "Microbros aren’t living up to the hype. Like most things in life."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([null])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

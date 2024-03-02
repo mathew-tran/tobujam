@@ -1,9 +1,21 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://dod2nkeonbn4d"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=5 format=3 uid="uid://dod2nkeonbn4d"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_3f778"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_mnoit"]
+
+[sub_resource type="Resource" id="Resource_js0xd"]
+script = ExtResource("1_3f778")
+Dialogue = "Noogle is about to hit rock bottom - I know the feeling myself."
+Options = Array[ExtResource("2_mnoit")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_8uk2n"]
+script = ExtResource("2_mnoit")
+OptionName = "What's wrong?"
+DialogueToPointTo = SubResource("Resource_js0xd")
 
 [resource]
 script = ExtResource("1_3f778")
-Dialogue = "Noogle is about to hit rock bottom - I know the feeling myself."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Dialogue = "..."
+Options = Array[ExtResource("2_mnoit")]([SubResource("Resource_8uk2n")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

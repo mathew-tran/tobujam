@@ -4,8 +4,14 @@
 
 [resource]
 script = ExtResource("1_5y6o2")
-Dialogue = "Darn you! I was supposed to get the pizza joint!
+Dialogue = ".. You bought the pizza joint?
+...
+...
+...
+Darn you! I was supposed to get the pizza joint!
+And it's named.. \"Mama's Favorite\"??
 How did this happen?!
+*Screams inaudibly*
 *You won the game*
 *Take it easy on your brother, he's going through some things*"
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])

@@ -1,10 +1,22 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://d2qvfl3fs6xhd"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=5 format=3 uid="uid://d2qvfl3fs6xhd"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_eruhv"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_dcdvl"]
+
+[sub_resource type="Resource" id="Resource_y46kt"]
+script = ExtResource("1_eruhv")
+Dialogue = "Intuition, or a gut feeling, really!"
+Options = Array[ExtResource("2_dcdvl")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_gc0x8"]
+script = ExtResource("2_dcdvl")
+OptionName = "How do you know?"
+DialogueToPointTo = SubResource("Resource_y46kt")
 
 [resource]
 script = ExtResource("1_eruhv")
 Dialogue = "This time I’m sure - Reactive is gonna absolutely blow up tonight.
 "
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Options = Array[ExtResource("2_dcdvl")]([SubResource("Resource_gc0x8")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
