@@ -90,7 +90,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88mbb"]
-size = Vector2(8, 15)
+size = Vector2(8, 13)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67qod"]
 bg_color = Color(0.0745098, 0.0666667, 0.0509804, 1)
@@ -110,7 +110,7 @@ sprite_frames = SubResource("SpriteFrames_ffl3s")
 animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_88mbb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
