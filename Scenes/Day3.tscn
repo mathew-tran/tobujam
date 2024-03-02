@@ -65,6 +65,7 @@ InteractableContent = SubResource("Resource_awmym")
 [editable path="TileMap/George"]
 [editable path="TileMap/Ayush"]
 [editable path="TileMap/Amir"]
+[editable path="TileMap/NewBroker"]
 [editable path="TileMap/Boss"]
 [editable path="TileMap/OldDrink"]
 [editable path="TileMap/MysteryBusinessComputer"]
