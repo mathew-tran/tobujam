@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cor2nr6sd4vgr"]
+[gd_scene load_steps=6 format=3 uid="uid://cor2nr6sd4vgr"]
 
 [ext_resource type="FontFile" uid="uid://cnbd6asieeogp" path="res://Font/dina10px.ttf" id="1_nexbq"]
 [ext_resource type="Script" path="res://Scripts/UI/OptionButton.gd" id="1_o7kwl"]
@@ -11,12 +11,21 @@ anti_aliasing = false
 bg_color = Color(0.603922, 0.647059, 0.74902, 1)
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_un0ov"]
+bg_color = Color(0.282353, 0.588235, 0.803922, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.988235, 0.980392, 0.964706, 1)
+
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(220, 20)
 theme_override_fonts/font = ExtResource("1_nexbq")
 theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxFlat_iy0mk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g6d0k")
+theme_override_styles/focus = SubResource("StyleBoxFlat_un0ov")
 text = "Option 1"
 script = ExtResource("1_o7kwl")
 

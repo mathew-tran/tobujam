@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_3b3co")
 Name = "Ayush"
+OwnerColor = Color(0.0784314, 0.172549, 0.294118, 1)

@@ -67,9 +67,12 @@ func SetDialogue(data):
 	StartText()
 
 func StartText():
+
+	$TextureRect.visible = false
 	DescriptionText.visible_characters = 0
 	if DialogueData["Speaker"]:
 		TitleText.text = DialogueData["Speaker"].Get()
+		$Panel/Panel.self_modulate = DialogueData["Speaker"].GetColor()
 		$Panel/Panel.visible = true
 	else:
 		$Panel/Panel.visible = false
@@ -146,14 +149,16 @@ func _on_timer_timeout():
 
 			else:
 				$Timer.wait_time = DefaultCharacterDelay
-				if $TalkSound.playing == false:
-					$TalkSound.play()
+
 	$TalkSound.pitch_scale = randf_range(1, 1.2)
 
 	if IsLineFinished():
 		$Timer.stop()
 		$TextureRect.visible = true
 		$AnimationPlayer.play("animateArrow")
+	else:
+		if $TalkSound.playing == false:
+			$TalkSound.play()
 
 func IsLineFinished():
 	return DescriptionText.visible_characters >= len(DialogueToSay[0])

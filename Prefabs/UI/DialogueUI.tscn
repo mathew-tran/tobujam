@@ -17,12 +17,12 @@ border_color = Color(0.988235, 0.980392, 0.964706, 1)
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfsk8"]
-bg_color = Color(0.713726, 0.482353, 0.180392, 1)
+bg_color = Color(1, 1, 1, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.988235, 0.980392, 0.964706, 1)
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_detail = 20
