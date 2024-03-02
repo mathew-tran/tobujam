@@ -1,9 +1,22 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cb2js5h6jb3at"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=5 format=3 uid="uid://cb2js5h6jb3at"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_h1hmw"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_6k814"]
+
+[sub_resource type="Resource" id="Resource_w6gn8"]
+script = ExtResource("1_h1hmw")
+Dialogue = "I heard BMI is gonna make some massive gains soon. You might want to invest.
+Other than that. Not much really."
+Options = Array[ExtResource("2_6k814")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_7jqye"]
+script = ExtResource("2_6k814")
+OptionName = "Any tips you have?"
+DialogueToPointTo = SubResource("Resource_w6gn8")
 
 [resource]
 script = ExtResource("1_h1hmw")
-Dialogue = "BMI is gonna make some massive gains."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Dialogue = "Hey friend!"
+Options = Array[ExtResource("2_6k814")]([SubResource("Resource_7jqye")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

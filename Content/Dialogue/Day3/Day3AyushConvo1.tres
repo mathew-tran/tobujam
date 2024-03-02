@@ -1,9 +1,21 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://bgrc45vqtnsdq"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=5 format=3 uid="uid://bgrc45vqtnsdq"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_hg6eh"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_yl82f"]
+
+[sub_resource type="Resource" id="Resource_ngbv0"]
+script = ExtResource("1_hg6eh")
+Dialogue = "Stay away from Noogle. Microserf is where to invest."
+Options = Array[ExtResource("2_yl82f")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_e0b8f"]
+script = ExtResource("2_yl82f")
+OptionName = "Any tips for today?"
+DialogueToPointTo = SubResource("Resource_ngbv0")
 
 [resource]
 script = ExtResource("1_hg6eh")
 Dialogue = "Microserfs’s latest OS isn’t popular with the peasants."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Options = Array[ExtResource("2_yl82f")]([SubResource("Resource_e0b8f")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

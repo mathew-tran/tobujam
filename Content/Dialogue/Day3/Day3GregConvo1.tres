@@ -1,9 +1,21 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://uark2bihnxda"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=5 format=3 uid="uid://uark2bihnxda"]
 
-[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_8hc4x"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_36jbb"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_tk1jc"]
+
+[sub_resource type="Resource" id="Resource_hup5w"]
+script = ExtResource("1_36jbb")
+Dialogue = "I am just telling it how it is. Be careful of the hype. Don't say I didn't warn you!"
+Options = Array[ExtResource("2_tk1jc")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_x70tr"]
+script = ExtResource("2_tk1jc")
+OptionName = "You sound negative"
+DialogueToPointTo = SubResource("Resource_hup5w")
 
 [resource]
-script = ExtResource("1_8hc4x")
+script = ExtResource("1_36jbb")
 Dialogue = "Reactive’s SoundMaster chip is overhyped. Avoid."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Options = Array[ExtResource("2_tk1jc")]([SubResource("Resource_x70tr")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

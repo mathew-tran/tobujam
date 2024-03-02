@@ -1,9 +1,23 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://ciorye23d7c1o"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=5 format=3 uid="uid://ciorye23d7c1o"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_tro8u"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_3w2x0"]
+
+[sub_resource type="Resource" id="Resource_jla58"]
+script = ExtResource("1_tro8u")
+Dialogue = "Ignoring my question? that's pretty cool.
+Like most people, I work more effectively after a few beers. Maybe you and I should grab one sometime."
+Options = Array[ExtResource("2_3w2x0")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_8y1t8"]
+script = ExtResource("2_3w2x0")
+OptionName = "Stock trading tips?"
+DialogueToPointTo = SubResource("Resource_jla58")
 
 [resource]
 script = ExtResource("1_tro8u")
-Dialogue = "Like most people, I work more effectively after a few beers."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Dialogue = "What are you upto lately? You seem pretty active, seems suspicious.
+"
+Options = Array[ExtResource("2_3w2x0")]([SubResource("Resource_8y1t8")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
