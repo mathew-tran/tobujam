@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://db05fpr8obmvp"]
+[gd_scene load_steps=48 format=3 uid="uid://db05fpr8obmvp"]
 
 [ext_resource type="TileSet" uid="uid://ds1qfqyikgoae" path="res://Tilesets/TilesetOffice.tres" id="1_ab3dv"]
 [ext_resource type="Script" path="res://Scripts/Environment/JobMovePoint.gd" id="2_balut"]
@@ -45,6 +45,12 @@
 [ext_resource type="Resource" uid="uid://boe3grrc68o2x" path="res://Content/Dialogue/Day1/Day1Bookshelf14.tres" id="29_o10ql"]
 [ext_resource type="Resource" uid="uid://cyb2liydtgs2s" path="res://Content/Dialogue/Day1/Day1Bookshelf15.tres" id="30_abk2v"]
 [ext_resource type="PackedScene" uid="uid://b4d72eugouwcl" path="res://Prefabs/Environment/CashPickup.tscn" id="42_8uarh"]
+
+[sub_resource type="Resource" id="Resource_x6ahp"]
+script = ExtResource("15_kvpft")
+Dialogue = "New CharacterDialogue"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
 [sub_resource type="Resource" id="Resource_36ggu"]
 script = ExtResource("15_kvpft")
@@ -103,6 +109,12 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Amir" index="0"]
 animation = &"left"
+
+[node name="NewBroker" parent="." instance=ExtResource("3_nkhlc")]
+position = Vector2(92, -90)
+InteractableName = ExtResource("10_k3n2k")
+InteractableContent = SubResource("Resource_x6ahp")
+metadata/_edit_group_ = true
 
 [node name="Boss" parent="." groups=["Boss"] instance=ExtResource("3_nkhlc")]
 visible = false
@@ -386,6 +398,7 @@ bOneTimeInteract = true
 [editable path="George"]
 [editable path="Ayush"]
 [editable path="Amir"]
+[editable path="NewBroker"]
 [editable path="Boss"]
 [editable path="OldDrink"]
 [editable path="MysteryBusinessComputer"]
