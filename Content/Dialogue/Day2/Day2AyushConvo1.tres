@@ -1,9 +1,32 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://dlsyiiglcmfhk"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=7 format=3 uid="uid://dlsyiiglcmfhk"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_yefaa"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_1xi0f"]
+
+[sub_resource type="Resource" id="Resource_reeoh"]
+script = ExtResource("1_yefaa")
+Dialogue = "It's going to go down hill from here. I can feel it in my bones! If you got any stocks. You might wanna sell them quick!"
+Options = Array[ExtResource("2_1xi0f")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_qp8tf"]
+script = ExtResource("2_1xi0f")
+OptionName = "What about 2DFX?"
+DialogueToPointTo = SubResource("Resource_reeoh")
+
+[sub_resource type="Resource" id="Resource_bx8r8"]
+script = ExtResource("1_yefaa")
+Dialogue = "Well not a rumor exactly, but it seems like the coffee shop is closed this week."
+Options = Array[ExtResource("2_1xi0f")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_jv23n"]
+script = ExtResource("2_1xi0f")
+OptionName = "Hear any rumors?"
+DialogueToPointTo = SubResource("Resource_bx8r8")
 
 [resource]
 script = ExtResource("1_yefaa")
 Dialogue = "2DFX? Even the name depresses me."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Options = Array[ExtResource("2_1xi0f")]([SubResource("Resource_qp8tf"), SubResource("Resource_jv23n")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

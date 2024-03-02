@@ -1,9 +1,32 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://dddj8wnffrjvf"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=7 format=3 uid="uid://dddj8wnffrjvf"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_jlpnr"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_u8l25"]
+
+[sub_resource type="Resource" id="Resource_ukt1d"]
+script = ExtResource("1_jlpnr")
+Dialogue = "Microbros is the hottest, it has to double in price tonight."
+Options = Array[ExtResource("2_u8l25")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_qo32m"]
+script = ExtResource("2_u8l25")
+OptionName = "Any information on stocks?"
+DialogueToPointTo = SubResource("Resource_ukt1d")
+
+[sub_resource type="Resource" id="Resource_0v4kh"]
+script = ExtResource("1_jlpnr")
+Dialogue = "I don't trust the Greg fellow. He gives me some bad vibes."
+Options = Array[ExtResource("2_u8l25")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_cq1ba"]
+script = ExtResource("2_u8l25")
+OptionName = "Hear any rumors?"
+DialogueToPointTo = SubResource("Resource_0v4kh")
 
 [resource]
 script = ExtResource("1_jlpnr")
-Dialogue = "Microbros is the hottest, it has to double in price tonight."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Dialogue = "Hey Buddy!"
+Options = Array[ExtResource("2_u8l25")]([SubResource("Resource_qo32m"), SubResource("Resource_cq1ba")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

@@ -1,9 +1,32 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://c4ljkccg4uni"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=7 format=3 uid="uid://c4ljkccg4uni"]
 
-[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_vdt27"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_thgn1"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_w8vyt"]
+
+[sub_resource type="Resource" id="Resource_vwoul"]
+script = ExtResource("1_thgn1")
+Dialogue = "The masses are seeing through Microserfs’ propaganda - they’re going down."
+Options = Array[ExtResource("2_w8vyt")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_4kmve"]
+script = ExtResource("2_w8vyt")
+OptionName = "Tell me about stocks"
+DialogueToPointTo = SubResource("Resource_vwoul")
+
+[sub_resource type="Resource" id="Resource_bluvr"]
+script = ExtResource("1_thgn1")
+Dialogue = "I wouldn't put too much hopes into George's advice. He always seems to come out on top."
+Options = Array[ExtResource("2_w8vyt")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_t3ep1"]
+script = ExtResource("2_w8vyt")
+OptionName = "Got any gossip?"
+DialogueToPointTo = SubResource("Resource_bluvr")
 
 [resource]
-script = ExtResource("1_vdt27")
-Dialogue = "The masses are seeing through Microserfs’ propaganda - they’re going down."
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+script = ExtResource("1_thgn1")
+Dialogue = "Greetings."
+Options = Array[ExtResource("2_w8vyt")]([SubResource("Resource_4kmve"), SubResource("Resource_t3ep1")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

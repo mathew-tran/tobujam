@@ -1,9 +1,32 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cw5dfbi6vwoe3"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=7 format=3 uid="uid://cw5dfbi6vwoe3"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_u05y4"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_xtp7k"]
+
+[sub_resource type="Resource" id="Resource_xtf6p"]
+script = ExtResource("1_u05y4")
+Dialogue = "Had trouble getting here today. The roads were packed!"
+Options = Array[ExtResource("2_xtp7k")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_7u54t"]
+script = ExtResource("2_xtp7k")
+OptionName = "Good. How is your day?"
+DialogueToPointTo = SubResource("Resource_xtf6p")
+
+[sub_resource type="Resource" id="Resource_7qpdh"]
+script = ExtResource("1_u05y4")
+Dialogue = "Not much. I just got here."
+Options = Array[ExtResource("2_xtp7k")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_26h26"]
+script = ExtResource("2_xtp7k")
+OptionName = "Hear any news?"
+DialogueToPointTo = SubResource("Resource_7qpdh")
 
 [resource]
 script = ExtResource("1_u05y4")
-Dialogue = "Had trouble getting here today. The roads were packed!"
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Dialogue = "Hey, I've been seeing more of you lately. How's it going?"
+Options = Array[ExtResource("2_xtp7k")]([SubResource("Resource_7u54t"), SubResource("Resource_26h26")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
