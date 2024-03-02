@@ -39,7 +39,7 @@ func UpdateStockData():
 func _on_visibility_changed():
 	if visible:
 		var companyNames = StockData.GetCompanyNames()
-		$VBoxContainer/Day.text = "Day " + str(DayTime.Day)
+		$VBoxContainer/Day.text = str(DayTime.GetDayString())
 		$VBoxContainer/Trading/CompanyStockCashUI.Update()
 		print("attempt update stocks")
 		if len(CompanyStockButtons) > 0:
