@@ -8,7 +8,8 @@ script = ExtResource("1_36nju")
 Dialogue = "You are here to clean up during the day shift.
 Cleaning up involves picking up trash and cleaning spills.
 ... And since you are so keen to learn about trading. Feel free to talk to others.
-But time is a valuable resource ... Don't forget to work or I won't pay you!"
+Some are reliable and some are a waste of valuable time.
+But don't forget to work or I won't pay you!"
 Options = Array[ExtResource("2_gawhq")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
 
