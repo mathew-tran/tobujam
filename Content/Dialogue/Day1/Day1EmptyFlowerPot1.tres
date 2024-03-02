@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=14 format=3 uid="uid://blwb2feufq62w"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=10 format=3 uid="uid://blwb2feufq62w"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_54of5"]
 [ext_resource type="Script" path="res://Scripts/Resource/MonetaryGift.gd" id="1_hbq3e"]
 [ext_resource type="Script" path="res://Scripts/Resource/ValueSet.gd" id="2_0u46t"]
 [ext_resource type="Resource" uid="uid://bg0hcgmdj37mk" path="res://Content/Variables/Day1Variable/VAR_Day1Pot.tres" id="3_ibhaw"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="3_rbvai"]
-[ext_resource type="Script" path="res://Scripts/Resource/CheckValue.gd" id="3_xguot"]
-[ext_resource type="Script" path="res://Scripts/Resource/OptionConditionCheck.gd" id="6_vtyk6"]
 
 [sub_resource type="Resource" id="Resource_v2ki5"]
 script = ExtResource("1_hbq3e")
@@ -24,19 +22,9 @@ Options = Array[ExtResource("3_rbvai")]([])
 UpdateVariables = Array[ExtResource("2_0u46t")]([SubResource("Resource_sdik2")])
 DialogueGift = SubResource("Resource_v2ki5")
 
-[sub_resource type="Resource" id="Resource_yo1a2"]
-script = ExtResource("3_xguot")
-value = 1
-
-[sub_resource type="Resource" id="Resource_nv0fq"]
-script = ExtResource("6_vtyk6")
-VariableReference = ExtResource("3_ibhaw")
-CheckedValue = SubResource("Resource_yo1a2")
-
 [sub_resource type="Resource" id="Resource_t2kpa"]
 script = ExtResource("3_rbvai")
 OptionName = "Look inside"
-OptionUnlockCode = SubResource("Resource_nv0fq")
 DialogueToPointTo = SubResource("Resource_ru7qf")
 
 [resource]

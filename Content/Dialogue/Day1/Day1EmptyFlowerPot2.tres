@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=10 format=3 uid="uid://cc7ptmh1i2oae"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/StockGift.gd" id="1_qgg0t"]
+[ext_resource type="Resource" uid="uid://bg0hcgmdj37mk" path="res://Content/Variables/Day1Variable/VAR_Day1Pot.tres" id="2_byylb"]
+[ext_resource type="Script" path="res://Scripts/Resource/ValueSet.gd" id="3_8ols4"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="4_lefj1"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="7_n2wug"]
+
+[sub_resource type="Resource" id="Resource_f814w"]
+script = ExtResource("1_qgg0t")
+Amount = 5
+StockNameIndex = 3
+
+[sub_resource type="Resource" id="Resource_sdik2"]
+script = ExtResource("3_8ols4")
+VariableName = ExtResource("2_byylb")
+Value = 0
+
+[sub_resource type="Resource" id="Resource_ru7qf"]
+script = ExtResource("4_lefj1")
+Dialogue = "You found some stocks of Dull. 
+What were they doing here?"
+Options = Array[ExtResource("7_n2wug")]([])
+UpdateVariables = Array[ExtResource("3_8ols4")]([SubResource("Resource_sdik2")])
+DialogueGift = SubResource("Resource_f814w")
+
+[sub_resource type="Resource" id="Resource_t2kpa"]
+script = ExtResource("7_n2wug")
+OptionName = "Look inside"
+DialogueToPointTo = SubResource("Resource_ru7qf")
+
+[resource]
+script = ExtResource("4_lefj1")
+Dialogue = "An empty flower pot."
+Options = Array[ExtResource("7_n2wug")]([SubResource("Resource_t2kpa")])
+UpdateVariables = Array[ExtResource("3_8ols4")]([])
