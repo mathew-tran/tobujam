@@ -15,7 +15,6 @@ func _ready():
 	$VBoxContainer/Trading/CompanyStockUI5,
 	$VBoxContainer/Trading/CompanyStockUI6,
 	$VBoxContainer/Trading/CompanyStockUI7,
-	$VBoxContainer/Trading/CompanyStockUI8,
 	]
 	add_to_group("StockUI")
 	var companyNames = StockData.GetCompanyNames()

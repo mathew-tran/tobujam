@@ -12,7 +12,7 @@
 [sub_resource type="Resource" id="Resource_opplc"]
 script = ExtResource("7_nlmce")
 Amount = 3
-StockNameIndex = 4
+StockNameIndex = 3
 
 [sub_resource type="Resource" id="Resource_awmym"]
 script = ExtResource("8_gcode")
