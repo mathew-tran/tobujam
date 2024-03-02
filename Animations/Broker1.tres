@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://byl1dsi5xesjp"]
+
+[ext_resource type="Texture2D" uid="uid://dvn6o84bvl3qg" path="res://Art/Stockbroker1.png" id="1_713sn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvnte"]
+atlas = ExtResource("1_713sn")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrbcl"]
+atlas = ExtResource("1_713sn")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k17b8"]
+atlas = ExtResource("1_713sn")
+region = Rect2(40, 0, 20, 20)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvnte")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrbcl")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k17b8")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]

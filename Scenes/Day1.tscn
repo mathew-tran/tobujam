@@ -37,6 +37,12 @@ DialogueGift = SubResource("Resource_aagb0")
 [node name="George" parent="TileMap" index="3"]
 InteractableContent = ExtResource("2_wtpqp")
 
+[node name="Sprite2D" parent="TileMap/George" index="0"]
+animation = &"up"
+
+[node name="Sprite2D" parent="TileMap/Ayush" index="0"]
+animation = &"up"
+
 [node name="NarratorTalk" type="Area2D" parent="TileMap/DaySpecificObjects" index="0"]
 position = Vector2(191, 167)
 script = ExtResource("3_p7gop")

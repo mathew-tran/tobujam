@@ -17,10 +17,19 @@
 InteractableContent = ExtResource("3_x2lak")
 
 [node name="Ayush" parent="TileMap" index="4"]
+position = Vector2(531, 117)
 InteractableContent = ExtResource("4_2sgm8")
 
+[node name="Sprite2D" parent="TileMap/Ayush" index="0"]
+scale = Vector2(-1, 1)
+animation = &"left"
+
 [node name="Amir" parent="TileMap" index="5"]
+position = Vector2(532, 369)
 InteractableContent = ExtResource("5_ivj1j")
+
+[node name="Sprite2D" parent="TileMap/Amir" index="0"]
+animation = &"up"
 
 [node name="CrumpledPaper" parent="TileMap/DaySpecificObjects" index="0" instance=ExtResource("5_xvhhq")]
 position = Vector2(125, 338)

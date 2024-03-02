@@ -34,15 +34,12 @@ position = Vector2(21, 339)
 animation = &"left"
 
 [node name="George" parent="TileMap" index="3"]
-position = Vector2(-165, -3)
+position = Vector2(-118, -3)
 InteractableContent = ExtResource("3_113i5")
 
 [node name="Ayush" parent="TileMap" index="4"]
-position = Vector2(228, 3)
+position = Vector2(51, 112)
 InteractableContent = ExtResource("4_1df04")
-
-[node name="Sprite2D" parent="TileMap/Ayush" index="0"]
-animation = &"down"
 
 [node name="Amir" parent="TileMap" index="5"]
 InteractableContent = ExtResource("2_ju13j")
