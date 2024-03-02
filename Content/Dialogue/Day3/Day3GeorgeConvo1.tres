@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_w6gn8"]
 script = ExtResource("1_h1hmw")
-Dialogue = "I heard BMI is gonna make some massive gains soon. You might want to invest.
+Dialogue = "I heard ToiletTech is gonna make some massive gains soon. You might want to invest.
 Other than that. Not much really."
 Options = Array[ExtResource("2_6k814")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
