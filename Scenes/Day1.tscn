@@ -40,6 +40,9 @@ InteractableContent = ExtResource("2_wtpqp")
 [node name="Sprite2D" parent="TileMap/George" index="0"]
 animation = &"up"
 
+[node name="Ayush" parent="TileMap" index="4"]
+position = Vector2(811, 89)
+
 [node name="Sprite2D" parent="TileMap/Ayush" index="0"]
 animation = &"up"
 
@@ -118,3 +121,6 @@ InteractableContent = SubResource("Resource_e30mn")
 [editable path="TileMap/BookShelf15"]
 [editable path="TileMap/BossComputer"]
 [editable path="TileMap/EmptyFlowerPot"]
+[editable path="TileMap/EmptyFlowerPot2"]
+[editable path="TileMap/EmptyFlowerPot3"]
+[editable path="TileMap/EmptyFlowerPot4"]

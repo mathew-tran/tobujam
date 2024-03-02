@@ -80,3 +80,6 @@ position = Vector2(9, -136)
 [editable path="TileMap/BookShelf15"]
 [editable path="TileMap/BossComputer"]
 [editable path="TileMap/EmptyFlowerPot"]
+[editable path="TileMap/EmptyFlowerPot2"]
+[editable path="TileMap/EmptyFlowerPot3"]
+[editable path="TileMap/EmptyFlowerPot4"]
