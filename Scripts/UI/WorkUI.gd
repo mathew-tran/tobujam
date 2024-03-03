@@ -53,13 +53,13 @@ func GivePlayerReward():
 			content = NoMoneyDialogue
 		elif PlayerInventory.WorkLevel == Definitions.WorkMinimal:
 			content = MinimumMoneyDialogue
-			PlayerInventory.AddMoney(10)
+			PlayerInventory.AddMoney(20)
 		elif PlayerInventory.WorkLevel == Definitions.WorkGreat:
 			content = RegularMoneyDialogue
-			PlayerInventory.AddMoney(25)
+			PlayerInventory.AddMoney(35)
 		else:
 			content = MaxMoneyDialogue
-			PlayerInventory.AddMoney(50)
+			PlayerInventory.AddMoney(65)
 
 	Game.BroadcastSendDialogue({
 		"Speaker" : Speaker,
