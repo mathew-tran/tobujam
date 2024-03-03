@@ -3,11 +3,11 @@ extends Node
 
 var DayTimeMusicIndex = 0
 
-var TradingMusicTrack = "res://Audio/Music/Righteous.wav"
+var TradingMusicTrack = "res://Audio/Music/Righteous.mp3"
 var DaytimeMusicTracks = [
-	"res://Audio/Music/Early_Bird.wav",
-	"res://Audio/Music/Punching_In.wav",
-	"res://Audio/Music/Training_Vid.wav"
+	"res://Audio/Music/Early_Bird.mp3",
+	"res://Audio/Music/Punching_In.mp3",
+	"res://Audio/Music/Training_Vid.mp3"
 ]
 var CurrentMusic = ""
 
