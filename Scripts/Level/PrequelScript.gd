@@ -4,10 +4,13 @@ extends Node2D
 @export var Content : DialogueItem
 
 func _ready():
+	$AnimationPlayer.play("dancing")
+	$Brother.play("moveleft")
 	Game.connect("ExitDialogue",Callable(self, "OnExitDialogue"))
 	Game.BroadcastSendDialogue({
 		"Speaker" : Speaker,
 		"Description" : Content,
+		"Owner" : null
 	})
 
 func OnExitDialogue():

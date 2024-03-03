@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bsu3pyb720p83"]
+[gd_scene load_steps=19 format=3 uid="uid://bsu3pyb720p83"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_svxbx"]
 [ext_resource type="Resource" uid="uid://dlsyiiglcmfhk" path="res://Content/Dialogue/Day2/Day2AyushConvo1.tres" id="3_tdsj6"]
@@ -13,7 +13,10 @@
 [ext_resource type="Resource" uid="uid://dym8wxeg5l1vo" path="res://Content/Characters/CHAR_Greg.tres" id="10_gwwjg"]
 [ext_resource type="Resource" uid="uid://ngsrgdwgmhip" path="res://Content/Dialogue/Day2/Day2SelfTalk.tres" id="11_dwhq4"]
 [ext_resource type="Resource" uid="uid://cwidgq3anknf1" path="res://Content/Dialogue/Day2/Day2GregEnter.tres" id="11_rwfgb"]
+[ext_resource type="Resource" uid="uid://bsrvhhxysigvc" path="res://Content/Characters/CHAR_Manager.tres" id="14_ouvaw"]
 [ext_resource type="Resource" uid="uid://3mh7tn8l1dif" path="res://Content/Dialogue/Day2/Day2BossEnter.tres" id="14_wdtct"]
+[ext_resource type="Resource" uid="uid://dr0ceybyx6d2n" path="res://Content/Characters/CHAR_Amir.tres" id="16_8mmqr"]
+[ext_resource type="Resource" uid="uid://cq26paq738cw8" path="res://Content/Dialogue/Day2/Day2AmirEnter.tres" id="17_2y1kq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfosa"]
 size = Vector2(52, 42)
@@ -102,7 +105,7 @@ shape = SubResource("RectangleShape2D_jfosa")
 position = Vector2(289, 186)
 collision_mask = 4
 script = ExtResource("9_4k65i")
-Speaker = ExtResource("10_efx0d")
+Speaker = ExtResource("14_ouvaw")
 Dialogue = ExtResource("14_wdtct")
 metadata/_edit_group_ = true
 
@@ -110,9 +113,22 @@ metadata/_edit_group_ = true
 position = Vector2(16, -11)
 shape = SubResource("RectangleShape2D_jfosa")
 
+[node name="Day2SelfTalk3" type="Area2D" parent="TileMap/DaySpecificObjects" index="12"]
+position = Vector2(376, 203)
+collision_mask = 4
+script = ExtResource("9_4k65i")
+Speaker = ExtResource("16_8mmqr")
+Dialogue = ExtResource("17_2y1kq")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day2SelfTalk3"]
+position = Vector2(16, -11)
+shape = SubResource("RectangleShape2D_jfosa")
+
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2GregEnter" to="TileMap/DaySpecificObjects/Day2GregEnter" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk" to="TileMap/DaySpecificObjects/Day2SelfTalk" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk2" to="TileMap/DaySpecificObjects/Day2SelfTalk2" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk3" to="TileMap/DaySpecificObjects/Day2SelfTalk3" method="_on_body_entered"]
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]

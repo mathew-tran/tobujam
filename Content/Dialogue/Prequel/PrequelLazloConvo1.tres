@@ -1,15 +1,28 @@
-[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://b2fk33j2cb6yy"]
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=5 format=3 uid="uid://b2fk33j2cb6yy"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_v6cle"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_uoe31"]
 
-[resource]
+[sub_resource type="Resource" id="Resource_7v712"]
 script = ExtResource("1_v6cle")
-Dialogue = "Hey little brother. You shoulda joined the pizza trade. I earn so much managing this place that next week I'm buying them out!
+Dialogue = "NO!!!! I gotta show my moves!
+.. You shoulda joined the pizza trade. I earn so much managing this place that I'm gonna be buying them out!
 First successful businessman in the family... Mama will be proud.
 Have you told her yet, that you work as a janitor?!
 Well.. anyways. 
 I gotta run to the bank.
 Heh.. Heh...  *Chuckles*
 I'll be getting it Friday at the latest!"
-Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+Options = Array[ExtResource("2_uoe31")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_s0xps"]
+script = ExtResource("2_uoe31")
+OptionName = "Can you stop dancing?"
+DialogueToPointTo = SubResource("Resource_7v712")
+
+[resource]
+script = ExtResource("1_v6cle")
+Dialogue = "Hey little brother! Long time no see!"
+Options = Array[ExtResource("2_uoe31")]([SubResource("Resource_s0xps")])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

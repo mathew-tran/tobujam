@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dn80gnthcpb7n"]
+[gd_scene load_steps=22 format=3 uid="uid://dn80gnthcpb7n"]
 
 [ext_resource type="Script" path="res://Scripts/Level/PrequelScript.gd" id="1_p03gr"]
 [ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="2_88hmn"]
@@ -15,6 +15,18 @@
 atlas = ExtResource("5_e0plu")
 region = Rect2(0, 0, 20, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg1d1"]
+atlas = ExtResource("5_e0plu")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxlx1"]
+atlas = ExtResource("5_e0plu")
+region = Rect2(20, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdexh"]
+atlas = ExtResource("5_e0plu")
+region = Rect2(20, 40, 20, 20)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_4mcfa"]
 animations = [{
 "frames": [{
@@ -23,6 +35,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg1d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxlx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdexh")
+}],
+"loop": true,
+"name": &"moveleft",
 "speed": 5.0
 }]
 
@@ -53,6 +79,92 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_px21t"]
+resource_name = "dancing"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Brother:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"moveleft"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Brother:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(153, 77), Vector2(173, 77), Vector2(153, 77)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Brother:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 2.2, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(-1, 1), Vector2(-1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v2rum"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Brother:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"moveleft"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Brother:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(153, 77)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Brother:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u4el2"]
+_data = {
+"RESET": SubResource("Animation_v2rum"),
+"dancing": SubResource("Animation_px21t")
+}
+
 [node name="Prequel" type="Node2D"]
 script = ExtResource("1_p03gr")
 Speaker = ExtResource("2_88hmn")
@@ -63,6 +175,8 @@ Content = ExtResource("3_amrq7")
 [node name="Brother" type="AnimatedSprite2D" parent="."]
 position = Vector2(153, 77)
 sprite_frames = SubResource("SpriteFrames_4mcfa")
+animation = &"moveleft"
+frame_progress = 0.579531
 
 [node name="Brother2" type="AnimatedSprite2D" parent="."]
 position = Vector2(153, 102)
@@ -88,3 +202,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u4el2")
+}
+speed_scale = 2.0

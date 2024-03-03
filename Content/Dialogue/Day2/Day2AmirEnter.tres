@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cq26paq738cw8"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_tmo3w"]
+
+[resource]
+script = ExtResource("1_tmo3w")
+Dialogue = "Wanna know how I do stock trading?
+I just throw a little bit into everything.
+Probably not the wisest. But I guess I could say I have a balanced portfolio. Wish I was taught how to deal with finances in my early years! Well I guess we have to try and fail more!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
