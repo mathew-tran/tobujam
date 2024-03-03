@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bsu3pyb720p83"]
+[gd_scene load_steps=21 format=3 uid="uid://bsu3pyb720p83"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_svxbx"]
 [ext_resource type="Resource" uid="uid://dlsyiiglcmfhk" path="res://Content/Dialogue/Day2/Day2AyushConvo1.tres" id="3_tdsj6"]
@@ -17,6 +17,8 @@
 [ext_resource type="Resource" uid="uid://3mh7tn8l1dif" path="res://Content/Dialogue/Day2/Day2BossEnter.tres" id="14_wdtct"]
 [ext_resource type="Resource" uid="uid://dr0ceybyx6d2n" path="res://Content/Characters/CHAR_Amir.tres" id="16_8mmqr"]
 [ext_resource type="Resource" uid="uid://cq26paq738cw8" path="res://Content/Dialogue/Day2/Day2AmirEnter.tres" id="17_2y1kq"]
+[ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="18_5ljlw"]
+[ext_resource type="Resource" uid="uid://bx2e54323e211" path="res://Content/Dialogue/Day2/Day2LazloPhone.tres" id="19_cow8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfosa"]
 size = Vector2(52, 42)
@@ -125,10 +127,23 @@ metadata/_edit_group_ = true
 position = Vector2(16, -11)
 shape = SubResource("RectangleShape2D_jfosa")
 
+[node name="Day2SelfTalk4" type="Area2D" parent="TileMap/DaySpecificObjects" index="13"]
+position = Vector2(419, 264)
+collision_mask = 4
+script = ExtResource("9_4k65i")
+Speaker = ExtResource("18_5ljlw")
+Dialogue = ExtResource("19_cow8w")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day2SelfTalk4"]
+position = Vector2(16, -11)
+shape = SubResource("RectangleShape2D_jfosa")
+
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2GregEnter" to="TileMap/DaySpecificObjects/Day2GregEnter" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk" to="TileMap/DaySpecificObjects/Day2SelfTalk" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk2" to="TileMap/DaySpecificObjects/Day2SelfTalk2" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk3" to="TileMap/DaySpecificObjects/Day2SelfTalk3" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk4" to="TileMap/DaySpecificObjects/Day2SelfTalk4" method="_on_body_entered"]
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]

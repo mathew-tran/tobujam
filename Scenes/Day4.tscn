@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://gmry2xu11wgp"]
+[gd_scene load_steps=24 format=3 uid="uid://gmry2xu11wgp"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_yyjlm"]
 [ext_resource type="Resource" uid="uid://dwgrs280wnnna" path="res://Content/Dialogue/Day4/Day4GeorgeConvo1.tres" id="3_x2lak"]
@@ -18,12 +18,17 @@
 [ext_resource type="Resource" uid="uid://dym8wxeg5l1vo" path="res://Content/Characters/CHAR_Greg.tres" id="15_1006o"]
 [ext_resource type="Resource" uid="uid://f7svb47vdmjq" path="res://Content/Characters/CHAR_George.tres" id="17_7i0so"]
 [ext_resource type="Resource" uid="uid://ce8si28v2fr0y" path="res://Content/Dialogue/Day4/Day4George.tres" id="18_tdfa1"]
+[ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="19_r5vk2"]
+[ext_resource type="Resource" uid="uid://cyth1ek8dtwkf" path="res://Content/Dialogue/Day4/Day4LazloPhone.tres" id="20_c7gt6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sfqw"]
 size = Vector2(79, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u38my"]
 size = Vector2(69, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdvbw"]
+size = Vector2(52, 42)
 
 [node name="Main" type="Node2D"]
 
@@ -114,10 +119,23 @@ metadata/_edit_group_ = true
 position = Vector2(24.5, -4.5)
 shape = SubResource("RectangleShape2D_u38my")
 
+[node name="Day2SelfTalk4" type="Area2D" parent="TileMap/DaySpecificObjects" index="8"]
+position = Vector2(419, 264)
+collision_mask = 4
+script = ExtResource("10_uyapu")
+Speaker = ExtResource("19_r5vk2")
+Dialogue = ExtResource("20_c7gt6")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day2SelfTalk4"]
+position = Vector2(16, -11)
+shape = SubResource("RectangleShape2D_jdvbw")
+
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter" to="TileMap/DaySpecificObjects/Day4ManagerEnter" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter2" to="TileMap/DaySpecificObjects/Day4ManagerEnter2" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter3" to="TileMap/DaySpecificObjects/Day4ManagerEnter3" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter4" to="TileMap/DaySpecificObjects/Day4ManagerEnter4" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk4" to="TileMap/DaySpecificObjects/Day2SelfTalk4" method="_on_body_entered"]
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]

@@ -176,7 +176,7 @@ Content = ExtResource("3_amrq7")
 position = Vector2(153, 77)
 sprite_frames = SubResource("SpriteFrames_4mcfa")
 animation = &"moveleft"
-frame_progress = 0.579531
+frame_progress = 0.41278
 
 [node name="Brother2" type="AnimatedSprite2D" parent="."]
 position = Vector2(153, 102)

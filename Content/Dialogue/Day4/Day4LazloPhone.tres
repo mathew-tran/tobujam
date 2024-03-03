@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=5 format=3 uid="uid://cyth1ek8dtwkf"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_m0ds0"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_g2ktc"]
+
+[sub_resource type="Resource" id="Resource_vefos"]
+script = ExtResource("1_m0ds0")
+Dialogue = "Hey.. heard you are going deep into the stock trade.
+Let's not do anything hasty. Alright?"
+Options = Array[ExtResource("2_g2ktc")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_s00sf"]
+script = ExtResource("2_g2ktc")
+OptionName = ".. You pick it up."
+DialogueToPointTo = SubResource("Resource_vefos")
+
+[resource]
+script = ExtResource("1_m0ds0")
+Dialogue = "Hey pick up the phone!"
+Options = Array[ExtResource("2_g2ktc")]([SubResource("Resource_s00sf")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
