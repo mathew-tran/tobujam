@@ -20,7 +20,7 @@ var ColorData = {
 }
 
 var TimePoints = 8
-var StartingCash = 100
+var StartingCash = 300
 
 # still need to update dialogue..
 var TotalAssetGoal = 2000
