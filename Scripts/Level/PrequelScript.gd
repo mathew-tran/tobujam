@@ -13,3 +13,5 @@ func _ready():
 func OnExitDialogue():
 	DayTime.MoveNextDay()
 	FadeScreen.TransitionLevel("res://Scenes/Day1.tscn")
+
+

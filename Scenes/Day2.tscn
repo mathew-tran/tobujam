@@ -100,6 +100,7 @@ shape = SubResource("RectangleShape2D_jfosa")
 
 [node name="Day2SelfTalk2" type="Area2D" parent="TileMap/DaySpecificObjects" index="11"]
 position = Vector2(289, 186)
+collision_mask = 4
 script = ExtResource("9_4k65i")
 Speaker = ExtResource("10_efx0d")
 Dialogue = ExtResource("14_wdtct")
