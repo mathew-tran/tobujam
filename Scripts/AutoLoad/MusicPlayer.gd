@@ -65,6 +65,7 @@ func OnDayIncrease():
 func SetMusic(musicRes):
 	MusicChannel.stream = load(musicRes)
 	MusicChannel.play()
+	MusicTimer.stop()
 
 func OnGameWin():
 	StopMusic()
