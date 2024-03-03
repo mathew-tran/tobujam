@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://db05fpr8obmvp"]
+[gd_scene load_steps=59 format=3 uid="uid://db05fpr8obmvp"]
 
 [ext_resource type="TileSet" uid="uid://ds1qfqyikgoae" path="res://Tilesets/TilesetOffice.tres" id="1_ab3dv"]
 [ext_resource type="Script" path="res://Scripts/Environment/JobMovePoint.gd" id="2_balut"]
@@ -50,7 +50,11 @@
 [ext_resource type="Resource" uid="uid://deu0s4f7uyxx5" path="res://Content/Dialogue/Day1/Day1CoffeeMaker.tres" id="41_3wd0h"]
 [ext_resource type="Resource" uid="uid://cc7ptmh1i2oae" path="res://Content/Dialogue/Day1/Day1EmptyFlowerPot2.tres" id="41_n06tb"]
 [ext_resource type="PackedScene" uid="uid://b4d72eugouwcl" path="res://Prefabs/Environment/CashPickup.tscn" id="42_8uarh"]
+[ext_resource type="Script" path="res://Scripts/DialogueArea.gd" id="51_4mykf"]
 [ext_resource type="Script" path="res://Scripts/Environment/Lighting.gd" id="51_w0b86"]
+[ext_resource type="Resource" uid="uid://csbnd4s5u36f0" path="res://Content/Characters/CHAR_Main.tres" id="52_vd1kc"]
+[ext_resource type="Resource" uid="uid://uv2dd7bft0k1" path="res://Content/Dialogue/Day1/Day1GoHomeAttempt.tres" id="54_nw7pu"]
+[ext_resource type="Resource" uid="uid://bxpu5aw3sd33o" path="res://Content/Dialogue/Day1/Day1MaintenanceCloset.tres" id="55_5ltuh"]
 
 [sub_resource type="Resource" id="Resource_36ggu"]
 script = ExtResource("15_kvpft")
@@ -58,6 +62,12 @@ Dialogue = "This computer is my boss's.
 Best not touch it."
 Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
 UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l56o6"]
+size = Vector2(79, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfubw"]
+size = Vector2(79, 20)
 
 [node name="TileMap" type="TileMap"]
 tile_set = ExtResource("1_ab3dv")
@@ -443,6 +453,33 @@ bOneTimeInteract = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("51_w0b86")
+
+[node name="SelfTalk2" type="Area2D" parent="."]
+position = Vector2(188, 287)
+script = ExtResource("51_4mykf")
+Speaker = ExtResource("52_vd1kc")
+Dialogue = ExtResource("54_nw7pu")
+bDestroyAfterDialogue = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelfTalk2"]
+position = Vector2(29.5, 0)
+shape = SubResource("RectangleShape2D_l56o6")
+
+[node name="SelfTalk3" type="Area2D" parent="."]
+position = Vector2(446, 90)
+script = ExtResource("51_4mykf")
+Speaker = ExtResource("52_vd1kc")
+Dialogue = ExtResource("55_5ltuh")
+bDestroyAfterDialogue = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelfTalk3"]
+position = Vector2(29.5, 0)
+shape = SubResource("RectangleShape2D_bfubw")
+
+[connection signal="body_entered" from="SelfTalk2" to="SelfTalk2" method="_on_body_entered"]
+[connection signal="body_entered" from="SelfTalk3" to="SelfTalk3" method="_on_body_entered"]
 
 [editable path="BossLobby"]
 [editable path="George"]

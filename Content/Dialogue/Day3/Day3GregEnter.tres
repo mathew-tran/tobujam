@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cjqm8k85rdree"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_m27bo"]
+
+[resource]
+script = ExtResource("1_m27bo")
+Dialogue = "... Darn that George! He must be up to something..
+If this keeps up. I might become homeless!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

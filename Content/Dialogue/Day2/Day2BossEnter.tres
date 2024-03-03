@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=7 format=3 uid="uid://3mh7tn8l1dif"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_ygjvi"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_knmip"]
+
+[sub_resource type="Resource" id="Resource_8xxiw"]
+script = ExtResource("1_ygjvi")
+Dialogue = "Good stuff. Keep at it!"
+Options = Array[ExtResource("2_knmip")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_ox2wf"]
+script = ExtResource("2_knmip")
+OptionName = "Yes"
+DialogueToPointTo = SubResource("Resource_8xxiw")
+
+[sub_resource type="Resource" id="Resource_30sue"]
+script = ExtResource("1_ygjvi")
+Dialogue = "Well I am sure you our bound to make some money. Remember to chat with the people around here. Most of them are friendly."
+Options = Array[ExtResource("2_knmip")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_6ai6c"]
+script = ExtResource("2_knmip")
+OptionName = "No"
+DialogueToPointTo = SubResource("Resource_30sue")
+
+[resource]
+script = ExtResource("1_ygjvi")
+Dialogue = "Hey. How's the intel going? Make anything yet?"
+Options = Array[ExtResource("2_knmip")]([SubResource("Resource_ox2wf"), SubResource("Resource_6ai6c")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

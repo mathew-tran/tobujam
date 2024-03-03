@@ -91,5 +91,4 @@ position = Vector2(153, 77)
 sprite_frames = SubResource("SpriteFrames_5222b")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0.243137, 0.854902, 1)
 script = ExtResource("11_pxmqo")

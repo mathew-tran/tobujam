@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://gmry2xu11wgp"]
+[gd_scene load_steps=21 format=3 uid="uid://gmry2xu11wgp"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_yyjlm"]
 [ext_resource type="Resource" uid="uid://dwgrs280wnnna" path="res://Content/Dialogue/Day4/Day4GeorgeConvo1.tres" id="3_x2lak"]
@@ -12,18 +12,27 @@
 [ext_resource type="Script" path="res://Scripts/DialogueArea.gd" id="10_uyapu"]
 [ext_resource type="Resource" uid="uid://bsrvhhxysigvc" path="res://Content/Characters/CHAR_Manager.tres" id="11_p7c75"]
 [ext_resource type="Resource" uid="uid://dsfbqrrhab5jl" path="res://Content/Dialogue/Day4/Day4BossEnter.tres" id="12_81u2o"]
+[ext_resource type="Resource" uid="uid://li0q3qiayaoi" path="res://Content/Dialogue/Day4/Day4AyushWatch.tres" id="13_4y27s"]
+[ext_resource type="Resource" uid="uid://dnp2gnkf4otar" path="res://Content/Characters/CHAR_Ayush.tres" id="13_fopau"]
+[ext_resource type="Resource" uid="uid://ci30q1x0vt5le" path="res://Content/Dialogue/Day4/Day4GregWatch.tres" id="14_ho6os"]
+[ext_resource type="Resource" uid="uid://dym8wxeg5l1vo" path="res://Content/Characters/CHAR_Greg.tres" id="15_1006o"]
+[ext_resource type="Resource" uid="uid://f7svb47vdmjq" path="res://Content/Characters/CHAR_George.tres" id="17_7i0so"]
+[ext_resource type="Resource" uid="uid://ce8si28v2fr0y" path="res://Content/Dialogue/Day4/Day4George.tres" id="18_tdfa1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sfqw"]
 size = Vector2(79, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u38my"]
+size = Vector2(69, 33)
 
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_yyjlm")]
 
-[node name="George" parent="TileMap" index="3"]
+[node name="George" parent="TileMap" index="4"]
 InteractableContent = ExtResource("3_x2lak")
 
-[node name="Ayush" parent="TileMap" index="4"]
+[node name="Ayush" parent="TileMap" index="5"]
 position = Vector2(531, 117)
 InteractableContent = ExtResource("4_2sgm8")
 
@@ -31,14 +40,14 @@ InteractableContent = ExtResource("4_2sgm8")
 scale = Vector2(-1, 1)
 animation = &"left"
 
-[node name="Amir" parent="TileMap" index="5"]
+[node name="Amir" parent="TileMap" index="6"]
 position = Vector2(532, 369)
 InteractableContent = ExtResource("5_ivj1j")
 
 [node name="Sprite2D" parent="TileMap/Amir" index="0"]
 animation = &"up"
 
-[node name="Greg" parent="TileMap" index="6"]
+[node name="Greg" parent="TileMap" index="7"]
 position = Vector2(651, 190)
 InteractableContent = ExtResource("5_jkcku")
 
@@ -69,7 +78,46 @@ metadata/_edit_group_ = true
 position = Vector2(29.5, -11)
 shape = SubResource("RectangleShape2D_3sfqw")
 
+[node name="Day4ManagerEnter2" type="Area2D" parent="TileMap/DaySpecificObjects" index="5"]
+position = Vector2(504, 133)
+collision_mask = 4
+script = ExtResource("10_uyapu")
+Speaker = ExtResource("13_fopau")
+Dialogue = ExtResource("13_4y27s")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day4ManagerEnter2"]
+position = Vector2(29.5, -11)
+shape = SubResource("RectangleShape2D_3sfqw")
+
+[node name="Day4ManagerEnter3" type="Area2D" parent="TileMap/DaySpecificObjects" index="6"]
+position = Vector2(619, 204)
+collision_mask = 4
+script = ExtResource("10_uyapu")
+Speaker = ExtResource("15_1006o")
+Dialogue = ExtResource("14_ho6os")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day4ManagerEnter3"]
+position = Vector2(29.5, -11)
+shape = SubResource("RectangleShape2D_3sfqw")
+
+[node name="Day4ManagerEnter4" type="Area2D" parent="TileMap/DaySpecificObjects" index="7"]
+position = Vector2(425, 380)
+collision_mask = 4
+script = ExtResource("10_uyapu")
+Speaker = ExtResource("17_7i0so")
+Dialogue = ExtResource("18_tdfa1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day4ManagerEnter4"]
+position = Vector2(24.5, -4.5)
+shape = SubResource("RectangleShape2D_u38my")
+
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter" to="TileMap/DaySpecificObjects/Day4ManagerEnter" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter2" to="TileMap/DaySpecificObjects/Day4ManagerEnter2" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter3" to="TileMap/DaySpecificObjects/Day4ManagerEnter3" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter4" to="TileMap/DaySpecificObjects/Day4ManagerEnter4" method="_on_body_entered"]
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]

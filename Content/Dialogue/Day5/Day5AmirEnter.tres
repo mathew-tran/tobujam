@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cvofk1ewr1xak"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_55nco"]
+
+[resource]
+script = ExtResource("1_55nco")
+Dialogue = "Hey! How have you been? Hope your hungry because I'll get some donuts later today!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

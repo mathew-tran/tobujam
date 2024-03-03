@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bbvseebc0xmli"]
+[gd_scene load_steps=27 format=3 uid="uid://bbvseebc0xmli"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_okqoo"]
 [ext_resource type="Resource" uid="uid://bdaspf12kd6r8" path="res://Content/Dialogue/Day1/Day1GeorgeConvo1.tres" id="2_wtpqp"]
@@ -15,6 +15,12 @@
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="13_whml1"]
 [ext_resource type="Resource" uid="uid://e25qaxp7iyik" path="res://Content/Dialogue/Day1/Day1BarSelfTalk.tres" id="14_ewpna"]
 [ext_resource type="Resource" uid="uid://c1qx3aqwlfsam" path="res://Content/Dialogue/Day1/Day1ManagerTip.tres" id="15_fo8eu"]
+[ext_resource type="Resource" uid="uid://f7svb47vdmjq" path="res://Content/Characters/CHAR_George.tres" id="15_ktx1j"]
+[ext_resource type="Resource" uid="uid://b3iir07v18luy" path="res://Content/Dialogue/Day1/Day1ScareGeorge.tres" id="16_yj7u6"]
+[ext_resource type="Resource" uid="uid://dym8wxeg5l1vo" path="res://Content/Characters/CHAR_Greg.tres" id="18_pkuf7"]
+[ext_resource type="Resource" uid="uid://dqpyxbefv6ruw" path="res://Content/Dialogue/Day1/Day1GregWashroom.tres" id="19_jorcm"]
+[ext_resource type="Resource" uid="uid://dobi4odl20n3b" path="res://Content/Dialogue/Day1/Day1Amir.tres" id="20_38hq0"]
+[ext_resource type="Resource" uid="uid://dr0ceybyx6d2n" path="res://Content/Characters/CHAR_Amir.tres" id="20_plsbo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pc2ds"]
 size = Vector2(79, 20)
@@ -42,13 +48,13 @@ size = Vector2(79, 42)
 
 [node name="TileMap" parent="." instance=ExtResource("1_okqoo")]
 
-[node name="George" parent="TileMap" index="3"]
+[node name="George" parent="TileMap" index="4"]
 InteractableContent = ExtResource("2_wtpqp")
 
 [node name="Sprite2D" parent="TileMap/George" index="0"]
 animation = &"up"
 
-[node name="Ayush" parent="TileMap" index="4"]
+[node name="Ayush" parent="TileMap" index="5"]
 position = Vector2(811, 89)
 
 [node name="Sprite2D" parent="TileMap/Ayush" index="0"]
@@ -108,7 +114,19 @@ metadata/_edit_group_ = true
 position = Vector2(29.5, 0)
 shape = SubResource("RectangleShape2D_ic022")
 
-[node name="Day1ManagerTip" type="Area2D" parent="TileMap/DaySpecificObjects" index="10"]
+[node name="BarSelfTalk2" type="Area2D" parent="TileMap/DaySpecificObjects" index="10"]
+position = Vector2(420, 375)
+collision_mask = 4
+script = ExtResource("3_p7gop")
+Speaker = ExtResource("15_ktx1j")
+Dialogue = ExtResource("16_yj7u6")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/BarSelfTalk2"]
+position = Vector2(29.5, 0)
+shape = SubResource("RectangleShape2D_ic022")
+
+[node name="Day1ManagerTip" type="Area2D" parent="TileMap/DaySpecificObjects" index="11"]
 position = Vector2(192, 76)
 collision_mask = 4
 script = ExtResource("3_p7gop")
@@ -120,10 +138,37 @@ metadata/_edit_group_ = true
 position = Vector2(29.5, -11)
 shape = SubResource("RectangleShape2D_uho12")
 
+[node name="Day1ManagerTip2" type="Area2D" parent="TileMap/DaySpecificObjects" index="12"]
+position = Vector2(64, -80)
+collision_mask = 4
+script = ExtResource("3_p7gop")
+Speaker = ExtResource("18_pkuf7")
+Dialogue = ExtResource("19_jorcm")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day1ManagerTip2"]
+position = Vector2(29.5, -11)
+shape = SubResource("RectangleShape2D_uho12")
+
+[node name="Day1ManagerTip3" type="Area2D" parent="TileMap/DaySpecificObjects" index="13"]
+position = Vector2(-75, -30)
+collision_mask = 4
+script = ExtResource("3_p7gop")
+Speaker = ExtResource("20_plsbo")
+Dialogue = ExtResource("20_38hq0")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day1ManagerTip3"]
+position = Vector2(29.5, -11)
+shape = SubResource("RectangleShape2D_uho12")
+
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/NarratorTalk" to="TileMap/DaySpecificObjects/NarratorTalk" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/SelfTalk" to="TileMap/DaySpecificObjects/SelfTalk" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/BarSelfTalk" to="TileMap/DaySpecificObjects/BarSelfTalk" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/BarSelfTalk2" to="TileMap/DaySpecificObjects/BarSelfTalk2" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day1ManagerTip" to="TileMap/DaySpecificObjects/Day1ManagerTip" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day1ManagerTip2" to="TileMap/DaySpecificObjects/Day1ManagerTip2" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day1ManagerTip3" to="TileMap/DaySpecificObjects/Day1ManagerTip3" method="_on_body_entered"]
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]

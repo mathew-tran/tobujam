@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://dobi4odl20n3b"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_124rm"]
+
+[resource]
+script = ExtResource("1_124rm")
+Dialogue = "Nice to see a fresh face!
+.. Judging by your clothes, you are the new janitor right?
+...
+Well. To let you in on a not-so secret. George and Greg used to be best buds until a few weeks ago. But now it seems like they can barely be in the same room together. Not sure what happened, but neither will speak up about it.
+"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

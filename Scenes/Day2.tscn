@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bsu3pyb720p83"]
+[gd_scene load_steps=16 format=3 uid="uid://bsu3pyb720p83"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_svxbx"]
 [ext_resource type="Resource" uid="uid://dlsyiiglcmfhk" path="res://Content/Dialogue/Day2/Day2AyushConvo1.tres" id="3_tdsj6"]
@@ -13,39 +13,40 @@
 [ext_resource type="Resource" uid="uid://dym8wxeg5l1vo" path="res://Content/Characters/CHAR_Greg.tres" id="10_gwwjg"]
 [ext_resource type="Resource" uid="uid://ngsrgdwgmhip" path="res://Content/Dialogue/Day2/Day2SelfTalk.tres" id="11_dwhq4"]
 [ext_resource type="Resource" uid="uid://cwidgq3anknf1" path="res://Content/Dialogue/Day2/Day2GregEnter.tres" id="11_rwfgb"]
+[ext_resource type="Resource" uid="uid://3mh7tn8l1dif" path="res://Content/Dialogue/Day2/Day2BossEnter.tres" id="14_wdtct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfosa"]
-size = Vector2(79, 42)
+size = Vector2(52, 42)
 
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_svxbx")]
 
-[node name="BossLobby" parent="TileMap" index="2"]
+[node name="BossLobby" parent="TileMap" index="3"]
 position = Vector2(304, 175)
 
-[node name="George" parent="TileMap" index="3"]
+[node name="George" parent="TileMap" index="4"]
 position = Vector2(771, 206)
 
-[node name="Ayush" parent="TileMap" index="4"]
+[node name="Ayush" parent="TileMap" index="5"]
 position = Vector2(757, 308)
 InteractableContent = ExtResource("3_tdsj6")
 
 [node name="Sprite2D" parent="TileMap/Ayush" index="0"]
 animation = &"left"
 
-[node name="Amir" parent="TileMap" index="5"]
+[node name="Amir" parent="TileMap" index="6"]
 position = Vector2(394, 194)
 InteractableContent = ExtResource("4_b0vqt")
 
-[node name="Greg" parent="TileMap" index="6"]
+[node name="Greg" parent="TileMap" index="7"]
 position = Vector2(429, -31)
 InteractableContent = ExtResource("4_xq0sy")
 
 [node name="Sprite2D" parent="TileMap/Greg" index="0"]
 animation = &"left"
 
-[node name="BossComputer" parent="TileMap" index="29"]
+[node name="BossComputer" parent="TileMap" index="30"]
 InteractableContent = ExtResource("6_5vkav")
 
 [node name="BananaPeel" parent="TileMap/DaySpecificObjects" index="0" instance=ExtResource("7_x4vs4")]
@@ -97,8 +98,20 @@ metadata/_edit_group_ = true
 position = Vector2(29.5, -11)
 shape = SubResource("RectangleShape2D_jfosa")
 
+[node name="Day2SelfTalk2" type="Area2D" parent="TileMap/DaySpecificObjects" index="11"]
+position = Vector2(289, 186)
+script = ExtResource("9_4k65i")
+Speaker = ExtResource("10_efx0d")
+Dialogue = ExtResource("14_wdtct")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day2SelfTalk2"]
+position = Vector2(16, -11)
+shape = SubResource("RectangleShape2D_jfosa")
+
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2GregEnter" to="TileMap/DaySpecificObjects/Day2GregEnter" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk" to="TileMap/DaySpecificObjects/Day2SelfTalk" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/DaySpecificObjects/Day2SelfTalk2" to="TileMap/DaySpecificObjects/Day2SelfTalk2" method="_on_body_entered"]
 
 [editable path="TileMap"]
 [editable path="TileMap/BossLobby"]

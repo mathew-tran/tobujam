@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=7 format=3 uid="uid://ce8si28v2fr0y"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_fuh03"]
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueOption.gd" id="2_tqfcn"]
+
+[sub_resource type="Resource" id="Resource_en31l"]
+script = ExtResource("1_fuh03")
+Dialogue = "That's good. Hopefully some of my advice helped!"
+Options = Array[ExtResource("2_tqfcn")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_hieys"]
+script = ExtResource("2_tqfcn")
+OptionName = "Good."
+DialogueToPointTo = SubResource("Resource_en31l")
+
+[sub_resource type="Resource" id="Resource_c7sqx"]
+script = ExtResource("1_fuh03")
+Dialogue = "Well there's always a next time right? Even if you lose. You gain experience. The way I see it is everything is just a numbers game!"
+Options = Array[ExtResource("2_tqfcn")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
+
+[sub_resource type="Resource" id="Resource_swisb"]
+script = ExtResource("2_tqfcn")
+OptionName = "Bad."
+DialogueToPointTo = SubResource("Resource_c7sqx")
+
+[resource]
+script = ExtResource("1_fuh03")
+Dialogue = "Hey! Tonights the big night!
+Well, before Friday that is.
+How are you fairing?"
+Options = Array[ExtResource("2_tqfcn")]([SubResource("Resource_hieys"), SubResource("Resource_swisb")])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

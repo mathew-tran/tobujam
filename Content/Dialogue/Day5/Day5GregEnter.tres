@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://cu1mfkgdh8lls"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_rgpys"]
+
+[resource]
+script = ExtResource("1_rgpys")
+Dialogue = "Oof. I didn't do too well this week. I might need to borrow some money.. again...  from George."
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])

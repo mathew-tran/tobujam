@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueItem" load_steps=2 format=3 uid="uid://dqpyxbefv6ruw"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/DialogueItem.gd" id="1_asuxj"]
+
+[resource]
+script = ExtResource("1_asuxj")
+Dialogue = ".. I am slowly becoming a tea drinker, because the coffee shop has been down for weeks.
+Maybe there's some good in this!"
+Options = Array[Resource("res://Scripts/Resource/DialogueOption.gd")]([])
+UpdateVariables = Array[Resource("res://Scripts/Resource/ValueSet.gd")]([])
