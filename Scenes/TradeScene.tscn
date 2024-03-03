@@ -87,7 +87,7 @@ script = ExtResource("2_balut")
 position = Vector2(-588, 1363)
 script = ExtResource("2_balut")
 
-[node name="BossLobby" parent="." instance=ExtResource("3_nkhlc")]
+[node name="BossLobby" parent="." groups=["BossLobby"] instance=ExtResource("3_nkhlc")]
 position = Vector2(221, 66)
 InteractableName = ExtResource("4_bcfv0")
 InteractableContent = ExtResource("5_ou1hx")

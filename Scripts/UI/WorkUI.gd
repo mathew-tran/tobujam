@@ -28,10 +28,15 @@ func ShowBoss(bShow):
 	if result:
 		result[0].visible = bShow
 
+	result = get_tree().get_nodes_in_group("BossLobby")
+	if result:
+		result[0].visible = !bShow
+
 func GivePlayerReward():
 	Game.bBlockDialogue = true
 	FadeScreen.FadeIn()
 	await get_tree().create_timer(.8).timeout
+
 	ShowBoss(true)
 	Game.TeleportPlayer("JobMovePoint")
 	await get_tree().create_timer(1.0).timeout
