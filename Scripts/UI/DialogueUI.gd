@@ -13,6 +13,11 @@ var bSpedUp = false
 func _init():
 	visible = false
 	Game.connect("SendDialogue", Callable(self, "OnSendDialogue"))
+	DayTime.connect("Increment", Callable(self, "OnTimeIncrement"))
+
+func OnTimeIncrement():
+	if DayTime.CurrentTime != 0:
+		$TimeUseClick.play()
 
 func OnSendDialogue(data):
 	SetDialogue(data)
