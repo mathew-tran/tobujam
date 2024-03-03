@@ -38,6 +38,8 @@ func UpdateStockData():
 
 func _on_visibility_changed():
 	if visible:
+		$AudioStreamPlayer2D.pitch_scale = 1.3
+		$AudioStreamPlayer2D.play()
 		var companyNames = StockData.GetCompanyNames()
 		$VBoxContainer/Day.text = str(DayTime.GetDayString())
 		$VBoxContainer/Trading/CompanyStockCashUI.Update()
@@ -49,7 +51,7 @@ func _on_visibility_changed():
 		CompanyStockButtons[0].grab_focus()
 
 func _on_button_button_up():
-
+	$AudioStreamPlayer2D.pitch_scale = 1
 	$AudioStreamPlayer2D.play()
 	$VBoxContainer/Trading/HBoxContainer/Button.release_focus()
 	visible = false
