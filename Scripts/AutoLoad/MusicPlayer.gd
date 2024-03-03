@@ -5,9 +5,9 @@ var DayTimeMusicIndex = 0
 
 var TradingMusicTrack = "res://Audio/Music/Righteous.mp3"
 var DaytimeMusicTracks = [
-	"res://Audio/Music/Early Bird.mp3",
-	"res://Audio/Music/Punching In.mp3",
-	"res://Audio/Music/Training Vid.mp3"
+	"res://Audio/Music/EarlyBird.mp3",
+	"res://Audio/Music/PunchingIn.mp3",
+	"res://Audio/Music/TrainingVid.mp3"
 ]
 var CurrentMusic = ""
 
