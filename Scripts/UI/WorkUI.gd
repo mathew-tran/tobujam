@@ -47,7 +47,7 @@ func GivePlayerReward():
 	var content = null
 	if DayTime.IsLastDay():
 		content = FinalDayMoneyDialogue
-		PlayerInventory.AddMoney(100)
+		PlayerInventory.AddMoney(250)
 	else:
 		if PlayerInventory.WorkLevel == Definitions.WorkPoor:
 			content = NoMoneyDialogue
