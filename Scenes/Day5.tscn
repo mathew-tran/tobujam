@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://7txgjy56oow5"]
+[gd_scene load_steps=18 format=3 uid="uid://7txgjy56oow5"]
 
 [ext_resource type="PackedScene" uid="uid://db05fpr8obmvp" path="res://Scenes/TradeScene.tscn" id="1_mh3en"]
 [ext_resource type="Resource" uid="uid://d2qvfl3fs6xhd" path="res://Content/Dialogue/Day5/Day5GeorgeConvo1.tres" id="3_qjyd5"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://bjxrjov7ig1m4" path="res://Content/Dialogue/Day5/Day5GeorgeEnter.tres" id="13_vicpg"]
 [ext_resource type="Resource" uid="uid://cu1mfkgdh8lls" path="res://Content/Dialogue/Day5/Day5GregEnter.tres" id="14_floej"]
 [ext_resource type="Resource" uid="uid://dym8wxeg5l1vo" path="res://Content/Characters/CHAR_Greg.tres" id="14_obaf6"]
+[ext_resource type="PackedScene" uid="uid://dto1lmjp2mmco" path="res://Prefabs/Environment/Cleanup/WaterSpill.tscn" id="16_2dwff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6pcs"]
 size = Vector2(79, 42)
@@ -114,6 +115,21 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DaySpecificObjects/Day4ManagerEnter6"]
 position = Vector2(29.5, -11)
 shape = SubResource("RectangleShape2D_p6pcs")
+
+[node name="WaterSpill2" parent="TileMap/DaySpecificObjects" index="7" instance=ExtResource("16_2dwff")]
+position = Vector2(50, -104)
+
+[node name="WaterSpill3" parent="TileMap/DaySpecificObjects" index="8" instance=ExtResource("16_2dwff")]
+position = Vector2(104, -98)
+
+[node name="WaterSpill4" parent="TileMap/DaySpecificObjects" index="9" instance=ExtResource("16_2dwff")]
+position = Vector2(30, -93)
+
+[node name="WaterSpill5" parent="TileMap/DaySpecificObjects" index="10" instance=ExtResource("16_2dwff")]
+position = Vector2(252, -124)
+
+[node name="WaterSpill6" parent="TileMap/DaySpecificObjects" index="11" instance=ExtResource("16_2dwff")]
+position = Vector2(54, 91)
 
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter3" to="TileMap/DaySpecificObjects/Day4ManagerEnter3" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/DaySpecificObjects/Day4ManagerEnter4" to="TileMap/DaySpecificObjects/Day4ManagerEnter4" method="_on_body_entered"]

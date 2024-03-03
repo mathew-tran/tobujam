@@ -68,10 +68,16 @@ position = Vector2(-175, -48)
 [node name="JuiceSpill" parent="TileMap/DaySpecificObjects" index="2" instance=ExtResource("7_bfmcq")]
 position = Vector2(320, 186)
 
-[node name="WaterSpill" parent="TileMap/DaySpecificObjects" index="3" instance=ExtResource("8_l40ql")]
+[node name="JuiceSpill2" parent="TileMap/DaySpecificObjects" index="3" instance=ExtResource("7_bfmcq")]
+position = Vector2(-121, -15)
+
+[node name="WaterSpill" parent="TileMap/DaySpecificObjects" index="4" instance=ExtResource("8_l40ql")]
 position = Vector2(9, -136)
 
-[node name="Day4ManagerEnter" type="Area2D" parent="TileMap/DaySpecificObjects" index="4"]
+[node name="WaterSpill2" parent="TileMap/DaySpecificObjects" index="5" instance=ExtResource("8_l40ql")]
+position = Vector2(212, -132)
+
+[node name="Day4ManagerEnter" type="Area2D" parent="TileMap/DaySpecificObjects" index="6"]
 position = Vector2(192, 77)
 collision_mask = 4
 script = ExtResource("10_uyapu")
@@ -83,7 +89,7 @@ metadata/_edit_group_ = true
 position = Vector2(29.5, -11)
 shape = SubResource("RectangleShape2D_3sfqw")
 
-[node name="Day4ManagerEnter2" type="Area2D" parent="TileMap/DaySpecificObjects" index="5"]
+[node name="Day4ManagerEnter2" type="Area2D" parent="TileMap/DaySpecificObjects" index="7"]
 position = Vector2(504, 133)
 collision_mask = 4
 script = ExtResource("10_uyapu")
@@ -95,7 +101,7 @@ metadata/_edit_group_ = true
 position = Vector2(29.5, -11)
 shape = SubResource("RectangleShape2D_3sfqw")
 
-[node name="Day4ManagerEnter3" type="Area2D" parent="TileMap/DaySpecificObjects" index="6"]
+[node name="Day4ManagerEnter3" type="Area2D" parent="TileMap/DaySpecificObjects" index="8"]
 position = Vector2(619, 204)
 collision_mask = 4
 script = ExtResource("10_uyapu")
@@ -107,7 +113,7 @@ metadata/_edit_group_ = true
 position = Vector2(29.5, -11)
 shape = SubResource("RectangleShape2D_3sfqw")
 
-[node name="Day4ManagerEnter4" type="Area2D" parent="TileMap/DaySpecificObjects" index="7"]
+[node name="Day4ManagerEnter4" type="Area2D" parent="TileMap/DaySpecificObjects" index="9"]
 position = Vector2(425, 380)
 collision_mask = 4
 script = ExtResource("10_uyapu")
@@ -119,7 +125,7 @@ metadata/_edit_group_ = true
 position = Vector2(24.5, -4.5)
 shape = SubResource("RectangleShape2D_u38my")
 
-[node name="Day2SelfTalk4" type="Area2D" parent="TileMap/DaySpecificObjects" index="8"]
+[node name="Day2SelfTalk4" type="Area2D" parent="TileMap/DaySpecificObjects" index="10"]
 position = Vector2(419, 264)
 collision_mask = 4
 script = ExtResource("10_uyapu")
