@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bh6r3t2estef0"
+path="res://.godot/imported/Punching In.wav-0dd588f91f0af8eab735b7f89bc8748c.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Punching In.wav"
+dest_files=["res://.godot/imported/Punching In.wav-0dd588f91f0af8eab735b7f89bc8748c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
