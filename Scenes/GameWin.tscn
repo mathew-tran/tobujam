@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjq6vdocsqry5"]
+[gd_scene load_steps=17 format=3 uid="uid://cjq6vdocsqry5"]
 
 [ext_resource type="Script" path="res://Scripts/Level/GameWinScript.gd" id="1_pvr41"]
 [ext_resource type="Resource" uid="uid://lmbcn2a55bw5" path="res://Content/Characters/CHAR_Laszlo.tres" id="2_bp8eg"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ctomr4kyk71xl" path="res://Prefabs/UI/WorkUI.tscn" id="8_b6yfo"]
 [ext_resource type="PackedScene" uid="uid://8eya33vkbhju" path="res://Prefabs/UI/StockUI.tscn" id="9_6k6r4"]
 [ext_resource type="Texture2D" uid="uid://bi6fhlsxq1p0b" path="res://Art/Lazlo.png" id="10_ixiy3"]
+[ext_resource type="Script" path="res://Scripts/Environment/Lighting.gd" id="11_h2kuk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibiyu"]
 atlas = ExtResource("5_mlc0h")
@@ -88,3 +89,7 @@ grow_vertical = 2
 [node name="Brother" type="AnimatedSprite2D" parent="."]
 position = Vector2(153, 77)
 sprite_frames = SubResource("SpriteFrames_ccvcj")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0.243137, 0.854902, 1)
+script = ExtResource("11_h2kuk")

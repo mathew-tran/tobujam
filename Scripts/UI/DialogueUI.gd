@@ -10,7 +10,7 @@ var DefaultCharacterDelay = .08
 var DefaultWordDelay = .01
 var bSpedUp = false
 
-func _enter_tree():
+func _init():
 	visible = false
 	Game.connect("SendDialogue", Callable(self, "OnSendDialogue"))
 

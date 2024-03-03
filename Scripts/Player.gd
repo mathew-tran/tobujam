@@ -16,17 +16,20 @@ func _ready():
 	Game.connect("ExitDialogue", Callable(self, "OnExitDialogue"))
 
 	DayTime.connect("DayIncrease", Callable(self, "OnDayIncrease"))
+	Game.connect("StartTrading", Callable(self, "OnStartTrading"))
 
 	UpdateAnims()
 	add_to_group("Player")
-	FadeScreen.FadeOut()
 
 	await get_tree().create_timer(.4).timeout
 	#$CollisionShape2D.disabled = false
 
 
+func OnStartTrading():
+	$CanvasLayer.visible = false
+
 func OnDayIncrease():
-	FadeScreen.FadeOut()
+	pass
 
 func OnEnterDialogue():
 	bCanMove = false

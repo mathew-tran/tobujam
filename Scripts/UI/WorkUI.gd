@@ -67,10 +67,17 @@ func OnFinishTalking():
 	Game.disconnect("ExitDialogue", Callable(self, "OnFinishTalking"))
 	Game.connect("ExitDialogue", Callable(self, "OnFinishTradeDialogue"))
 	FadeScreen.FadeIn()
+	await get_tree().create_timer(.8).timeout
+	Game.TeleportPlayer("Home")
+	await get_tree().create_timer(1.5).timeout
+	FadeScreen.FadeOut()
+
 	Game.BroadcastSendDialogue({
 		"Speaker" : load("res://Content/Characters/CHAR_Narrator.tres"),
 		"Description" : TransitionDialogues[DayTime.Day - 1],
 	})
+
+
 
 
 func OnFinishTradeDialogue():
@@ -78,4 +85,5 @@ func OnFinishTradeDialogue():
 	Game.disconnect("ExitDialogue", Callable(self, "OnFinishTradeDialogue"))
 	await get_tree().create_timer(.8).timeout
 	ShowBoss(false)
+
 

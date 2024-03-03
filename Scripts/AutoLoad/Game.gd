@@ -29,6 +29,7 @@ func HardReset():
 
 func DoTrading():
 	bBlockDialogue = true
+
 	await get_tree().create_timer(.8).timeout
 	emit_signal("StartTrading")
 
@@ -36,22 +37,22 @@ func DoTrading():
 	var result = get_tree().get_nodes_in_group("StockUI")
 	if result:
 		result[0].visible = true
-	FadeScreen.FadeOut()
+
 
 func MoveToNextDay():
 	PlayerInventory.ResetWork()
 	if PlayerInventory.GetTotalAssets() >= Definitions.TotalAssetGoal:
 		emit_signal("GameWin")
-		get_tree().change_scene_to_file("res://Scenes/GameWin.tscn")
+		FadeScreen.TransitionLevel("res://Scenes/GameWin.tscn")
 		return
 	if DayTime.Day + 1 >= Definitions.FinalDayGoal:
 		emit_signal("GameLose")
-		get_tree().change_scene_to_file("res://Scenes/GameLose.tscn")
+		FadeScreen.TransitionLevel("res://Scenes/GameLose.tscn")
 		return
 	var NextDayScene = "res://Scenes/Day" + str(DayTime.Day + 1) + ".tscn"
-	get_tree().change_scene_to_file(NextDayScene)
+
+	FadeScreen.TransitionLevel(NextDayScene)
 	DayTime.MoveNextDay()
-	Game.TeleportPlayer("StartPoint")
 	bBlockDialogue = false
 
 

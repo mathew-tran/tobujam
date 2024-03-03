@@ -49,11 +49,13 @@ func _on_visibility_changed():
 		CompanyStockButtons[0].grab_focus()
 
 func _on_button_button_up():
+
 	$AudioStreamPlayer2D.play()
 	$VBoxContainer/Trading/HBoxContainer/Button.release_focus()
-	await get_tree().create_timer(.8).timeout
-	Game.MoveToNextDay()
 	visible = false
+	await get_tree().create_timer(1.5).timeout
+	Game.MoveToNextDay()
+
 
 
 
