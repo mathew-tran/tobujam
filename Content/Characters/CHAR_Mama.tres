@@ -1,7 +1,12 @@
-[gd_resource type="Resource" script_class="DialogueOwner" load_steps=2 format=3 uid="uid://bfpys02e1bfba"]
+[gd_resource type="Resource" script_class="DialogueOwner" load_steps=3 format=3 uid="uid://bfpys02e1bfba"]
 
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueOwner.gd" id="1_biidx"]
+[ext_resource type="AudioStream" uid="uid://8g00sxufwfjw" path="res://Audio/SFX/Blip.wav" id="1_olbh2"]
 
 [resource]
 script = ExtResource("1_biidx")
 Name = "Lazlo"
+OwnerColor = Color(0, 0, 0, 1)
+MinPitch = 1.0
+MaxPitch = 1.2
+Sound = ExtResource("1_olbh2")

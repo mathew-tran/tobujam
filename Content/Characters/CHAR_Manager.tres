@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="DialogueOwner" load_steps=2 format=3 uid="uid://bsrvhhxysigvc"]
+[gd_resource type="Resource" script_class="DialogueOwner" load_steps=3 format=3 uid="uid://bsrvhhxysigvc"]
 
+[ext_resource type="AudioStream" uid="uid://dc5hiiibkttil" path="res://Audio/SFX/Blip_Select2.wav" id="1_88d8c"]
 [ext_resource type="Script" path="res://Scripts/Resource/DialogueOwner.gd" id="1_cyis6"]
 
 [resource]
 script = ExtResource("1_cyis6")
 Name = "Juan (Manager)"
 OwnerColor = Color(0.666667, 0.713726, 0.603922, 1)
+MinPitch = 1.0
+MaxPitch = 1.1
+Sound = ExtResource("1_88d8c")

@@ -6,8 +6,8 @@ var DialogueData = {}
 @onready var TitleText = $Panel/Panel/Speaker
 
 var DialogueToSay = []
-var DefaultCharacterDelay = .08
-var DefaultWordDelay = .01
+var DefaultCharacterDelay = .01
+var DefaultWordDelay = .2
 var bSpedUp = false
 
 func _init():
@@ -74,8 +74,10 @@ func StartText():
 		TitleText.text = DialogueData["Speaker"].Get()
 		$Panel/Panel.self_modulate = DialogueData["Speaker"].GetColor()
 		$Panel/Panel.visible = true
+		$TalkSound.stream = DialogueData["Speaker"].GetSound()
 	else:
 		$Panel/Panel.visible = false
+		$TalkSound.stream = load("res://Audio/SFX/Blip_Select2.wav")
 	DescriptionText.text = DialogueToSay[0]
 	$Timer.wait_time = DefaultCharacterDelay
 	$Timer.start()
@@ -150,15 +152,17 @@ func _on_timer_timeout():
 			else:
 				$Timer.wait_time = DefaultCharacterDelay
 
-	$TalkSound.pitch_scale = randf_range(1, 1.2)
+	if DialogueData["Speaker"]:
+		$TalkSound.pitch_scale = DialogueData["Speaker"].GetPitch()
+	else:
+		$TalkSound.pitch_scale = randf_range(1, 1.2)
 
 	if IsLineFinished():
 		$Timer.stop()
 		$TextureRect.visible = true
 		$AnimationPlayer.play("animateArrow")
 	else:
-		if $TalkSound.playing == false:
-			$TalkSound.play()
+		$TalkSound.play()
 
 func IsLineFinished():
 	return DescriptionText.visible_characters >= len(DialogueToSay[0])
